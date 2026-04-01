@@ -1,45 +1,27 @@
 <!DOCTYPE html>
-<html lang="es-PE">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- ✅ SEO -->
-    <title>Fiesta Restaurant | Restaurante Peruano en Lima y Chiclayo - Reservas y Delivery</title>
-    <meta name="description" content="Restaurante peruano gourmet en Lima y Chiclayo. Cocina tradicional con toque contemporáneo. Reservas online, delivery disponible.">
-    <meta name="keywords" content="restaurante peruano, lima, chiclayo, comida peruana, ceviche, lomo saltado, delivery, restaurante gourmet">
-    <meta name="author" content="Fiesta Restaurant">
-    <meta name="robots" content="index, follow">
-    
-    <!-- ✅ CANONICAL & OPEN GRAPH -->
-    <link rel="canonical" href="https://www.fiestagourmet.pe/">
-    <meta property="og:type" content="restaurant.restaurant">
-    <meta property="og:url" content="https://www.fiestagourmet.pe/">
-    <meta property="og:title" content="Fiesta Restaurant | Restaurante Peruano">
-    <meta property="og:description" content="Experiencia culinaria peruana con alma contemporánea.">
-    <meta property="og:locale" content="es_PE">
-    
-    <!-- ✅ FAVICONS -->
+    <meta name="description" content="Restaurante peruano gourmet en Lima y Chiclayo. Cocina tradicional con toque contemporaneo.">
+    <title>Fiesta Restaurant | Restaurante Peruano Gourmet</title>
+
+    <!-- FAVICONS & THEME -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#0a0a0a">
-    
-    <!-- ✅ PRECONNECT -->
+
+    <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    
-    <!-- ✅ FUENTES -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- ✅ TAILWIND CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- TAILWIND CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    
+
+    <!-- TAILWIND CONFIG -->
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -49,327 +31,135 @@
                     colors: {
                         primary: { DEFAULT: '#f5f5f5', dark: '#18181b' },
                         accent: { DEFAULT: '#c9a961', hover: '#b8984d' },
-                        status: {
-                            open: '#10b981',
-                            closing: '#f59e0b',
-                            soon: '#3b82f6',
-                            closed: '#ef4444'
-                        }
                     },
                     animation: {
-                        'float': 'float 6s ease-in-out infinite',
                         'pulse-glow': 'pulse-glow 8s ease-in-out infinite',
-                        'whatsapp-pulse': 'whatsappPulse 4s ease-in-out infinite',
                         'pulse-dot': 'pulseDot 3s ease-in-out infinite',
-                        'slide-in': 'slideIn 0.3s ease-out',
+                        'whatsapp-appear': 'whatsappAppear 0.5s ease-out forwards',
                     },
                     keyframes: {
-                        float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
                         'pulse-glow': { '0%,100%': { opacity: '0.02' }, '50%': { opacity: '0.08' } },
-                        whatsappPulse: { 
-                            '0%,100%': { transform: 'scale(1)', opacity: '1', boxShadow: '0 4px 15px rgba(37,211,102,0.3)' }, 
-                            '50%': { transform: 'scale(1.02)', opacity: '0.9', boxShadow: '0 6px 20px rgba(37,211,102,0.4)' } 
-                        },
                         pulseDot: { '0%,100%': { opacity: '1' }, '50%': { opacity: '0.6' } },
-                        slideIn: { '0%': { transform: 'translateX(100%)' }, '100%': { transform: 'translateX(0)' } },
+                        whatsappAppear: { '0%': { opacity: '0', transform: 'scale(0)' }, '100%': { opacity: '1', transform: 'scale(1)' } },
                     }
                 }
             }
         }
     </script>
-    
-    <!-- ✅ SCHEMA.ORG JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Restaurant",
-        "name": "Fiesta Restaurant",
-        "url": "https://www.fiestagourmet.pe/",
-        "telephone": "+51927743956",
-        "address": [
-            {"@type": "PostalAddress", "streetAddress": "Av. Conquistadores 1234", "addressLocality": "Lima", "addressCountry": "PE"},
-            {"@type": "PostalAddress", "streetAddress": "Jr. Balta 567", "addressLocality": "Chiclayo", "addressCountry": "PE"}
-        ],
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                "opens": "12:00",
-                "closes": "18:00"
-            }
-        ],
-        "servesCuisine": "Peruvian",
-        "priceRange": "$$$",
-        "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "1247"}
-    }
-    </script>
-    
-    <style>
-        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-        html{scroll-behavior:smooth}
-        body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#a1a1aa;overflow-x:hidden}
-        .font-heading{font-family:'Cormorant Garamond',serif;font-weight:400;letter-spacing:-0.02em}
-        ::-webkit-scrollbar{width:6px}
-        ::-webkit-scrollbar-track{background:transparent}
-        ::-webkit-scrollbar-thumb{background:#27272a;border-radius:3px}
-        .bg-mesh{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.3;background:radial-gradient(ellipse 80% 50% at 20% 10%, rgba(201,169,97,.06), transparent 60%);filter:blur(40px);animation:pulse-glow 12s ease-in-out infinite}
-        .glass{background:rgba(26,26,26,.7);backdrop-filter:blur(20px);border:1px solid rgba(201,169,97,.15)}
-        .glass-nav{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,169,97,.1)}
-        .glass-card{background:rgba(26,26,26,.5);border:1px solid rgba(201,169,97,.1);transition:all.4s}
-        .glass-card:hover{transform:translateY(-4px);border-color:rgba(201,169,97,.25)}
-        .reveal{opacity:0;transform:translateY(24px);transition:all .8s cubic-bezier(.16,1,.3,1)}
-        .reveal.active{opacity:1;transform:translateY(0)}
-        .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}
-        .nav-link{position:relative;padding:8px 0;transition:color.3s}
-        .nav-link:hover{color:#c9a961}
-        .btn{border-radius:9999px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;font-size:.7rem;padding:.875rem 2rem;transition:all.4s;display:inline-flex;align-items:center;gap:.5rem;cursor:pointer}
-        .btn-primary{background:#c9a961;color:#0a0a0a}
-        .btn-primary:hover{background:#b8984d;transform:translateY(-2px)}
-        .btn-outline{border:1px solid rgba(201,169,97,.3);color:#c9a961;background:transparent}
-        .btn-outline:hover{background:rgba(201,169,97,.1);border-color:#c9a961;transform:translateY(-2px)}
-        .btn-elegant{background:linear-gradient(135deg,#1a1a1a,#2d2d2d);color:#c9a961;border:1px solid rgba(201,169,97,.3)}
-        .btn-elegant:hover{border-color:#c9a961;transform:translateY(-2px)}
-        .form-input{background:rgba(26,26,26,.6);border:1px solid rgba(201,169,97,.15);border-radius:12px;padding:1rem 1.25rem;color:#e4e4e7;transition:all.3s;width:100%}
-        .form-input:focus{outline:none;border-color:#c9a961}
-        .city-toggle{display:flex;gap:.25rem;padding:.25rem;background:rgba(26,26,26,.6);border-radius:9999px;border:1px solid rgba(201,169,97,.15)}
-        .city-btn{padding:.5rem 1.5rem;border-radius:9999px;font-size:.75rem;font-weight:500;color:#71717a;transition:all.3s}
-        .city-btn.active{background:#c9a961;color:#0a0a0a}
-        
-        /* ✅ STATUS BADGE */
-        .status-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;border-radius:9999px;font-size:.625rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;transition:all.3s}
-        .status-badge.open{background:rgba(16,185,129,.15);color:#10b981;border:1px solid rgba(16,185,129,.3)}
-        .status-badge.closing{background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3)}
-        .status-badge.soon{background:rgba(59,130,246,.15);color:#3b82f6;border:1px solid rgba(59,130,246,.3)}
-        .status-badge.closed{background:rgba(239,68,68,.15);color:#ef4444;border:1px solid rgba(239,68,68,.3)}
-        .status-dot{width:6px;height:6px;border-radius:50%;animation:pulse-dot 2s ease-in-out infinite}
-        .status-dot.open{background:#10b981}
-        .status-dot.closing{background:#f59e0b}
-        .status-dot.soon{background:#3b82f6}
-        .status-dot.closed{background:#ef4444}
-        
-        .sede-info-card{background:rgba(26,26,26,.6);border:1px solid rgba(201,169,97,.2);border-radius:20px;padding:2rem;opacity:0;transform:translateY(20px);transition:all .6s}
-        .sede-info-card.show{opacity:1;transform:translateY(0)}
-        .sede-info-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.25rem}
-        .sede-info-item:last-child{margin-bottom:0}
-        .sede-info-icon{width:20px;height:20px;color:#c9a961;flex-shrink:0;margin-top:.25rem}
-        .sede-info-label{font-size:.75rem;color:#71717a;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.25rem}
-        .sede-info-value{font-size:.9rem;color:#a1a1aa;line-height:1.5}
-        .sede-info-value a{color:#c9a961;transition:color.3s}
-        #reservationSection,#deliverySection,#deliveryOrderModal,#cartSidebar{display:none;opacity:0;transition:opacity .6s ease}
-        #reservationSection.visible,#deliverySection.visible,#deliveryOrderModal.visible,#cartSidebar.visible{display:block}
-        #reservationSection.visible.opacity-show,#deliverySection.visible.opacity-show,#deliveryOrderModal.visible.opacity-show,#cartSidebar.visible.opacity-show{opacity:1}
-        .delivery-card{position:relative;overflow:hidden;border-radius:16px;transition:all.4s;background:rgba(26,26,26,.4);border:1px solid rgba(201,169,97,.1)}
-        .delivery-card:hover{transform:translateY(-4px);border-color:rgba(201,169,97,.25)}
-        .delivery-badge{position:absolute;top:12px right:12px;background:rgba(201,169,97,.9);color:#0a0a0a;font-size:.625rem;padding:.375rem .75rem;border-radius:9999px;font-weight:600}
-        .zone-card{padding:1.25rem;border-radius:12px;border:1px solid rgba(201,169,97,.1);cursor:pointer;transition:all.3s;background:rgba(26,26,26,.4)}
-        .zone-card:hover{border-color:rgba(201,169,97,.25)}
-        .zone-card.active{border-color:#c9a961;background:rgba(201,169,97,.08)}
-        .social-icon{width:48px;height:48px;border-radius:50%;border:1px solid rgba(201,169,97,.2);display:flex;align-items:center;justify-content:center;transition:all.3s;color:rgba(201,169,97,.7)}
-        .social-icon:hover{background:#c9a961;color:#0a0a0a;border-color:#c9a961;transform:translateY(-3px)}
-        
-        /* ✅ WHATSAPP FLOTANTE - EFECTOS NORMALES */
-        .whatsapp-container{position:fixed;bottom:24px;right:24px;z-index:50;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-        .whatsapp-bubble{background:#fff;color:#1a1a1a;padding:12px 16px;border-radius:18px;border-bottom-right-radius:4px;font-size:14px;font-weight:500;box-shadow:0 4px 20px rgba(0,0,0,0.15);opacity:0;transform:translateX(20px) scale(0.8);transition:all 0.5s ease;pointer-events:none;max-width:250px;text-align:right}
-        .whatsapp-bubble.show{opacity:1;transform:translateX(0) scale(1)}
-        .whatsapp-bubble::after{content:'';position:absolute;bottom:-6px;right:20px;width:12px;height:12px;background:#fff;transform:rotate(45deg);border-bottom-right-radius:2px}
-        .whatsapp-bubble-text{display:block;margin-bottom:4px}
-        .whatsapp-bubble-time{font-size:11px;color:#666}
-        .online-indicator{position:absolute;top:4px;right:4px;width:10px;height:10px;background:#10b981;border-radius:50%;border:2px solid #fff;animation:pulse-dot 3s ease-in-out infinite}
-        .whatsapp-float{position:relative;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(37,211,102,0.3);transition:all 0.4s ease;animation:whatsapp-pulse 4s ease-in-out infinite;cursor:pointer}
-        .whatsapp-float:hover{transform:scale(1.05);box-shadow:0 8px 25px rgba(37,211,102,0.5)}
-        .whatsapp-float iconify-icon{color:#fff;font-size:32px}
-        .glow-effect{position:absolute;inset:-4px;border-radius:50%;background:linear-gradient(45deg,#25D366,#128C7E);opacity:0;animation:glow-pulse 5s ease-in-out infinite;z-index:-1}
-        @keyframes glow-pulse{
-            0%,100%{opacity:0;transform:scale(1)}
-            50%{opacity:0.2;transform:scale(1.1)}
-        }
-        
-        .menu-fade{transition:opacity .4s ease}
-        .menu-fade.out{opacity:0}
-        .menu-fade.in{opacity:1}
-        section{scroll-margin-top:80px}
-        @media (max-width: 640px){.hide-mobile{display:none}}
-        @media (min-width: 768px){.hide-desktop{display:none}}
-        @media (prefers-reduced-motion: reduce) {
-            *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-        }
-        :focus-visible{outline:2px solid #c9a961;outline-offset:2px}
-        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-        
-        /* ✅ E-COMMERCE STYLES */
-        .category-filter{padding:.5rem 1rem;border-radius:9999px;font-size:.75rem;font-weight:500;background:rgba(201,169,97,.1);color:#c9a961;border:1px solid rgba(201,169,97,.2);cursor:pointer;transition:all.3s}
-        .category-filter:hover,.category-filter.active{background:#c9a961;color:#0a0a0a;border-color:#c9a961}
-        .product-card{background:rgba(26,26,26,.4);border:1px solid rgba(201,169,97,.1);border-radius:16px;overflow:hidden;transition:all.4s}
-        .product-card:hover{transform:translateY(-4px);border-color:rgba(201,169,97,.25);box-shadow:0 20px 40px -12px rgba(0,0,0,.5)}
-        .quantity-btn{width:32px;height:32px;border-radius:50%;border:1px solid rgba(201,169,97,.3);background:transparent;color:#c9a961;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all.3s}
-        .quantity-btn:hover{background:#c9a961;color:#0a0a0a;border-color:#c9a961}
-        .cart-sidebar{position:fixed;top:0;right:0;width:100%;max-width:400px;height:100vh;background:rgba(26,26,26,.95);backdrop-filter:blur(20px);border-left:1px solid rgba(201,169,97,.2);z-index:60;transform:translateX(100%);transition:transform .4s cubic-bezier(.16,1,.3,1)}
-        .cart-sidebar.open{transform:translateX(0)}
-        .payment-method{padding:1rem;border-radius:12px;border:1px solid rgba(201,169,97,.2);cursor:pointer;transition:all.3s;display:flex;align-items:center;gap:.75rem}
-        .payment-method:hover,.payment-method.active{border-color:#c9a961;background:rgba(201,169,97,.05)}
-        .coupon-input{background:rgba(26,26,26,.6);border:1px solid rgba(201,169,97,.2);border-radius:12px;padding:.75rem 1rem;color:#e4e4e7;transition:all.3s}
-        .coupon-input:focus{outline:none;border-color:#c9a961}
-        
-        /* ✅ LOGO STYLES MEJORADO */
-.logo-img {
-  height: 50px;
-  width: auto;
-  display: block;
 
-  image-rendering: -webkit-optimize-contrast;
-  filter: contrast(1.1) brightness(1.05) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.247));
-}
-    </style>
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="font-body font-light relative">
 
-<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#c9a961] focus:text-[#0a0a0a] focus:rounded-lg">Saltar al contenido principal</a>
-
+<a href="#main-content" class="sr-only focus:not-sr-only">Saltar al contenido</a>
 <div class="bg-mesh"></div>
 
-<!-- Navigation - CON LOGO PNG -->
-<nav class="glass-nav fixed top-0 left-0 right-0 z-50" style="height:72px" role="navigation" aria-label="Menú principal">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between">
-        <!-- ✅ LOGO PNG -->
-        <a href="#inicio" class="flex items-center" aria-label="Fiesta Restaurant - Inicio">
-            <img src="logo_blanco.png" alt="Fiesta Restaurant Logo" class="logo-img">
+<!-- Navigation -->
+<nav class="glass-nav fixed top-0 left-0 right-0 z-50 h-[60px] sm:h-[72px]" role="navigation">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 h-full flex items-center justify-between">
+        <!-- LOGO -->
+        <a href="#inicio" class="flex items-center flex-shrink-0 z-10">
+            <img src="logo.png" alt="Fiesta Restaurant" class="logo-img">
         </a>
-        
-        <div class="hidden md:flex items-center gap-1" role="menubar">
-            <a href="#inicio" class="nav-link px-4 text-[11px] tracking-[0.12em] uppercase text-white/40" role="menuitem">Inicio</a>
-            <a href="#menu" class="nav-link px-4 text-[11px] tracking-[0.12em] uppercase text-white/40" role="menuitem">Carta</a>
-            <a href="#tienda" class="nav-link px-4 text-[11px] tracking-[0.12em] uppercase text-white/40" role="menuitem">Tienda</a>
-            <a href="#nosotros" class="nav-link px-4 text-[11px] tracking-[0.12em] uppercase text-white/40" role="menuitem">Nosotros</a>
-            <a href="#contacto" class="nav-link px-4 text-[11px] tracking-[0.12em] uppercase text-white/40" role="menuitem">Contacto</a>
+
+        <!-- LINKS DESKTOP -->
+        <div class="hidden md:flex items-center gap-1 flex-1 justify-center">
+            <a href="#inicio" class="nav-link px-3 text-[10px] tracking-[0.1em] uppercase text-white/50 hover:text-[#c9a961]">Inicio</a>
+            <a href="#menu" class="nav-link px-3 text-[10px] tracking-[0.1em] uppercase text-white/50 hover:text-[#c9a961]">Carta</a>
+            <a href="#tienda" class="nav-link px-3 text-[10px] tracking-[0.1em] uppercase text-white/50 hover:text-[#c9a961]">Tienda</a>
+            <a href="#nosotros" class="nav-link px-3 text-[10px] tracking-[0.1em] uppercase text-white/50 hover:text-[#c9a961]">Nosotros</a>
         </div>
-        
-        <div class="flex items-center gap-2">
-            <!-- ✅ BOTÓN RESERVAR -->
-            <button onclick="showReservation()" class="btn btn-primary" aria-label="Reservar mesa">
-                Reservar
+
+        <!-- ACCIONES -->
+        <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0 z-10">
+            <!-- Reservar Desktop -->
+            <button onclick="showReservation()" class="btn btn-primary hidden md:inline-flex text-[0.65rem] py-2 px-4">Reservar</button>
+
+            <!-- Carrito -->
+            <button onclick="openCart()" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#c9a961]/30 flex items-center justify-center hover:border-[#c9a961] transition-colors relative" aria-label="Carrito">
+                <iconify-icon icon="mdi:cart-outline" width="18" class="text-[#c9a961]"></iconify-icon>
+                <span id="cartBadgeNav" class="absolute -top-0.5 -right-0.5 w-4 h-4 bg-[#c9a961] text-[#0a0a0a] text-[9px] font-bold rounded-full flex items-center justify-center hidden">0</span>
             </button>
-            
-            <!-- ✅ CARRITO E-COMMERCE -->
-            <button onclick="openCart()" class="relative w-11 h-11 rounded-full border border-[#c9a961]/30 flex items-center justify-center hover:border-[#c9a961] transition-colors" aria-label="Ver carrito">
-                <iconify-icon icon="mdi:shopping-cart" width="20" class="text-[#c9a961]"></iconify-icon>
-                <span id="cartBadgeNav" class="absolute -top-1 -right-1 w-5 h-5 bg-[#c9a961] text-[#0a0a0a] text-xs font-bold rounded-full flex items-center justify-center hidden">0</span>
-            </button>
-            
-            <button id="menuToggle" class="md:hidden w-11 h-11 flex flex-col items-center justify-center gap-1.5" aria-label="Abrir menú" aria-expanded="false">
-                <span class="w-5 h-[2px] bg-[#c9a961]/60 rounded-full"></span>
-                <span class="w-4 h-[2px] bg-[#c9a961]/60 rounded-full ml-auto"></span>
-                <span class="w-5 h-[2px] bg-[#c9a961]/60 rounded-full"></span>
+
+            <!-- User -->
+            <div class="relative" id="userContainer">
+                <button onclick="showLogin()" id="userBtn" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#c9a961]/30 flex items-center justify-center hover:border-[#c9a961] transition-colors" aria-label="Usuario">
+                    <iconify-icon icon="mdi:account-outline" width="18" class="text-[#c9a961]"></iconify-icon>
+                </button>
+                <button onclick="toggleUserMenu()" id="userAvatar" class="hidden w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#c9a961]/20 border border-[#c9a961]/40 flex items-center justify-center text-[#c9a961] text-xs font-medium" aria-label="Menu usuario">
+                    <span id="avatarInitials">?</span>
+                </button>
+                <div id="userDropdown" class="user-dropdown">
+                    <div class="px-3 py-2 border-b border-[#c9a961]/10 mb-1">
+                        <div class="text-white text-sm font-medium" id="dropdownUserName">Usuario</div>
+                        <div class="text-white/40 text-xs" id="dropdownUserEmail">email</div>
+                    </div>
+                    <div class="user-dropdown-item" onclick="goToProfile()"><iconify-icon icon="mdi:account" width="18"></iconify-icon> Perfil</div>
+                    <div class="user-dropdown-item" onclick="logoutUser()"><iconify-icon icon="mdi:logout" width="18"></iconify-icon> Cerrar Sesion</div>
+                </div>
+            </div>
+
+            <!-- Hamburguesa -->
+            <button id="menuToggle" class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line w-3.5 ml-auto"></span>
+                <span class="hamburger-line"></span>
             </button>
         </div>
     </div>
 </nav>
 
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu">
+    <nav class="py-2">
+        <a href="#inicio" class="mobile-nav-link" onclick="closeMobileMenu()"><iconify-icon icon="mdi:home" width="20" class="text-[#c9a961]"></iconify-icon> Inicio</a>
+        <a href="#menu" class="mobile-nav-link" onclick="closeMobileMenu()"><iconify-icon icon="mdi:food" width="20" class="text-[#c9a961]"></iconify-icon> Carta</a>
+        <a href="#tienda" class="mobile-nav-link" onclick="closeMobileMenu()"><iconify-icon icon="mdi:store" width="20" class="text-[#c9a961]"></iconify-icon> Tienda</a>
+        <a href="#nosotros" class="mobile-nav-link" onclick="closeMobileMenu()"><iconify-icon icon="mdi:info" width="20" class="text-[#c9a961]"></iconify-icon> Nosotros</a>
+        <div class="p-4 border-t border-[#c9a961]/10">
+            <button onclick="showReservation(); closeMobileMenu();" class="btn btn-primary w-full justify-center text-xs py-3">Reservar Mesa</button>
+        </div>
+    </nav>
+</div>
+
 <main id="main-content">
 
-<!-- Hero Section -->
-<section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 px-4" aria-labelledby="hero-title">
+<!-- HERO -->
+<section id="inicio" class="relative min-h-screen flex items-center justify-center pt-16 px-4">
     <div class="absolute inset-0 z-0">
         <img src="https://z-cdn-media.chatglm.cn/files/d8eddfa0-dee9-4035-872c-a0d26c424cfe.jpg?auth_key=1874810915-4668bb15a6e84214b039985067153a81-0-1c75ae89e46e392beb30aba0c5dbff95" alt="Fachada Fiesta Gourmet" class="w-full h-full object-cover hero-parallax" style="opacity:.75;filter:contrast(1.05) saturate(.6)">
         <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/30 via-[#0a0a0a]/20 to-[#0a0a0a]/80"></div>
     </div>
-    
-    <div class="relative z-10 text-center max-w-5xl mx-auto px-2">
-        <div class="reveal mb-4">
-            <div id="restaurantStatus" class="status-badge open">
-                <span class="status-dot open"></span>
-                <span id="statusText">Abierto ahora</span>
+
+    <div class="relative z-10 text-center max-w-3xl mx-auto">
+        <div class="reveal mb-3">
+            <div id="restaurantStatus" class="status-badge open mx-auto">
+                <span class="status-dot"></span>
+                <span id="statusText">Abierto</span>
             </div>
-            <p id="currentDateTime" class="text-[10px] text-white/40 mt-2 tracking-wide"></p>
         </div>
-        
-        <h1 id="hero-title" class="reveal reveal-delay-1 font-heading text-white text-5xl sm:text-7xl md:text-8xl leading-[.9] tracking-tight mb-6">
-            Bienvenidos<br><span class="text-[#c9a961]/60 italic">a nuestra casa</span>
+
+        <h1 class="reveal reveal-delay-1 font-heading text-white responsive-title mb-4">
+            Bienvenidos<br><span class="text-[#c9a961] italic">a nuestra casa</span>
         </h1>
-        
-        <div class="reveal reveal-delay-2 mb-8">
-            <p class="text-white/40 text-xs mb-4 tracking-widest uppercase">Elige tu experiencia</p>
-            <div class="city-toggle justify-center mx-auto mb-8" role="group" aria-label="Seleccionar sede">
-                <button class="city-btn active" onclick="selectCity('lima')" id="btn-lima" aria-pressed="true">Lima</button>
-                <button class="city-btn" onclick="selectCity('chiclayo')" id="btn-chiclayo" aria-pressed="false">Chiclayo</button>
+
+        <div class="reveal reveal-delay-2 mb-6">
+            <p class="text-white/40 text-[10px] mb-3 tracking-widest uppercase">Elige tu sede</p>
+            <div class="city-toggle justify-center mx-auto inline-flex">
+                <button class="city-btn active" onclick="selectCity('lima')" id="btn-lima">Lima</button>
+                <button class="city-btn" onclick="selectCity('chiclayo')" id="btn-chiclayo">Chiclayo</button>
             </div>
-            
-            <!-- ✅ INFO DE SEDES -->
-            <div id="sedeInfo" class="sede-info-card max-w-md mx-auto" aria-live="polite"></div>
+            <div id="sedeInfo" class="sede-info-card mt-4 text-left"></div>
         </div>
-        
-        <p class="reveal reveal-delay-3 max-w-lg mx-auto text-white/50 text-base sm:text-lg font-light leading-relaxed mb-10">
+
+        <p class="reveal reveal-delay-3 text-white/50 text-sm sm:text-base mb-8 max-w-md mx-auto">
             Una experiencia culinaria peruana donde cada plato cuenta una historia.
         </p>
-        
-        <div class="reveal reveal-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#menu" class="btn btn-primary" onclick="scrollToSection('menu')">
-                Ver Carta
-                <iconify-icon icon="mdi:book-open" width="14"></iconify-icon>
-            </a>
-            <a href="#tienda" class="btn btn-outline" onclick="scrollToSection('tienda')">
-                <iconify-icon icon="mdi:store" width="14"></iconify-icon>
-                Tienda Online
-            </a>
-            <button onclick="showReservation()" class="btn btn-elegant">Reservar mesa</button>
-        </div>
-    </div>
-    
-    <a href="#menu" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3" onclick="scrollToSection('menu')" aria-label="Ir a la carta">
-        <span class="text-[9px] tracking-[0.3em] uppercase text-white/30">Explorar</span>
-        <div class="w-px h-12 bg-gradient-to-b from-[#c9a961]/40 to-transparent"></div>
-    </a>
-</section>
 
-<!-- ✅ CARTA COMPLETA -->
-<section id="menu" class="relative z-10 py-20 sm:py-28 px-4" aria-labelledby="menu-title">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="reveal inline-block text-[10px] font-medium tracking-[0.3em] uppercase text-[#c9a961]/70 mb-4">Nuestra carta</span>
-            <h2 id="menu-title" class="reveal reveal-delay-1 font-heading text-white/90 text-4xl sm:text-5xl leading-tight">
-                Platos que <span class="text-[#c9a961]/50 italic">enamoran</span>
-            </h2>
-            <p id="menuCityLabel" class="reveal reveal-delay-2 text-[#c9a961] text-sm mt-4 font-medium"></p>
-        </div>
-        
-        <div id="menuGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 menu-fade in" role="list"></div>
-    </div>
-</section>
-
-<!-- ✅ TIENDA E-COMMERCE -->
-<section id="tienda" class="relative z-10 py-20 sm:py-28 px-4" aria-labelledby="shop-title">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-            <span class="reveal inline-block text-[10px] font-medium tracking-[0.3em] uppercase text-[#c9a961]/70 mb-4">Tienda Online</span>
-            <h2 id="shop-title" class="reveal reveal-delay-1 font-heading text-white/90 text-4xl sm:text-5xl leading-tight">
-                Nuestros <span class="text-[#c9a961]/50 italic">Productos</span>
-            </h2>
-            <p class="reveal reveal-delay-2 text-white/40 mt-4">Compra online y recibe en casa</p>
-        </div>
-        
-        <!-- ✅ FILTROS DE CATEGORÍAS -->
-        <div class="reveal reveal-delay-3 flex flex-wrap justify-center gap-3 mb-10" role="group" aria-label="Filtros de categorías">
-            <button class="category-filter active" onclick="filterProducts('todos')">Todos</button>
-            <button class="category-filter" onclick="filterProducts('entradas')">Entradas</button>
-            <button class="category-filter" onclick="filterProducts('fondos')">Platos de Fondo</button>
-            <button class="category-filter" onclick="filterProducts('postres')">Postres</button>
-            <button class="category-filter" onclick="filterProducts('bebidas')">Bebidas</button>
-        </div>
-        
-        <!-- ✅ BÚSQUEDA -->
-        <div class="reveal reveal-delay-3 max-w-md mx-auto mb-10">
-            <div class="relative">
-                <input type="text" id="searchInput" placeholder="Buscar productos..." class="form-input pl-12" oninput="searchProducts()">
-                <iconify-icon icon="mdi:magnify" width="20" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/40"></iconify-icon>
-            </div>
-        </div>
-        
-        <!-- ✅ GRID DE PRODUCTOS -->
-        <div id="productsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" role="list"></div>
-        
-        <!-- ✅ CARRITO VACÍO -->
-        <div id="emptyCart" class="hidden text-center py-12">
-            <iconify-icon icon="mdi:shopping-cart-outline" width="64" class="text-white/20 mb-4"></iconify-icon>
-            <p class="text-white/40">No hay productos en esta categoría</p>
+        <div class="reveal reveal-delay-3 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="https://cartafiestalima.my.canva.site/" class="btn btn-primary text-xs py-3 px-6 w-full sm:w-auto" onclick="scrollToSection('menu')">Ver Carta</a>
+            <button onclick="showReservation()" class="btn btn-outline text-xs py-3 px-6 w-full sm:w-auto">Reservar Mesa</button>
         </div>
     </div>
 </section>
@@ -398,215 +188,27 @@
     </div>
 </section>
 
+
 <!-- About -->
-<section id="nosotros" class="relative z-10 py-20 sm:py-28 px-4" aria-labelledby="about-title">
+<section id="nosotros" class="relative z-10 section-padding px-4">
     <div class="max-w-5xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div class="reveal">
-                <img src="preparacion_collar.jpeg" alt="Chef preparando platos" class="w-full rounded-3xl object-cover aspect-[3/4]" loading="lazy" width="800" height="900">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="reveal order-2 md:order-1">
+                <img src="preparacion_collar.jpeg" alt="Chef" class="w-full rounded-2xl object-cover aspect-[4/5]">
             </div>
-            <div class="space-y-6">
-                <div class="reveal">
-                    <span class="text-[10px] font-medium tracking-[0.3em] uppercase text-[#c9a961]/70 mb-4 block">Nuestra esencia</span>
-                    <h2 id="about-title" class="font-heading text-white/90 text-4xl sm:text-5xl leading-tight">
-                        Tradición peruana,<br><span class="text-[#c9a961]/50 italic">reinterpretada con alma</span>
-                    </h2>
-                </div>
-                <div class="reveal reveal-delay-1 space-y-4">
-                    <p class="text-white/40 leading-relaxed text-lg">
-                        En <strong class="text-[#c9a961]/70">Fiesta Restaurant</strong> creemos que la cocina peruana es un patrimonio vivo.
-                    </p>
-                    <p class="text-white/40 leading-relaxed text-lg">
-                        Hoy llevamos esta pasión a <strong class="text-[#c9a961]/70">Lima</strong> y <strong class="text-[#c9a961]/70">Chiclayo</strong>.
-                    </p>
-                </div>
+            <div class="order-1 md:order-2 text-center md:text-left">
+                <span class="reveal text-[10px] tracking-[0.2em] uppercase text-[#c9a961]/70 mb-2 block">Nuestra esencia</span>
+                <h2 class="reveal reveal-delay-1 font-heading text-white text-3xl sm:text-4xl mb-4">Tradicion peruana, reinterpretada</h2>
+                <p class="reveal reveal-delay-2 text-white/50 leading-relaxed text-sm">
+                    En Fiesta Restaurant creemos que la cocina peruana es un patrimonio vivo. Hoy llevamos esta pasion a Lima y Chiclayo.
+                </p>
             </div>
         </div>
     </div>
 </section>
-
-<!-- DELIVERY SECTION -->
-<section id="deliverySection" class="relative z-10 py-20 sm:py-28 px-4" aria-labelledby="delivery-title">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="reveal inline-flex items-center gap-2 text-[10px] font-medium tracking-[0.3em] uppercase text-[#c9a961]/70 mb-4">
-                <iconify-icon icon="mdi:motorbike" width="16"></iconify-icon>
-                Delivery
-            </span>
-            <h2 id="delivery-title" class="reveal reveal-delay-1 font-heading text-white/90 text-4xl sm:text-5xl leading-tight">
-                Llevamos el sabor <span class="text-[#c9a961]/50 italic">a tu puerta</span>
-            </h2>
-        </div>
-        
-        <div class="reveal reveal-delay-3 glass rounded-3xl p-8 sm:p-10 max-w-4xl mx-auto">
-            <h3 class="font-heading text-white/90 text-2xl mb-6 text-center">📍 Zonas de Reparto</h3>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8" role="group" aria-label="Zonas de delivery">
-                <div class="zone-card active" onclick="selectZone(this, 'Miraflores', 5)" role="radio" aria-checked="true">
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-white/70">Miraflores</span>
-                        <span class="text-[#c9a961] text-sm font-semibold">S/ 5</span>
-                    </div>
-                </div>
-                <div class="zone-card" onclick="selectZone(this, 'San Isidro', 6)" role="radio" aria-checked="false">
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-white/70">San Isidro</span>
-                        <span class="text-[#c9a961] text-sm font-semibold">S/ 6</span>
-                    </div>
-                </div>
-                <div class="zone-card" onclick="selectZone(this, 'Surco', 7)" role="radio" aria-checked="false">
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-white/70">Surco</span>
-                        <span class="text-[#c9a961] text-sm font-semibold">S/ 7</span>
-                    </div>
-                </div>
-                <div class="zone-card" onclick="selectZone(this, 'La Molina', 8)" role="radio" aria-checked="false">
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-white/70">La Molina</span>
-                        <span class="text-[#c9a961] text-sm font-semibold">S/ 8</span>
-                    </div>
-                </div>
-            </div>
-            
-            <button onclick="openCart()" class="btn btn-primary w-full justify-center text-base py-4">
-                <iconify-icon icon="mdi:shopping-cart" width="18"></iconify-icon>
-                Ver Carrito
-                <span class="ml-2 px-2 py-1 bg-[#0a0a0a] rounded-full text-xs">(<span id="cartCount2">0</span>)</span>
-            </button>
-        </div>
-    </div>
-</section>
-
-<!-- ✅ CART SIDEBAR (E-COMMERCE) -->
-<div id="cartSidebar" class="cart-sidebar" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true">
-    <div class="flex flex-col h-full">
-        <div class="flex items-center justify-between p-6 border-b border-[#c9a961]/10">
-            <h3 id="cart-title" class="font-heading text-white/90 text-2xl">🛒 Tu Carrito</h3>
-            <button onclick="closeCart()" class="text-white/40 hover:text-[#c9a961]" aria-label="Cerrar carrito">
-                <iconify-icon icon="mdi:close" width="24"></iconify-icon>
-            </button>
-        </div>
-        
-        <div id="cartItemsSidebar" class="flex-1 overflow-y-auto p-6 space-y-4">
-            <p class="text-white/40 text-center py-12">Tu carrito está vacío</p>
-        </div>
-        
-        <!-- ✅ CUPÓN DE DESCUENTO -->
-        <div class="px-6 py-4 border-t border-[#c9a961]/10">
-            <div class="flex gap-2 mb-4">
-                <input type="text" id="couponCode" placeholder="Código de descuento" class="coupon-input flex-1">
-                <button onclick="applyCoupon()" class="btn btn-outline text-xs py-2">Aplicar</button>
-            </div>
-            <p id="couponMessage" class="text-xs text-[#10b981] hidden">¡Cupón aplicado!</p>
-        </div>
-        
-        <!-- ✅ RESUMEN DEL PEDIDO -->
-        <div class="px-6 py-4 border-t border-[#c9a961]/10 space-y-3">
-            <div class="flex justify-between text-sm">
-                <span class="text-white/50">Subtotal</span>
-                <span class="text-white/90">S/ <span id="cartSubtotal">0</span></span>
-            </div>
-            <div class="flex justify-between text-sm">
-                <span class="text-white/50">Delivery</span>
-                <span class="text-white/90">S/ <span id="cartDelivery">5</span></span>
-            </div>
-            <div class="flex justify-between text-sm" id="discountRow" style="display:none">
-                <span class="text-[#10b981]">Descuento</span>
-                <span class="text-[#10b981]">- S/ <span id="cartDiscount">0</span></span>
-            </div>
-            <div class="flex justify-between text-lg font-heading pt-3 border-t border-[#c9a961]/10">
-                <span class="text-white/90">Total</span>
-                <span class="text-[#c9a961]">S/ <span id="cartTotalSidebar">0</span></span>
-            </div>
-        </div>
-        
-        <!-- ✅ MÉTODOS DE PAGO -->
-        <div class="px-6 py-4 border-t border-[#c9a961]/10">
-            <p class="text-xs text-white/50 mb-3">Método de pago</p>
-            <div class="space-y-2">
-                <div class="payment-method active" onclick="selectPayment(this, 'yape')">
-                    <iconify-icon icon="simple-icons:yape" width="24" class="text-[#742284]"></iconify-icon>
-                    <span class="text-sm text-white/90">Yape</span>
-                </div>
-                <div class="payment-method" onclick="selectPayment(this, 'plin')">
-                    <iconify-icon icon="mdi:cellphone-nfc" width="24" class="text-[#00C4B0]"></iconify-icon>
-                    <span class="text-sm text-white/90">Plin</span>
-                </div>
-                <div class="payment-method" onclick="selectPayment(this, 'tarjeta')">
-                    <iconify-icon icon="mdi:credit-card" width="24" class="text-[#c9a961]"></iconify-icon>
-                    <span class="text-sm text-white/90">Tarjeta</span>
-                </div>
-                <div class="payment-method" onclick="selectPayment(this, 'efectivo')">
-                    <iconify-icon icon="mdi:cash" width="24" class="text-[#10b981]"></iconify-icon>
-                    <span class="text-sm text-white/90">Efectivo</span>
-                </div>
-            </div>
-        </div>
-        
-        <!-- ✅ BOTÓN CHECKOUT -->
-        <div class="px-6 py-4 border-t border-[#c9a961]/10">
-            <button onclick="checkout()" class="btn btn-primary w-full justify-center py-4">
-                <iconify-icon icon="mdi:whatsapp" width="18"></iconify-icon>
-                Completar Pedido por WhatsApp
-            </button>
-            <p class="text-[10px] text-white/30 text-center mt-3">Te redirigiremos a WhatsApp para confirmar</p>
-        </div>
-    </div>
-</div>
-
-<!-- Reservation Section -->
-<section id="reservationSection" class="relative z-10 py-20 sm:py-28 px-4" role="dialog" aria-modal="true" aria-labelledby="reservation-title" aria-hidden="true">
-    <div class="max-w-4xl mx-auto">
-        <div class="glass rounded-3xl p-8 sm:p-12">
-            <div class="text-center mb-10">
-                <button onclick="hideReservation()" class="absolute top-6 right-6 text-white/40 hover:text-[#c9a961]" aria-label="Cerrar formulario">
-                    <iconify-icon icon="mdi:close" width="28"></iconify-icon>
-                </button>
-                <span class="inline-block text-[10px] font-medium tracking-[0.3em] uppercase text-[#c9a961]/70 mb-4">Reserva tu mesa</span>
-                <h2 id="reservation-title" class="font-heading text-white/90 text-3xl sm:text-4xl">
-                    Vive la experiencia <span class="text-[#c9a961]/70 italic">Fiesta Restaurant</span>
-                </h2>
-            </div>
-            
-            <form class="space-y-5" onsubmit="handleReservation(event)">
-                <div class="grid sm:grid-cols-2 gap-5">
-                    <input type="text" class="form-input" placeholder="Nombre completo" required aria-label="Nombre">
-                    <input type="tel" class="form-input" placeholder="Teléfono" required aria-label="Teléfono">
-                </div>
-                <div class="grid sm:grid-cols-3 gap-5">
-                    <input type="date" class="form-input" required aria-label="Fecha">
-                    <select class="form-input" required aria-label="Hora">
-                        <option value="">Hora</option>
-                        <option>12:00 PM</option>
-                        <option>1:00 PM</option>
-                        <option>2:00 PM</option>
-                        <option>3:00 PM</option>
-                        <option>4:00 PM</option>
-                        <option>5:00 PM</option>
-                    </select>
-                    <select class="form-input" required aria-label="Personas">
-                        <option value="">Personas</option>
-                        <option>2 personas</option>
-                        <option>3-4 personas</option>
-                        <option>5-6 personas</option>
-                    </select>
-                </div>
-                <select class="form-input" required aria-label="Sede">
-                    <option value="">Seleccionar sede</option>
-                    <option value="lima">Lima</option>
-                    <option value="chiclayo">Chiclayo</option>
-                </select>
-                <button type="submit" class="btn btn-primary w-full justify-center text-base mt-4">
-                    Confirmar reserva
-                    <iconify-icon icon="mdi:calendar-check" width="18"></iconify-icon>
-                </button>
-            </form>
-        </div>
-    </div>
-</section>
-
 </main>
 
-<!-- ✅ FOOTER CON TODOS LOS ICONOS -->
+<!-- FOOTER -->
 <footer id="contacto" class="relative z-10 border-t border-[#c9a961]/5 py-12 px-4" role="contentinfo">
     <div class="max-w-7xl mx-auto text-center">
         <p class="text-[10px] font-medium tracking-[0.2em] uppercase text-[#c9a961]/70 mb-6">Encuéntranos en</p>
@@ -615,540 +217,182 @@
             <a href="https://wa.me/51927743956" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
                 <iconify-icon icon="mdi:whatsapp" width="24"></iconify-icon>
             </a>
-            <a href="https://facebook.com/fiestagourmet" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+            <a href="https://www.facebook.com/share/1Bao94eAnb/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
                 <iconify-icon icon="mdi:facebook" width="24"></iconify-icon>
             </a>
-            <a href="https://instagram.com/fiestagourmet" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+            <a href="https://www.instagram.com/fiestalima?igsh=bmh5ZHhrbW56ZXRr" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
                 <iconify-icon icon="mdi:instagram" width="24"></iconify-icon>
             </a>
-            <a href="https://tripadvisor.com/fiestagourmet" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TripAdvisor">
+            <a href="https://www.tripadvisor.com.pe/Restaurant_Review-g294316-d812950-Reviews-Fiesta_Restaurant_Gourmet-Lima_Lima_Region.html" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TripAdvisor">
                 <iconify-icon icon="simple-icons:tripadvisor" width="24"></iconify-icon>
             </a>
-            <a href="https://youtube.com/@fiestagourmet" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+            <a href="https://youtube.com/@fiestarestaurantgourmet?si=UuB16V2-niKuGn4k" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
                 <iconify-icon icon="mdi:youtube" width="24"></iconify-icon>
             </a>
         </div>
-        
-        <!-- ✅ COPYRIGHT CON FIESTA RESTAURANT -->
-        <p class="text-[10px] text-white/20">© 2026 Fiesta Restaurant. Todos los derechos reservados.</p>
+        <p class="text-[10px] text-white/20">2026 Fiesta Restaurant. Todos los derechos reservados.</p>
     </div>
 </footer>
 
-<!-- ✅ WHATSAPP FLOTANTE MEJORADO -->
-<div class="whatsapp-container">
-    <!-- Burbuja de mensaje -->
-    <div id="whatsappBubble" class="whatsapp-bubble">
-        <span class="whatsapp-bubble-text">👋 ¡Hola! ¿Necesitas ayuda?</span>
-        <span class="whatsapp-bubble-time">En línea ahora</span>
-    </div>
-    
-    <!-- Botón WhatsApp -->
-    <a href="https://wa.me/51927743956?text=Hola%20Fiesta%20Restaurant" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chatear por WhatsApp" onmouseenter="showBubble()" onmouseleave="hideBubble()">
-        <div class="glow-effect"></div>
-        <span class="online-indicator" title="En línea"></span>
-        <iconify-icon icon="mdi:whatsapp"></iconify-icon>
-    </a>
-</div>
-
-<script>
-// ✅ WHATSAPP BUBBLE FUNCTIONS - TIEMPOS NORMALES
-function showBubble() {
-    const bubble = document.getElementById('whatsappBubble');
-    bubble.classList.add('show');
-}
-
-function hideBubble() {
-    const bubble = document.getElementById('whatsappBubble');
-    setTimeout(() => {
-        bubble.classList.remove('show');
-    }, 4000); // Se oculta después de 4 segundos
-}
-
-// Mostrar burbuja automáticamente después de 8 segundos
-setTimeout(() => {
-    showBubble();
-}, 8000);
-
-// ✅ ESTADO DEL RESTAURANTE
-function updateRestaurantStatus() {
-    const now = new Date();
-    const day = now.getDay();
-    const hour = now.getHours();
-    const minutes = now.getMinutes();
-    
-    const statusBadge = document.getElementById('restaurantStatus');
-    const statusDot = statusBadge.querySelector('.status-dot');
-    const statusText = document.getElementById('statusText');
-    const dateTime = document.getElementById('currentDateTime');
-    
-    const opcionesFecha = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-    dateTime.textContent = now.toLocaleDateString('es-PE', opcionesFecha);
-    
-    if (day === 1) {
-        statusBadge.className = 'status-badge closed'; statusDot.className = 'status-dot closed'; statusText.textContent = 'Cerrado - Lunes';
-    } else if (hour < 12) {
-        const minutosParaAbrir = (12 * 60) - (hour * 60 + minutes);
-        if (minutosParaAbrir <= 120) {
-            statusBadge.className = 'status-badge soon'; statusDot.className = 'status-dot soon';
-            statusText.textContent = `Se apertura en ${Math.floor(minutosParaAbrir / 60)}h ${minutosParaAbrir % 60}m`;
-        } else {
-            statusBadge.className = 'status-badge closed'; statusDot.className = 'status-dot closed';
-            statusText.textContent = 'Abre a las 12:00 PM';
-        }
-    } else if (hour >= 18) {
-        statusBadge.className = 'status-badge closed'; statusDot.className = 'status-dot closed'; statusText.textContent = 'Cerrado - Hasta mañana';
-    } else if (hour >= 12 && hour < 16) {
-        statusBadge.className = 'status-badge open'; statusDot.className = 'status-dot open'; statusText.textContent = 'Abierto ahora';
-    } else {
-        const minutosParaCerrar = (18 * 60) - (hour * 60 + minutes);
-        statusBadge.className = 'status-badge closing'; statusDot.className = 'status-dot closing';
-        statusText.textContent = `Cierra en ${Math.floor(minutosParaCerrar / 60)}h ${minutosParaCerrar % 60}m`;
-    }
-}
-
-setInterval(updateRestaurantStatus, 60000);
-
-// ✅ MENÚS POR SEDE (CARTA COMPLETA)
-const menusPorSede = {
-    lima: {
-        platos: [
-            { nombre: 'Ceviche Clásico', precio: 48, descripcion: 'Pescado fresco marinado en limón', imagen: 'falta foto', badge: 'Popular' },
-            { nombre: 'Lomo Saltado', precio: 62, descripcion: 'Lomo fino con vegetales y papas', imagen: 'falta foto', badge: null },
-            { nombre: 'Ají de Gallina', precio: 45, descripcion: 'Pechuga en crema de ají amarillo', imagen: 'falta foto', badge: 'Tradicional' },
-            { nombre: 'Suspiro Limeña', precio: 28, descripcion: 'Dulce tradicional con manjar', imagen: 'falta foto', badge: null },
-            { nombre: 'Causa Rellena', precio: 32, descripcion: 'Masa de papa con pollo y palta', imagen: 'falta foto', badge: null },
-            { nombre: 'Pisco Sour', precio: 25, descripcion: 'Cóctel bandera con pisco', imagen: 'falta foto', badge: 'Signature' }
-        ]
-    },
-    chiclayo: {
-        platos: [
-            { nombre: 'Arroz con Pato', precio: 52, descripcion: 'Arroz verde con pato estofado', imagen: 'ff', badge: 'Especialidad' },
-            { nombre: 'Espesado de punta de pecho', precio: 48, descripcion: 'no hay', imagen: 'ff', badge: 'Tradicional' },
-            { nombre: 'Ceviche de Pescado', precio: 55, descripcion: 'falan datos', imagen: 'ff', badge: 'Premium' },
-            { nombre: 'King Kong', precio: 22, descripcion: 'Dulce típico de manjar', imagen: 'ff', badge: null },
-            { nombre: 'Seco de Cabrito', precio: 58, descripcion: 'Cabrito en chicha de jora', imagen: 'ff', badge: 'Norteño' },
-            { nombre: 'Chicha de Jora', precio: 12, descripcion: 'Bebida tradicional de maíz', imagen: 'ff', badge: 'Típico' }
-        ]
-    }
-};
-
-// ✅ PRODUCTOS E-COMMERCE
-const products = {
-    lima: [
-        { id: 1, nombre: 'Ceviche Clásico', precio: 48, categoria: 'entradas', imagen: 'ff', descripcion: 'Pescado fresco marinado en limón', badge: 'Popular' },
-        { id: 2, nombre: 'Lomo Saltado', precio: 62, categoria: 'fondos', imagen: 'ff', descripcion: 'Lomo fino con vegetales y papas', badge: null },
-        { id: 3, nombre: 'Ají de Gallina', precio: 45, categoria: 'fondos', imagen: 'ff', descripcion: 'Pechuga en crema de ají amarillo', badge: 'Tradicional' },
-        { id: 4, nombre: 'Suspiro Limeña', precio: 28, categoria: 'postres', imagen: 'ff', descripcion: 'Dulce tradicional con manjar', badge: null },
-        { id: 5, nombre: 'Causa Rellena', precio: 32, categoria: 'entradas', imagen: 'ff', descripcion: 'Masa de papa con pollo y palta', badge: null },
-        { id: 6, nombre: 'Pisco Sour', precio: 25, categoria: 'bebidas', imagen: 'ff', descripcion: 'Cóctel bandera con pisco', badge: 'Signature' },
-        { id: 7, nombre: 'Chicha Morada', precio: 12, categoria: 'bebidas', imagen: 'ff', descripcion: 'Bebida tradicional de maíz morado', badge: null },
-        { id: 8, nombre: 'Arroz con Leche', precio: 22, categoria: 'postres', imagen: 'ff', descripcion: 'Postre cremoso con canela', badge: null }
-    ],
-    chiclayo: [
-        { id: 9, nombre: 'Arroz con Pato', precio: 52, categoria: 'fondos', imagen: 'ff', descripcion: 'Arroz verde con pato estofado', badge: 'Especialidad' },
-        { id: 10, nombre: 'Espesado de Gallina', precio: 48, categoria: 'fondos', imagen: 'ff', descripcion: 'Gallina en salsa espesa', badge: 'Tradicional' },
-        { id: 11, nombre: 'Ceviche de Conchas', precio: 55, categoria: 'entradas', imagen: 'ff', descripcion: 'Conchas negras de Tumbes', badge: 'Premium' },
-        { id: 12, nombre: 'King Kong', precio: 22, categoria: 'postres', imagen: 'ff', descripcion: 'Dulce típico de manjar', badge: null },
-        { id: 13, nombre: 'Seco de Cabrito', precio: 58, categoria: 'fondos', imagen: 'ff', descripcion: 'Cabrito en chicha de jora', badge: 'Norteño' },
-        { id: 14, nombre: 'Chicha de Jora', precio: 12, categoria: 'bebidas', imagen: 'ff', descripcion: 'Bebida tradicional de maíz', badge: 'Típico' }
-    ]
-};
-
-// ✅ INFO DE SEDES
-const sedesInfo = {
-    lima: {
-        direccion: 'AV. REDUCTO 1278-MIRAFLORES, LIMA',
-        telefono: '+01 242 9009',
-        horario: 'Mar - Dom: 12:00 pm - 6:00 pm\nLunes cerrado'
-    },
-    chiclayo: {
-        direccion: 'AV. SALAVERRY 1820, CHICLAYO',
-        telefono: '+51 924 516 825',
-        horario: 'Mar - Dom: 12:00 pm - 6:00 pm\nLunes cerrado'
-    }
-};
-
-let cart = [];
-let currentCity = 'lima';
-let currentFilter = 'todos';
-let deliveryZone = { name: 'Miraflores', price: 5 };
-let discount = 0;
-let paymentMethod = 'yape';
-
-// ✅ RENDERIZAR INFO DE SEDES
-function renderSedeInfo(city) {
-    const sede = sedesInfo[city];
-    const container = document.getElementById('sedeInfo');
-    
-    container.innerHTML = `
-        <div class="sede-info-item">
-            <iconify-icon icon="mdi:map-marker-outline" class="sede-info-icon"></iconify-icon>
-            <div>
-                <div class="sede-info-label">Dirección</div>
-                <div class="sede-info-value">${sede.direccion.replace(/\n/g, '<br>')}</div>
-            </div>
+<!-- CART SIDEBAR -->
+<div id="cartSidebar" class="cart-sidebar" role="dialog">
+    <div class="flex flex-col h-full">
+        <div class="flex items-center justify-between p-4 border-b border-[#c9a961]/10">
+            <h3 class="font-heading text-white text-xl">Tu Carrito</h3>
+            <button onclick="closeCart()" class="modal-close-btn" style="position:relative;top:0;right:0"><iconify-icon icon="mdi:close" width="16"></iconify-icon></button>
         </div>
-        <div class="sede-info-item">
-            <iconify-icon icon="mdi:phone-outline" class="sede-info-icon"></iconify-icon>
-            <div>
-                <div class="sede-info-label">Teléfono</div>
-                <div class="sede-info-value"><a href="tel:${sede.telefono.replace(/\s/g, '')}">${sede.telefono}</a></div>
-            </div>
-        </div>
-        <div class="sede-info-item">
-            <iconify-icon icon="mdi:clock-outline" class="sede-info-icon"></iconify-icon>
-            <div>
-                <div class="sede-info-label">Horario</div>
-                <div class="sede-info-value">${sede.horario.replace(/\n/g, '<br>')}</div>
-            </div>
-        </div>
-    `;
-    
-    container.classList.remove('show');
-    void container.offsetWidth;
-    container.classList.add('show');
-}
-
-// ✅ RENDERIZAR CARTA COMPLETA
-function renderMenu(city = currentCity) {
-    const menu = menusPorSede[city].platos;
-    const grid = document.getElementById('menuGrid');
-    const label = document.getElementById('menuCityLabel');
-    
-    grid.classList.remove('in');
-    grid.classList.add('out');
-    
-    setTimeout(() => {
-        label.textContent = city === 'lima' ? '📍 Sede Lima - Miraflores' : '📍 Sede Chiclayo - Salaverry ';
-        grid.innerHTML = menu.map((plato, index) => `
-            <article class="reveal glass-card rounded-3xl overflow-hidden" role="listitem">
-                <img src="${plato.imagen}" alt="${plato.nombre}" class="w-full aspect-video object-cover" loading="lazy" width="600" height="450">
-                <div class="p-6">
-                    <div class="flex justify-between mb-3">
-                        <h3 class="font-heading text-white/90 text-2xl">${plato.nombre}</h3>
-                        <span class="text-[#c9a961] font-semibold text-lg">S/ ${plato.precio}</span>
-                    </div>
-                    <p class="text-white/40 text-sm">${plato.descripcion}</p>
-                    ${plato.badge ? `<span class="inline-block mt-3 px-3 py-1 bg-[#c9a961]/20 text-[#c9a961] text-xs rounded-full">${plato.badge}</span>` : ''}
-                </div>
-            </article>
-        `).join('');
+        <div id="cartItemsSidebar" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
         
-        grid.classList.remove('out');
-        grid.classList.add('in');
-        document.querySelectorAll('#menuGrid .reveal').forEach(el => {
-            el.classList.remove('active');
-            observer.observe(el);
-        });
-    }, 400);
-}
-
-// ✅ RENDERIZAR PRODUCTOS E-COMMERCE
-function renderProducts(city = currentCity, filter = currentFilter) {
-    const productsList = products[city];
-    const grid = document.getElementById('productsGrid');
-    const emptyCart = document.getElementById('emptyCart');
-    
-    let filtered = filter === 'todos' ? productsList : productsList.filter(p => p.categoria === filter);
-    
-    const searchTerm = document.getElementById('searchInput')?.value.toLowerCase() || '';
-    if (searchTerm) {
-        filtered = filtered.filter(p => p.nombre.toLowerCase().includes(searchTerm));
-    }
-    
-    if (filtered.length === 0) {
-        grid.innerHTML = '';
-        emptyCart.classList.remove('hidden');
-        return;
-    }
-    
-    emptyCart.classList.add('hidden');
-    grid.innerHTML = filtered.map(product => `
-        <div class="product-card reveal active" role="listitem">
-            <div class="relative">
-                <img src="${product.imagen}" alt="${product.nombre}" class="w-full aspect-video object-cover" loading="lazy">
-                ${product.badge ? `<span class="absolute top-3 left-3 px-3 py-1 bg-[#c9a961] text-[#0a0a0a] text-xs font-bold rounded-full">${product.badge}</span>` : ''}
+        <!-- Cupon -->
+        <div class="p-4 border-t border-[#c9a961]/10">
+            <div class="flex gap-2">
+                <input type="text" id="couponCode" placeholder="Cupon" class="form-input text-xs py-2">
+                <button onclick="applyCoupon()" class="btn btn-outline text-[10px] py-2 px-3">Aplicar</button>
             </div>
-            <div class="p-5">
-                <div class="flex justify-between items-start mb-2">
-                    <h3 class="font-heading text-white/90 text-xl">${product.nombre}</h3>
-                    <span class="text-[#c9a961] font-semibold text-lg">S/ ${product.precio}</span>
-                </div>
-                <p class="text-white/40 text-sm mb-4">${product.descripcion}</p>
-                <div class="flex items-center gap-3">
-                    <button onclick="addToCart(${product.id})" class="btn btn-primary flex-1 justify-center text-xs py-2">
-                        <iconify-icon icon="mdi:cart-plus" width="16"></iconify-icon>
-                        Agregar
-                    </button>
-                </div>
-            </div>
+            <p id="couponMessage" class="text-[10px] text-[#10b981] mt-1 hidden"></p>
         </div>
-    `).join('');
-}
 
-// ✅ FILTRAR PRODUCTOS
-function filterProducts(category) {
-    currentFilter = category;
-    document.querySelectorAll('.category-filter').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent.toLowerCase().includes(category === 'todos' ? 'todos' : category));
-    });
-    renderProducts(currentCity, category);
-}
+        <!-- Totales -->
+        <div class="p-4 border-t border-[#c9a961]/10 space-y-2 text-sm">
+            <div class="flex justify-between"><span class="text-white/50">Subtotal</span><span class="text-white">S/ <span id="cartSubtotal">0</span></span></div>
+            <div class="flex justify-between"><span class="text-white/50">Delivery</span><span class="text-white">S/ <span id="cartDelivery">5</span></span></div>
+            <div class="flex justify-between text-base pt-2 border-t border-[#c9a961]/10"><span class="text-white font-medium">Total</span><span class="text-[#c9a961] font-heading text-lg">S/ <span id="cartTotalSidebar">0</span></span></div>
+        </div>
 
-// ✅ BUSCAR PRODUCTOS
-function searchProducts() {
-    renderProducts(currentCity, currentFilter);
-}
-
-// ✅ CARRITO E-COMMERCE
-function addToCart(productId) {
-    const productsList = products[currentCity];
-    const product = productsList.find(p => p.id === productId);
-    
-    const existingItem = cart.find(item => item.id === productId);
-    if (existingItem) {
-        existingItem.quantity++;
-    } else {
-        cart.push({ ...product, quantity: 1 });
-    }
-    
-    updateCart();
-    openCart();
-}
-
-function updateCart() {
-    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const subtotal = cart.reduce((sum, item) => sum + (item.precio * item.quantity), 0);
-    const total = subtotal + deliveryZone.price - discount;
-    
-    document.getElementById('cartBadgeNav').textContent = count;
-    document.getElementById('cartBadgeNav').classList.toggle('hidden', count === 0);
-    document.getElementById('cartCount2').textContent = count;
-    document.getElementById('cartSubtotal').textContent = subtotal;
-    document.getElementById('cartDelivery').textContent = deliveryZone.price;
-    document.getElementById('cartDiscount').textContent = discount;
-    document.getElementById('cartTotalSidebar').textContent = total;
-    
-    document.getElementById('discountRow').style.display = discount > 0 ? 'flex' : 'none';
-    
-    renderCartSidebar();
-    saveCart();
-}
-
-function renderCartSidebar() {
-    const container = document.getElementById('cartItemsSidebar');
-    
-    if (cart.length === 0) {
-        container.innerHTML = '<p class="text-white/40 text-center py-12">Tu carrito está vacío</p>';
-        return;
-    }
-    
-    container.innerHTML = cart.map((item, index) => `
-        <div class="flex items-center gap-4 glass rounded-xl p-3 animate-slide-in">
-            <img src="${item.imagen}" alt="${item.nombre}" class="w-16 h-16 rounded-lg object-cover">
-            <div class="flex-1">
-                <h4 class="text-white/90 text-sm font-medium">${item.nombre}</h4>
-                <p class="text-[#c9a961] text-xs">S/ ${item.precio}</p>
+        <!-- Pago -->
+        <div class="p-4 border-t border-[#c9a961]/10">
+            <p class="text-[10px] text-white/40 mb-2 uppercase tracking-wider">Pago</p>
+            <div class="grid grid-cols-2 gap-2 mb-4">
+                <div class="payment-method active text-xs py-2" onclick="selectPayment(this, 'yape')"><iconify-icon icon="simple-icons:yape" width="16" class="text-[#742284]"></iconify-icon> Yape</div>
+                <div class="payment-method text-xs py-2" onclick="selectPayment(this, 'efectivo')"><iconify-icon icon="mdi:cash" width="16" class="text-[#10b981]"></iconify-icon> Efectivo</div>
             </div>
-            <div class="flex items-center gap-2">
-                <button onclick="updateQuantity(${index}, -1)" class="quantity-btn">
-                    <iconify-icon icon="mdi:minus" width="14"></iconify-icon>
-                </button>
-                <span class="text-white/90 text-sm w-6 text-center">${item.quantity}</span>
-                <button onclick="updateQuantity(${index}, 1)" class="quantity-btn">
-                    <iconify-icon icon="mdi:plus" width="14"></iconify-icon>
-                </button>
-            </div>
-            <button onclick="removeFromCart(${index})" class="text-white/30 hover:text-red-400">
-                <iconify-icon icon="mdi:trash" width="18"></iconify-icon>
+            <button onclick="checkout()" class="btn btn-primary w-full justify-center py-3 text-xs">
+                <iconify-icon icon="mdi:whatsapp" width="16"></iconify-icon> Pedir por WhatsApp
             </button>
         </div>
-    `).join('');
-}
+    </div>
+</div>
 
-function updateQuantity(index, change) {
-    cart[index].quantity += change;
-    if (cart[index].quantity <= 0) {
-        cart.splice(index, 1);
-    }
-    updateCart();
-}
+<!-- MODAL: LOGIN -->
+<div id="loginModal" class="modal-overlay">
+    <div class="modal-content-base auth-content">
+        <button onclick="closeModal('loginModal')" class="modal-close-btn"><iconify-icon icon="mdi:close" width="16"></iconify-icon></button>
+        <div class="text-center mb-6">
+            <iconify-icon icon="mdi:account-circle" width="48" class="text-[#c9a961] mb-2"></iconify-icon>
+            <h3 class="font-heading text-white text-2xl">Bienvenido</h3>
+            <p class="text-white/40 text-xs mt-1">Inicia sesion para continuar</p>
+        </div>
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="mb-4">
+                <label class="form-label">Correo</label>
+                <input type="email" id="loginEmail" class="form-input" placeholder="tu@email.com" required>
+                <p class="form-error" id="loginEmailError">Correo invalido</p>
+            </div>
+            <div class="mb-4">
+                <label class="form-label">Contrasena</label>
+                <input type="password" id="loginPassword" class="form-input" placeholder="********" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-full justify-center py-3 mt-2">Iniciar Sesion</button>
+        </form>
+        <p class="text-center text-white/40 text-xs mt-4">No tienes cuenta? <span class="text-[#c9a961] cursor-pointer" onclick="switchToRegister()">Registrate</span></p>
+    </div>
+</div>
 
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCart();
-}
+<!-- MODAL: REGISTER -->
+<div id="registerModal" class="modal-overlay">
+    <div class="modal-content-base auth-content">
+        <button onclick="closeModal('registerModal')" class="modal-close-btn"><iconify-icon icon="mdi:close" width="16"></iconify-icon></button>
+        <div class="text-center mb-6">
+            <h3 class="font-heading text-white text-2xl">Crear Cuenta</h3>
+        </div>
+        <form id="registerForm" onsubmit="handleRegister(event)">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+                <div>
+                    <label class="form-label">Nombre</label>
+                    <input type="text" id="registerFirstName" class="form-input" required>
+                </div>
+                <div>
+                    <label class="form-label">Apellido</label>
+                    <input type="text" id="registerLastName" class="form-input" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Correo</label>
+                <input type="email" id="registerEmail" class="form-input" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Telefono</label>
+                <input type="tel" id="registerPhone" class="form-input" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Contrasena</label>
+                <input type="password" id="registerPassword" class="form-input" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-full justify-center py-3 mt-2">Registrarme</button>
+        </form>
+        <p class="text-center text-white/40 text-xs mt-4">Ya tienes cuenta? <span class="text-[#c9a961] cursor-pointer" onclick="switchToLogin()">Inicia Sesion</span></p>
+    </div>
+</div>
 
-// ✅ CUPONES
-function applyCoupon() {
-    const code = document.getElementById('couponCode').value.toUpperCase();
-    const message = document.getElementById('couponMessage');
-    
-    const coupons = {
-        'FIESTA10': 10,
-        'GOURMET15': 15,
-        'PRIMERPEDIDO': 20
-    };
-    
-    if (coupons[code]) {
-        discount = coupons[code];
-        message.textContent = `¡${code} aplicado! -${discount}% de descuento`;
-        message.classList.remove('hidden');
-        updateCart();
-    } else {
-        message.textContent = 'Cupón inválido';
-        message.className = 'text-xs text-red-400';
-        message.classList.remove('hidden');
-    }
-}
+<!-- MODAL: RESERVATION -->
+<div id="reservationModal" class="modal-overlay">
+    <div class="modal-content-base max-w-lg">
+        <button onclick="closeModal('reservationModal')" class="modal-close-btn"><iconify-icon icon="mdi:close" width="16"></iconify-icon></button>
+        <h3 class="font-heading text-white text-2xl text-center mb-6">Selecciona Sede</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div onclick="requestReservation('lima')" class="glass-card p-4 rounded-xl text-center cursor-pointer">
+                <iconify-icon icon="mdi:map-marker" width="32" class="text-[#c9a961] mb-2"></iconify-icon>
+                <h4 class="text-white font-medium">Lima</h4>
+                <p class="text-white/40 text-xs mt-1">Av. Reducto 1278</p>
+            </div>
+            <div onclick="requestReservation('chiclayo')" class="glass-card p-4 rounded-xl text-center cursor-pointer">
+                <iconify-icon icon="mdi:map-marker" width="32" class="text-[#c9a961] mb-2"></iconify-icon>
+                <h4 class="text-white font-medium">Chiclayo</h4>
+                <p class="text-white/40 text-xs mt-1">Av. Salaverry 1820</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-// ✅ MÉTODOS DE PAGO
-function selectPayment(element, method) {
-    document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('active'));
-    element.classList.add('active');
-    paymentMethod = method;
-}
+<!-- MODAL: CONFIRM RESERVATION -->
+<div id="confirmModal" class="modal-overlay">
+    <div class="modal-content-base max-w-xs text-center">
+        <iconify-icon icon="mdi:calendar-check" width="40" class="text-[#c9a961] mb-3"></iconify-icon>
+        <h3 class="font-heading text-white text-xl mb-2">Confirmar Reserva?</h3>
+        <p class="text-white/50 text-sm mb-6">Serás redirigido a Mesa247 para <span id="confirmSedeName" class="text-[#c9a961]">[sede]</span>.</p>
+        <div class="flex flex-col gap-2">
+            <button onclick="confirmReservation()" class="btn btn-primary w-full justify-center py-3">Si, reservar</button>
+            <button onclick="closeModal('confirmModal')" class="btn btn-outline w-full justify-center py-3">Cancelar</button>
+        </div>
+    </div>
+</div>
 
-// ✅ CHECKOUT
-function checkout() {
-    if (cart.length === 0) {
-        alert('Agrega productos al carrito primero');
-        return;
-    }
-    
-    const total = document.getElementById('cartTotalSidebar').textContent;
-    const items = cart.map(item => `${item.quantity}x ${item.nombre}`).join(', ');
-    
-    const message = `🛒 *Nuevo Pedido - Fiesta Restaurant*\n\n📦 Productos:\n${items}\n\n💰 Total: S/ ${total}\n💳 Pago: ${paymentMethod.toUpperCase()}\n\n📍 Dirección: [Tu dirección aquí]`;
-    
-    window.open(`https://wa.me/51927743956?text=${encodeURIComponent(message)}`, '_blank');
-}
+<!-- MODAL: WHATSAPP -->
+<div id="whatsappConfirmModal" class="modal-overlay">
+    <div class="modal-content-base max-w-xs text-center">
+        <div class="w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center mx-auto mb-3">
+            <iconify-icon icon="mdi:whatsapp" width="32" class="text-white"></iconify-icon>
+        </div>
+        <h3 class="font-heading text-white text-xl mb-2">Necesitas ayuda?</h3>
+        <p class="text-white/50 text-sm mb-6">Chatea con nosotros por WhatsApp</p>
+        <button onclick="openWhatsAppChat()" class="btn btn-primary w-full justify-center py-3" style="background:#25D366;border:none">Chatear ahora</button>
+        <button onclick="closeModal('whatsappConfirmModal')" class="btn btn-outline w-full justify-center py-2 mt-2 text-xs">Cerrar</button>
+    </div>
+</div>
 
-// ✅ CARRITO SIDEBAR
-function openCart() {
-    const sidebar = document.getElementById('cartSidebar');
-    sidebar.classList.add('visible');
-    setTimeout(() => sidebar.classList.add('open'), 10);
-    sidebar.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-}
+<!-- WHATSAPP FLOTANTE -->
+<div class="whatsapp-container">
+    <button onclick="openModal('whatsappConfirmModal')" class="whatsapp-float" id="whatsappFloat">
+        <span class="online-indicator"></span>
+        <iconify-icon icon="mdi:whatsapp"></iconify-icon>
+    </button>
+</div>
 
-function closeCart() {
-    const sidebar = document.getElementById('cartSidebar');
-    sidebar.classList.remove('open');
-    setTimeout(() => {
-        sidebar.classList.remove('visible');
-        sidebar.setAttribute('aria-hidden', 'true');
-    }, 400);
-    document.body.style.overflow = '';
-}
+<!-- TOAST -->
+<div id="toast" class="toast"><iconify-icon icon="mdi:check-circle" width="18" class="toast-icon text-[#10b981]"></iconify-icon><span class="toast-message text-sm" id="toastMessage"></span></div>
 
-// ✅ LOCALSTORAGE
-function saveCart() {
-    localStorage.setItem('fiestaCart', JSON.stringify(cart));
-    localStorage.setItem('fiestaCity', currentCity);
-}
-
-function loadCart() {
-    const saved = localStorage.getItem('fiestaCart');
-    const savedCity = localStorage.getItem('fiestaCity');
-    
-    if (saved) cart = JSON.parse(saved);
-    if (savedCity) currentCity = savedCity;
-    
-    updateCart();
-}
-
-// ✅ SEDE
-function selectCity(city) {
-    currentCity = city;
-    document.querySelectorAll('.city-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.id === `btn-${city}`);
-        btn.setAttribute('aria-pressed', btn.id === `btn-${city}`);
-    });
-    renderSedeInfo(city);
-    renderMenu(city);
-    renderProducts(city, currentFilter);
-    saveCart();
-}
-
-function selectZone(element, name, price) {
-    document.querySelectorAll('.zone-card').forEach(card => {
-        card.classList.remove('active');
-        card.setAttribute('aria-checked', 'false');
-    });
-    element.classList.add('active');
-    element.setAttribute('aria-checked', 'true');
-    deliveryZone = { name, price };
-    document.getElementById('cartDelivery').textContent = price;
-    updateCart();
-}
-
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        const navHeight = 72;
-        const offsetPosition = section.getBoundingClientRect().top + window.pageYOffset - navHeight;
-        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-    }
-}
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('active');
-    });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-function showDelivery() {
-    const section = document.getElementById('deliverySection');
-    section.classList.add('visible');
-    setTimeout(() => section.classList.add('opacity-show'), 10);
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-function showReservation() {
-    const section = document.getElementById('reservationSection');
-    section.classList.add('visible');
-    section.setAttribute('aria-hidden', 'false');
-    setTimeout(() => section.classList.add('opacity-show'), 10);
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-function hideReservation() {
-    const section = document.getElementById('reservationSection');
-    section.classList.remove('opacity-show');
-    section.setAttribute('aria-hidden', 'true');
-    setTimeout(() => section.classList.remove('visible'), 600);
-    document.getElementById('inicio').scrollIntoView({ behavior: 'smooth' });
-}
-
-function handleReservation(e) {
-    e.preventDefault();
-    alert('¡Reserva recibida! Te confirmaremos pronto.');
-    hideReservation();
-    e.target.reset();
-}
-
-// ✅ INICIALIZAR
-document.addEventListener('DOMContentLoaded', () => {
-    updateRestaurantStatus();
-    loadCart();
-    renderSedeInfo('lima');
-    renderMenu();
-    renderProducts();
-});
-const logo = document.getElementById("logo");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    logo.src = "LogoFiestaN.png"; // oscuro
-  } else {
-    logo.src = "LogoFiestaWhite.png"; // claro
-  }
-});
-</script>
+<!-- CUSTOM JS -->
+<script src="app.js"></script>
 
 </body>
 </html>
