@@ -8,2121 +8,377 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --black: #0a0a0a;
-            --charcoal: #1a1a1a;
-            --dark-gray: #2a2a2a;
-            --gold: #C9A961;
-            --gold-light: #D4B978;
-            --white: #ffffff;
-            --gray: #888888;
-            --gray-light: #e0e0e0;
-            --whatsapp: #25D366;
-            --online-green: #00ff88;
-            --orange: #FF6B35;
-            --red: #e74c3c;
+            --black: #0a0a0a; --charcoal: #1a1a1a; --dark-gray: #2a2a2a;
+            --gold: #C9A961; --gold-light: #D4B978; --white: #ffffff;
+            --gray: #888888; --gray-light: #e0e0e0; --whatsapp: #25D366;
+            --online-green: #00ff88; --orange: #FF6B35; --red: #e74c3c;
         }
-
         body {
-            font-family: 'Lato', sans-serif;
-            background: var(--black);
-            color: var(--white);
-            line-height: 1.6;
-            font-weight: 300;
-            overflow-x: hidden;
-            padding-bottom: 80px;
+            font-family: 'Lato', sans-serif; background: var(--black); color: var(--white);
+            line-height: 1.6; font-weight: 300; overflow-x: hidden; padding-bottom: 80px;
         }
-
-        /* ===== HEADER ===== */
         .header {
-            background: rgba(10, 10, 10, 0.98);
-            padding: 12px 15px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(201, 169, 97, 0.15);        }
-
+            background: rgba(10, 10, 10, 0.98); padding: 12px 15px; position: fixed;
+            width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(201, 169, 97, 0.15);
+        }
         .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1400px; margin: 0 auto; display: flex;
+            justify-content: space-between; align-items: center;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 35px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .header-icons {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .cart-icon-wrapper {
-            position: relative;
-        }
-
+        .logo { display: flex; align-items: center; }
+        .logo img { height: 35px; width: auto; object-fit: contain; }
+        .header-icons { display: flex; gap: 8px; align-items: center; }
+        .cart-icon-wrapper { position: relative; }
         .icon-btn {
-            width: 36px;
-            height: 36px;
-            border: 1px solid rgba(201, 169, 97, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            color: var(--gold);
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s;
+            width: 36px; height: 36px; border: 1px solid rgba(201, 169, 97, 0.3);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            background: transparent; color: var(--gold); cursor: pointer;
+            text-decoration: none; font-size: 14px; transition: all 0.3s;
         }
-
-        .icon-btn:hover {
-            background: var(--gold);
-            color: var(--black);        }
-
+        .icon-btn:hover { background: var(--gold); color: var(--black); }
         .cart-badge {
-            position: absolute;
-            top: -6px;
-            right: -6px;
-            background: var(--orange);
-            color: var(--white);
-            font-size: 9px;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
+            position: absolute; top: -6px; right: -6px; background: var(--orange);
+            color: var(--white); font-size: 9px; width: 18px; height: 18px;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-weight: 700;
         }
-
-        .user-btn {
-            position: relative;
-        }
-
+        .user-btn { position: relative; }
         .user-badge {
-            position: absolute;
-            top: -4px;
-            right: -4px;
-            width: 10px;
-            height: 10px;
-            background: var(--online-green);
-            border-radius: 50%;
-            border: 2px solid var(--black);
+            position: absolute; top: -4px; right: -4px; width: 10px; height: 10px;
+            background: var(--online-green); border-radius: 50%; border: 2px solid var(--black);
         }
-
-        .menu-toggle {
-            display: flex;
-        }
-
-        /* ===== HERO CON MESA ===== */
+        .menu-toggle { display: flex; }
         .hero-banner {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
                         url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920') center/cover;
-            padding: 90px 15px 30px;
-            text-align: center;
-            position: relative;
-            min-height: 40vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 90px 15px 30px; text-align: center; min-height: 40vh;
+            display: flex; align-items: center; justify-content: center;
         }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 100%;
-        }
-
+        .hero-content { position: relative; z-index: 1; max-width: 100%; }
         .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 400;
-            margin-bottom: 12px;
-            color: var(--white);
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-            line-height: 1.3;
+            font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400;
+            margin-bottom: 12px; color: var(--white); text-shadow: 2px 2px 10px rgba(0,0,0,0.5); line-height: 1.3;
         }
-
-        .hero-title .gold-text {
-            color: var(--gold);
-            font-style: italic;
-        }
-
-        .hero-subtitle {
-            font-size: 13px;
-            color: var(--gray-light);
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-
-        /* ===== SEDE SELECTOR ===== */
+        .hero-title .gold-text { color: var(--gold); font-style: italic; }
+        .hero-subtitle { font-size: 13px; color: var(--gray-light); margin-bottom: 20px; font-weight: 300; }
         .sede-selector {
-            display: inline-flex;
-            background: rgba(26, 26, 26, 0.9);
-            border: 1px solid rgba(201, 169, 97, 0.3);
-            border-radius: 20px;
-            padding: 4px;
-            margin-bottom: 20px;
+            display: inline-flex; background: rgba(26, 26, 26, 0.9);
+            border: 1px solid rgba(201, 169, 97, 0.3); border-radius: 20px;
+            padding: 4px; margin-bottom: 20px;
         }
-
         .sede-btn {
-            padding: 10px 25px;
-            border: none;
-            background: transparent;
-            color: var(--gray);
-            font-size: 12px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-            border-radius: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;        }
-
-        .sede-btn.active {
-            background: var(--gold);
-            color: var(--black);
+            padding: 10px 25px; border: none; background: transparent; color: var(--gray);
+            font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.3s;
+            border-radius: 16px; text-transform: uppercase; letter-spacing: 1px;
         }
-
-        .sede-btn:hover:not(.active) {
-            color: var(--white);
-        }
-
-        /* ===== INFO SEDE ===== */
+        .sede-btn.active { background: var(--gold); color: var(--black); }
+        .sede-btn:hover:not(.active) { color: var(--white); }
         .sede-info {
-            background: rgba(26, 26, 26, 0.95);
-            border: 1px solid rgba(201, 169, 97, 0.2);
-            border-radius: 10px;
-            padding: 15px 20px;
-            margin: 0 auto;
-            max-width: 100%;
-            backdrop-filter: blur(10px);
+            background: rgba(26, 26, 26, 0.95); border: 1px solid rgba(201, 169, 97, 0.2);
+            border-radius: 10px; padding: 15px 20px; margin: 0 auto; max-width: 100%;
         }
-
-        .sede-info h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            color: var(--gold);
-            margin-bottom: 12px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 8px;
-            font-size: 12px;
-        }
-
-        .info-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .info-item i {
-            color: var(--gold);
-            width: 16px;
-            font-size: 13px;
-            margin-top: 1px;
-        }
-
-        .info-item span {
-            color: var(--gray-light);            line-height: 1.5;
-        }
-
-        /* ===== HERO BOTONES ===== */
-        .hero-buttons {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-
+        .sede-info h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); margin-bottom: 12px; }
+        .info-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; font-size: 12px; }
+        .info-item:last-child { margin-bottom: 0; }
+        .info-item i { color: var(--gold); width: 16px; font-size: 13px; margin-top: 1px; }
+        .info-item span { color: var(--gray-light); line-height: 1.5; }
+        .hero-buttons { display: flex; gap: 12px; justify-content: center; margin-top: 25px; flex-wrap: wrap; }
         .btn-hero {
-            padding: 13px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-            font-size: 12px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-hero-primary {
-            background: var(--gold);
-            color: var(--black);
-        }
-
-        .btn-hero-primary:hover {
-            background: var(--gold-light);
-            transform: translateY(-2px);
-        }
-
-        .btn-hero-secondary {
-            background: transparent;
-            color: var(--gold);
-            border: 2px solid var(--gold);
-        }
-
-        .btn-hero-secondary:hover {
-            background: var(--gold);
-            color: var(--black);
-            transform: translateY(-2px);
-        }
-        /* ===== STATS SECTION ===== */
-        .stats-section {
-            padding: 40px 15px;
-            background: var(--black);
-            border-bottom: 1px solid rgba(201, 169, 97, 0.1);
-        }
-
-        .stats-grid {
-            max-width: 100%;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            text-align: center;
-        }
-
-        .stat-item {
-            padding: 15px 10px;
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            color: var(--gold);
-            font-weight: 400;
-            margin-bottom: 8px;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 9px;
-            letter-spacing: 2px;
-            color: var(--gray);
-            text-transform: uppercase;
-        }
-
-        /* ===== ABOUT SECTION ===== */
-        .about-section {
-            padding: 50px 15px;
-            max-width: 100%;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-subtitle {
-            font-size: 9px;
-            letter-spacing: 3px;
-            color: var(--gold);
-            margin-bottom: 15px;
-            text-transform: uppercase;        }
-
-        .about-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 400;
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-
-        .about-title .gold-text {
-            color: var(--gold);
-            font-style: italic;
-        }
-
-        .about-text {
-            font-size: 13px;
-            color: var(--gray);
-            line-height: 1.7;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
-        .about-image {
-            max-width: 100%;
-            margin: 0 auto;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            filter: grayscale(100%);
-            transition: filter 0.5s;
-        }
-
-        .about-image:hover img {
-            filter: grayscale(0%);
-        }
-
-        /* ===== HISTORIA SECTION ===== */
-        .historia-section {
-            display: none;
-            padding: 50px 15px;
-            background: var(--charcoal);
-            border-top: 1px solid rgba(201, 169, 97, 0.1);
-            border-bottom: 1px solid rgba(201, 169, 97, 0.1);
-        }
-        .historia-section.active {
-            display: block;
-            animation: fadeIn 0.6s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .historia-container {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-
-        .historia-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .historia-subtitle {
-            font-size: 9px;
-            letter-spacing: 3px;
-            color: var(--gold);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .historia-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 400;
-            color: var(--gold);
-        }
-
-        .historia-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .historia-text {
-            font-size: 13px;
-            line-height: 1.7;
-            color: var(--gray-light);
-        }
-        .historia-text p {
-            margin-bottom: 15px;
-        }
-
-        .historia-image {
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .historia-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .historia-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            text-align: center;
-            padding: 25px 15px;
-            background: rgba(201, 169, 97, 0.05);
-            border-radius: 10px;
-            border: 1px solid rgba(201, 169, 97, 0.1);
-            margin-bottom: 25px;
-        }
-
-        .historia-stat-item h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--gold);
-            margin-bottom: 8px;
-        }
-
-        .historia-stat-item p {
-            font-size: 10px;
-            color: var(--gray);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-cerrar-historia {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            background: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            text-decoration: none;
-            border-radius: 20px;            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn-cerrar-historia:hover {
-            background: var(--gold);
-            color: var(--black);
-        }
-
-        /* ===== CATEGORIAS SCROLL ===== */
-        .categorias-scroll {
-            background: var(--charcoal);
-            padding: 12px 0;
-            position: sticky;
-            top: 60px;
-            z-index: 100;
-            border-bottom: 1px solid rgba(201, 169, 97, 0.1);
-        }
-
-        .categorias-container {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            padding: 0 15px;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .categorias-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .categoria-pill {
-            background: var(--dark-gray);
-            border: 1px solid rgba(201, 169, 97, 0.2);
-            color: var(--gray);
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 11px;
-            font-weight: 500;
-            white-space: nowrap;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .categoria-pill.active {
-            background: var(--gold);
-            border-color: var(--gold);
-            color: var(--black);
-        }
-
-        .categoria-pill:hover:not(.active) {
-            border-color: var(--gold);
-            color: var(--white);
-        }
-
-        /* ===== SECCIONES ===== */
-        .seccion-title {
-            padding: 25px 15px 12px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 400;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .seccion-title i {
-            color: var(--gold);
-        }
-
-        .seccion-title .gold-text {
-            color: var(--gold);
-        }
-
-        /* ===== PRODUCTOS SCROLL ===== */
-        .productos-scroll-container {
-            padding: 0 0 25px;
-            overflow-x: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .productos-scroll-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .productos-scroll {
-            display: flex;
-            gap: 12px;
-            padding: 0 15px;
-            width: max-content;
-        }
-
-        .producto-card {            background: var(--charcoal);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid rgba(201, 169, 97, 0.1);
-            transition: all 0.3s;
-            width: 220px;
-            flex-shrink: 0;
-        }
-
-        .producto-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-3px);
-        }
-
-        .producto-imagen {
-            position: relative;
-            height: 140px;
-            overflow: hidden;
-        }
-
-        .producto-imagen img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .producto-card:hover .producto-imagen img {
-            transform: scale(1.05);
-        }
-
-        .producto-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: var(--orange);
-            color: var(--white);
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 9px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .producto-favorite {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 28px;            height: 28px;
-            background: rgba(0, 0, 0, 0.6);
-            border: none;
-            border-radius: 50%;
-            color: var(--white);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .producto-favorite:hover {
-            background: var(--red);
-        }
-
-        .producto-favorite.active {
-            background: var(--red);
-            color: var(--white);
-        }
-
-        .producto-info {
-            padding: 14px;
-        }
-
-        .producto-nombre {
-            font-family: 'Playfair Display', serif;
-            font-size: 15px;
-            font-weight: 500;
-            margin-bottom: 6px;
-            color: var(--white);
-        }
-
-        .producto-descripcion {
-            font-size: 11px;
-            color: var(--gray);
-            margin-bottom: 12px;
-            line-height: 1.4;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .producto-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .producto-precio {
-            font-family: 'Playfair Display', serif;
-            font-size: 17px;
-            color: var(--gold);
-            font-weight: 600;
-        }
-
-        .btn-agregar {
-            background: var(--gold);
-            border: none;
-            color: var(--black);
-            padding: 6px 14px;
-            border-radius: 16px;
-            cursor: pointer;
-            font-size: 9px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .btn-agregar:hover {
-            background: var(--gold-light);
-            transform: scale(1.05);
-        }
-
-        .btn-agregar.agregado {
-            background: var(--online-green);
-        }
-
-        /* ===== MODAL RESERVA SEDE ===== */
-        .modal-reserva-sede {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 6000;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            backdrop-filter: blur(5px);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .modal-reserva-sede.active {
-            opacity: 1;
-        }
-
-        .modal-reserva-content {
-            background: var(--charcoal);
-            border: 1px solid rgba(201, 169, 97, 0.3);
-            border-radius: 12px;
-            width: 100%;
-            max-width: 500px;
-            padding: 30px 25px;
-            position: relative;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-
-        .modal-reserva-sede.active .modal-reserva-content {
-            transform: scale(1);
-        }
-
-        .modal-reserva-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            color: var(--gray);
-            font-size: 22px;
-            cursor: pointer;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-reserva-close:hover {
-            color: var(--white);
-        }
-
-        .modal-reserva-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            color: var(--gold);
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .modal-reserva-subtitle {            text-align: center;
-            color: var(--gray);
-            font-size: 13px;
-            margin-bottom: 30px;
-        }
-
-        .sede-reserva-options {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .sede-reserva-btn {
-            background: var(--dark-gray);
-            border: 1px solid rgba(201, 169, 97, 0.3);
-            border-radius: 10px;
-            padding: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-align: left;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .sede-reserva-btn:hover {
-            background: rgba(201, 169, 97, 0.1);
-            border-color: var(--gold);
-            transform: translateX(5px);
-        }
-
-        .sede-reserva-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--black);
-            font-size: 20px;
-        }
-
-        .sede-reserva-info h3 {
-            font-size: 16px;
-            margin-bottom: 5px;
-            color: var(--gold);
-        }
-
-        .sede-reserva-info p {            font-size: 12px;
-            color: var(--gray);
-        }
-
-        /* ===== LOGIN POPUP ===== */
-        .login-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 5000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 15px;
-            backdrop-filter: blur(5px);
-        }
-
-        .login-overlay.active {
-            display: flex;
-        }
-
-        .login-popup {
-            background: var(--charcoal);
-            border: 1px solid rgba(201, 169, 97, 0.3);
-            border-radius: 12px;
-            width: 100%;
-            max-width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 25px 20px;
-            position: relative;
-            animation: popupIn 0.4s ease;
-        }
-
-        .login-close {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: none;
-            border: none;
-            color: var(--gray);
-            font-size: 20px;
-            cursor: pointer;
-            transition: color 0.3s;
-            width: 32px;
-            height: 32px;
-            display: flex;            align-items: center;
-            justify-content: center;
-        }
-
-        .login-close:hover {
-            color: var(--white);
-        }
-
-        .login-logo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .login-logo img{
-            height: 35px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .login-logo p {
-            color: var(--gray);
-            font-size: 12px;
-        }
-
-        .login-tabs {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
-        }
-
-        .login-tab {
-            flex: 1;
-            padding: 10px;
-            background: transparent;
-            border: none;
-            color: var(--gray);
-            font-size: 11px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .login-tab.active {
-            color: var(--gold);
-            border-bottom: 2px solid var(--gold);
-        }
-        .login-form {
-            display: none;
-        }
-
-        .login-form.active {
-            display: block;
-        }
-
-        .form-group {
-            margin-bottom: 14px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 10px;
-            color: var(--gray);
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 11px 12px;
-            background: var(--dark-gray);
-            border: 1px solid rgba(201, 169, 97, 0.2);
-            border-radius: 6px;
-            color: var(--white);
-            font-size: 13px;
-            transition: all 0.3s;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 0 2px rgba(201, 169, 97, 0.1);
-        }
-
-        .form-group input::placeholder {
-            color: var(--gray);
-        }
-
-        .btn-login {
-            width: 100%;
-            padding: 13px;
-            background: var(--gold);
-            border: none;
-            border-radius: 6px;
-            color: var(--black);            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 10px;
-        }
-
-        .btn-login:hover {
-            background: var(--gold-light);
-            transform: translateY(-2px);
-        }
-
-        .login-divider {
-            text-align: center;
-            margin: 18px 0;
-            color: var(--gray);
-            font-size: 10px;
-            position: relative;
-        }
-
-        .login-divider::before,
-        .login-divider::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 40%;
-            height: 1px;
-            background: rgba(201, 169, 97, 0.2);
-        }
-
-        .login-divider::before {
-            left: 0;
-        }
-
-        .login-divider::after {
-            right: 0;
-        }
-
-        .social-login {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .social-btn {
-            width: 42px;
-            height: 42px;
-            border: 1px solid rgba(201, 169, 97, 0.3);            border-radius: 50%;
-            background: transparent;
-            color: var(--gold);
-            cursor: pointer;
-            font-size: 17px;
-            transition: all 0.3s;
-        }
-
-        .social-btn:hover {
-            background: var(--gold);
-            color: var(--black);
-            transform: translateY(-3px);
-        }
-
-        .login-footer {
-            text-align: center;
-            margin-top: 18px;
-            font-size: 11px;
-            color: var(--gray);
-        }
-
-        .login-footer a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        .login-footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* ===== CARRITO BOTTOM SHEET ===== */
-        .carrito-bottom {
-            position: fixed;
-            bottom: -100%;
-            left: 0;
-            right: 0;
-            background: var(--charcoal);
-            border-top-left-radius: 16px;
-            border-top-right-radius: 16px;
-            z-index: 3000;
-            transition: bottom 0.3s;
-            max-height: 75vh;
-            overflow-y: auto;
-            border-top: 1px solid rgba(201, 169, 97, 0.2);
-        }
-
-        .carrito-bottom.active {
-            bottom: 0;
-        }
-        .carrito-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 2999;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-
-        .carrito-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .carrito-handle {
-            width: 45px;
-            height: 4px;
-            background: var(--gray);
-            border-radius: 2px;
-            margin: 12px auto;
-            cursor: pointer;
-        }
-
-        .carrito-header {
-            padding: 0 15px 15px;
-            border-bottom: 1px solid rgba(201, 169, 97, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .carrito-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            font-weight: 400;
-        }
-
-        .carrito-close {
-            background: none;
-            border: none;
-            color: var(--gray);
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .carrito-items {            padding: 15px;
-        }
-
-        .carrito-item {
-            display: flex;
-            gap: 12px;
-            padding-bottom: 15px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(201, 169, 97, 0.1);
-        }
-
-        .carrito-item-imagen {
-            width: 65px;
-            height: 65px;
-            border-radius: 6px;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-
-        .carrito-item-imagen img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .carrito-item-info {
-            flex: 1;
-        }
-
-        .carrito-item-nombre {
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 4px;
-        }
-
-        .carrito-item-precio {
-            color: var(--gold);
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .carrito-item-cantidad {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .cantidad-btn {
-            width: 28px;            height: 28px;
-            border: 1px solid rgba(201, 169, 97, 0.3);
-            background: transparent;
-            color: var(--gold);
-            cursor: pointer;
-            font-size: 14px;
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-
-        .cantidad-btn:hover {
-            background: var(--gold);
-            color: var(--black);
-        }
-
-        .cantidad-valor {
-            font-size: 13px;
-            font-weight: 600;
-            min-width: 26px;
-            text-align: center;
-        }
-
-        .carrito-item-eliminar {
-            background: none;
-            border: none;
-            color: var(--gray);
-            cursor: pointer;
-            font-size: 16px;
-            padding: 5px;
-        }
-
-        .carrito-item-eliminar:hover {
-            color: var(--red);
-        }
-
-        .carrito-vacio {
-            text-align: center;
-            padding: 50px 15px;
-            color: var(--gray);
-        }
-
-        .carrito-vacio i {
-            font-size: 50px;
-            margin-bottom: 15px;
-            opacity: 0.3;
-        }
-
-        .carrito-footer {
-            padding: 15px;
-            background: var(--dark-gray);            border-top: 1px solid rgba(201, 169, 97, 0.1);
-        }
-
-        .carrito-total-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            font-size: 13px;
-        }
-
-        .carrito-total-row.subtotal {
-            color: var(--gray);
-        }
-
-        .carrito-total-row.total {
-            font-size: 16px;
-            font-weight: 700;
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid rgba(201, 169, 97, 0.2);
-        }
-
-        .carrito-total-row .monto {
-            color: var(--gold);
-            font-family: 'Playfair Display', serif;
-        }
-
-        .carrito-total-row.total .monto {
-            font-size: 20px;
-        }
-
-        .btn-checkout {
-            background: var(--gold);
-            color: var(--black);
-            border: none;
-            padding: 15px;
-            width: 100%;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        .btn-checkout:hover {
-            background: var(--gold-light);
-        }
-
-        .btn-checkout:disabled {
-            background: var(--gray);
-            cursor: not-allowed;
-        }
-
-        /* ===== FLOATING CART BUTTON ===== */
-        .floating-cart {
-            position: fixed;
-            bottom: 90px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: var(--gold);
-            color: var(--black);
-            padding: 12px 24px;
-            border-radius: 40px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            z-index: 2500;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4);
-            font-weight: 700;
-            font-size: 12px;
-        }
-
-        .floating-cart.active {
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .floating-cart:hover {
-            transform: translateX(-50%) translateY(-3px);
-        }
-
-        .floating-cart-count {
-            background: var(--black);
-            color: var(--gold);
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 11px;
-        }
-        /* ===== FOOTER ===== */
-        .footer {
-            background: var(--charcoal);
-            padding: 40px 15px 25px;
-            border-top: 1px solid rgba(201, 169, 97, 0.15);
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .footer-title {
-            font-size: 9px;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: var(--gold);
-            text-transform: uppercase;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(201, 169, 97, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            text-decoration: none;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-
-        .social-icon:hover {
-            background: var(--gold);
-            color: var(--black);
-            border-color: var(--gold);
-        }
-
-        .copyright {
-            font-size: 10px;
-            color: var(--gray);
-            opacity: 0.5;        }
-
-        /* ===== WHATSAPP FLOAT ===== */
-        .whatsapp-wrapper {
-            position: fixed;
-            bottom: 30px;
-            right: 20px;
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 10px;
-            cursor: pointer;
-        }
-
-        .whatsapp-status {
-            background: rgba(10, 10, 10, 0.95);
-            border: 1px solid rgba(201, 169, 97, 0.3);
-            padding: 10px 16px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s ease;
-            pointer-events: none;
-            min-width: 180px;
-        }
-
-        .whatsapp-wrapper:hover .whatsapp-status {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .status-avatar {
-            position: relative;
-            width: 36px;
-            height: 36px;
-            flex-shrink: 0;
-        }
-
-        .status-avatar img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--whatsapp);
-        }
-        .status-indicator {
-            position: absolute;
-            bottom: 2px;
-            right: 2px;
-            width: 10px;
-            height: 10px;
-            background: var(--online-green);
-            border: 2px solid var(--black);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); }
-            50% { opacity: 0.7; box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); }
-        }
-
-        .status-text {
-            flex: 1;
-        }
-
-        .status-text h4 {
-            font-size: 12px;
-            font-weight: 500;
-            margin-bottom: 2px;
-            color: var(--white);
-        }
-
-        .status-text p {
-            font-size: 10px;
-            color: var(--online-green);
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .status-text p::before {
-            content: '';
-            width: 5px;
-            height: 5px;
-            background: var(--online-green);
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        .whatsapp-link {
-            text-decoration: none;
-            display: block;
-        }
-        .whatsapp-float {
-            width: 55px;
-            height: 55px;
-            background: var(--whatsapp);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 26px;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .whatsapp-float::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 2px solid var(--whatsapp);
-            animation: ripple 2s infinite;
-        }
-
-        @keyframes ripple {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(1.6); opacity: 0; }
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 35px rgba(37, 211, 102, 0.6);
-        }
-
-        .online-dot {
-            position: absolute;
-            top: 4px;
-            right: 4px;
-            width: 12px;
-            height: 12px;
-            background: var(--online-green);
-            border: 2px solid var(--black);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        /* ===== MOBILE MENU ===== */
-        .mobile-menu {
-            display: none;            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--black);
-            z-index: 2000;
-            padding: 30px 20px;
-            flex-direction: column;
-        }
-
-        .mobile-menu.active {
-            display: flex;
-        }
-
-        .mobile-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
-        }
-
-        .close-menu {
-            background: none;
-            border: none;
-            color: var(--gold);
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .nav-item {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 300;
-            padding: 18px 0;
-            border-bottom: 1px solid rgba(201, 169, 97, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-        }
-
-        .nav-item-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .nav-item i {
-            color: var(--gold);
-            width: 20px;
-        }
-
-        .btn-reservar-mobile {
-            background: var(--gold);
-            color: var(--black);
-            padding: 13px;
-            border-radius: 2px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 500;
-            margin-top: 25px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-size: 11px;
-        }
-
-        /* ===== MODAL HISTORIA MOBILE ===== */
-        .historia-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--black);
-            z-index: 3000;
-            overflow-y: auto;
-            animation: slideUp 0.4s ease;
-        }
-
-        .historia-modal.active {
-            display: block;
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(100%); }
-            to { transform: translateY(0); }
-        }
-
-        .historia-modal-header {
-            position: sticky;
-            top: 0;
-            background: var(--charcoal);
-            padding: 15px;
-            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
-            display: flex;            justify-content: space-between;
-            align-items: center;
-            z-index: 10;
-        }
-
-        .historia-modal-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            color: var(--gold);
-        }
-
-        .btn-cerrar-modal-historia {
-            background: none;
-            border: none;
-            color: var(--gray);
-            font-size: 24px;
-            cursor: pointer;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .btn-cerrar-modal-historia:hover {
-            color: var(--white);
-        }
-
-        .historia-modal-content {
-            padding: 25px 15px;
-        }
-
-        .historia-modal-text {
-            font-size: 14px;
-            line-height: 1.7;
-            color: var(--gray-light);
-            margin-bottom: 25px;
-        }
-
-        .historia-modal-text p {
-            margin-bottom: 15px;
-        }
-
-        .historia-modal-image {
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 25px;
-        }
-
-        .historia-modal-image img {            width: 100%;
-            height: auto;
-        }
+            padding: 13px 30px; border-radius: 25px; text-decoration: none; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; cursor: pointer;
+            border: none; font-size: 12px; display: inline-flex; align-items: center; gap: 8px;
+        }
+        .btn-hero-primary { background: var(--gold); color: var(--black); }
+        .btn-hero-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+        .btn-hero-secondary { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
+        .btn-hero-secondary:hover { background: var(--gold); color: var(--black); transform: translateY(-2px); }
+        .stats-section { padding: 40px 15px; background: var(--black); border-bottom: 1px solid rgba(201, 169, 97, 0.1); }
+        .stats-grid { max-width: 100%; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; text-align: center; }
+        .stat-item { padding: 15px 10px; }
+        .stat-number { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--gold); font-weight: 400; margin-bottom: 8px; line-height: 1; }
+        .stat-label { font-size: 9px; letter-spacing: 2px; color: var(--gray); text-transform: uppercase; }
+        .about-section { padding: 50px 15px; max-width: 100%; margin: 0 auto; text-align: center; }
+        .about-subtitle { font-size: 9px; letter-spacing: 3px; color: var(--gold); margin-bottom: 15px; text-transform: uppercase; }
+        .about-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 15px; line-height: 1.3; }
+        .about-title .gold-text { color: var(--gold); font-style: italic; }
+        .about-text { font-size: 13px; color: var(--gray); line-height: 1.7; margin-bottom: 30px; font-weight: 300; }
+        .about-image { max-width: 100%; margin: 0 auto; border-radius: 10px; overflow: hidden; }
+        .about-image img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: filter 0.5s; }
+        .about-image:hover img { filter: grayscale(0%); }
+        .historia-section { display: none; padding: 50px 15px; background: var(--charcoal); border-top: 1px solid rgba(201, 169, 97, 0.1); border-bottom: 1px solid rgba(201, 169, 97, 0.1); }
+        .historia-section.active { display: block; animation: fadeIn 0.6s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .historia-container { max-width: 100%; margin: 0 auto; }
+        .historia-header { text-align: center; margin-bottom: 30px; }
+        .historia-subtitle { font-size: 9px; letter-spacing: 3px; color: var(--gold); margin-bottom: 10px; text-transform: uppercase; }
+        .historia-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; color: var(--gold); }
+        .historia-content { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: center; margin-bottom: 30px; }
+        .historia-text { font-size: 13px; line-height: 1.7; color: var(--gray-light); }
+        .historia-text p { margin-bottom: 15px; }
+        .historia-image { border-radius: 10px; overflow: hidden; }
+        .historia-image img { width: 100%; height: auto; display: block; }
+        .historia-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; padding: 25px 15px; background: rgba(201, 169, 97, 0.05); border-radius: 10px; border: 1px solid rgba(201, 169, 97, 0.1); margin-bottom: 25px; }
+        .historia-stat-item h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); margin-bottom: 8px; }
+        .historia-stat-item p { font-size: 10px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; }
+        .btn-cerrar-historia { display: inline-block; margin-top: 20px; padding: 12px 30px; background: transparent; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; border-radius: 20px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.3s; }
+        .btn-cerrar-historia:hover { background: var(--gold); color: var(--black); }
+        .categorias-scroll { background: var(--charcoal); padding: 12px 0; position: sticky; top: 60px; z-index: 100; border-bottom: 1px solid rgba(201, 169, 97, 0.1); }
+        .categorias-container { display: flex; gap: 10px; overflow-x: auto; padding: 0 15px; scrollbar-width: none; }
+        .categorias-container::-webkit-scrollbar { display: none; }
+        .categoria-pill { background: var(--dark-gray); border: 1px solid rgba(201, 169, 97, 0.2); color: var(--gray); padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 11px; font-weight: 500; white-space: nowrap; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        .categoria-pill.active { background: var(--gold); border-color: var(--gold); color: var(--black); }
+        .categoria-pill:hover:not(.active) { border-color: var(--gold); color: var(--white); }
+        .seccion-title { padding: 25px 15px 12px; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 400; display: flex; align-items: center; gap: 10px; }
+        .seccion-title i { color: var(--gold); }
+        .seccion-title .gold-text { color: var(--gold); }
+        .productos-scroll-container { padding: 0 0 25px; overflow-x: auto; scrollbar-width: none; }
+        .productos-scroll-container::-webkit-scrollbar { display: none; }
+        .productos-scroll { display: flex; gap: 12px; padding: 0 15px; width: max-content; }
+        .producto-card { background: var(--charcoal); border-radius: 10px; overflow: hidden; border: 1px solid rgba(201, 169, 97, 0.1); transition: all 0.3s; width: 220px; flex-shrink: 0; }
+        .producto-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+        .producto-imagen { position: relative; height: 140px; overflow: hidden; }
+        .producto-imagen img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .producto-card:hover .producto-imagen img { transform: scale(1.05); }
+        .producto-badge { position: absolute; top: 10px; left: 10px; background: var(--orange); color: var(--white); padding: 4px 10px; border-radius: 15px; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .producto-favorite { position: absolute; top: 10px; right: 10px; width: 28px; height: 28px; background: rgba(0, 0, 0, 0.6); border: none; border-radius: 50%; color: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+        .producto-favorite:hover { background: var(--red); }
+        .producto-favorite.active { background: var(--red); color: var(--white); }
+        .producto-info { padding: 14px; }
+        .producto-nombre { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 500; margin-bottom: 6px; color: var(--white); }
+        .producto-descripcion { font-size: 11px; color: var(--gray); margin-bottom: 12px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .producto-footer { display: flex; justify-content: space-between; align-items: center; }
+        .producto-precio { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--gold); font-weight: 600; }
+        .btn-agregar { background: var(--gold); border: none; color: var(--black); padding: 6px 14px; border-radius: 16px; cursor: pointer; font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; display: flex; align-items: center; gap: 4px; }
+        .btn-agregar:hover { background: var(--gold-light); transform: scale(1.05); }
+        .btn-agregar.agregado { background: var(--online-green); }
+        .modal-reserva-sede { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.85); z-index: 6000; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease; }
+        .modal-reserva-sede.active { opacity: 1; }
+        .modal-reserva-content { background: var(--charcoal); border: 1px solid rgba(201, 169, 97, 0.3); border-radius: 12px; width: 100%; max-width: 500px; padding: 30px 25px; position: relative; transform: scale(0.9); transition: transform 0.3s ease; }
+        .modal-reserva-sede.active .modal-reserva-content { transform: scale(1); }
+        .modal-reserva-close { position: absolute; top: 15px; right: 15px; background: none; border: none; color: var(--gray); font-size: 22px; cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; }
+        .modal-reserva-close:hover { color: var(--white); }
+        .modal-reserva-title { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--gold); text-align: center; margin-bottom: 10px; }
+        .modal-reserva-subtitle { text-align: center; color: var(--gray); font-size: 13px; margin-bottom: 30px; }
+        .sede-reserva-options { display: flex; flex-direction: column; gap: 15px; }
+        .sede-reserva-btn { background: var(--dark-gray); border: 1px solid rgba(201, 169, 97, 0.3); border-radius: 10px; padding: 20px; cursor: pointer; transition: all 0.3s; text-align: left; display: flex; align-items: center; gap: 15px; }
+        .sede-reserva-btn:hover { background: rgba(201, 169, 97, 0.1); border-color: var(--gold); transform: translateX(5px); }
+        .sede-reserva-icon { width: 50px; height: 50px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--black); font-size: 20px; }
+        .sede-reserva-info h3 { font-size: 16px; margin-bottom: 5px; color: var(--gold); }
+        .sede-reserva-info p { font-size: 12px; color: var(--gray); }
+        .login-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.85); z-index: 5000; display: none; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(5px); }
+        .login-overlay.active { display: flex; }
+        .login-popup { background: var(--charcoal); border: 1px solid rgba(201, 169, 97, 0.3); border-radius: 12px; width: 100%; max-width: 100%; max-height: 90vh; overflow-y: auto; padding: 25px 20px; position: relative; animation: popupIn 0.4s ease; }
+        @keyframes popupIn { from { opacity: 0; transform: translateY(30px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        .login-close { position: absolute; top: 12px; right: 12px; background: none; border: none; color: var(--gray); font-size: 20px; cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; }
+        .login-close:hover { color: var(--white); }
+        .login-logo { text-align: center; margin-bottom: 20px; }
+        .login-logo h2 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--gold); margin-bottom: 6px; }
+        .login-logo p { color: var(--gray); font-size: 12px; }
+        .login-tabs { display: flex; gap: 8px; margin-bottom: 20px; border-bottom: 1px solid rgba(201, 169, 97, 0.2); }
+        .login-tab { flex: 1; padding: 10px; background: transparent; border: none; color: var(--gray); font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        .login-tab.active { color: var(--gold); border-bottom: 2px solid var(--gold); }
+        .login-form { display: none; }
+        .login-form.active { display: block; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: 10px; color: var(--gray); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
+        .form-group input { width: 100%; padding: 11px 12px; background: var(--dark-gray); border: 1px solid rgba(201, 169, 97, 0.2); border-radius: 6px; color: var(--white); font-size: 13px; transition: all 0.3s; }
+        .form-group input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 2px rgba(201, 169, 97, 0.1); }
+        .form-group input::placeholder { color: var(--gray); }
+        .btn-login { width: 100%; padding: 13px; background: var(--gold); border: none; border-radius: 6px; color: var(--black); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.3s; margin-top: 10px; }
+        .btn-login:hover { background: var(--gold-light); transform: translateY(-2px); }
+        .login-divider { text-align: center; margin: 18px 0; color: var(--gray); font-size: 10px; position: relative; }
+        .login-divider::before, .login-divider::after { content: ''; position: absolute; top: 50%; width: 40%; height: 1px; background: rgba(201, 169, 97, 0.2); }
+        .login-divider::before { left: 0; }
+        .login-divider::after { right: 0; }
+        .social-login { display: flex; gap: 10px; justify-content: center; }
+        .social-btn { width: 42px; height: 42px; border: 1px solid rgba(201, 169, 97, 0.3); border-radius: 50%; background: transparent; color: var(--gold); cursor: pointer; font-size: 17px; transition: all 0.3s; }
+        .social-btn:hover { background: var(--gold); color: var(--black); transform: translateY(-3px); }
+        .login-footer { text-align: center; margin-top: 18px; font-size: 11px; color: var(--gray); }
+        .login-footer a { color: var(--gold); text-decoration: none; }
+        .carrito-bottom { position: fixed; bottom: -100%; left: 0; right: 0; background: var(--charcoal); border-top-left-radius: 16px; border-top-right-radius: 16px; z-index: 3000; transition: bottom 0.3s; max-height: 75vh; overflow-y: auto; border-top: 1px solid rgba(201, 169, 97, 0.2); }
+        .carrito-bottom.active { bottom: 0; }
+        .carrito-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.7); z-index: 2999; opacity: 0; visibility: hidden; transition: all 0.3s; }
+        .carrito-overlay.active { opacity: 1; visibility: visible; }
+        .carrito-handle { width: 45px; height: 4px; background: var(--gray); border-radius: 2px; margin: 12px auto; cursor: pointer; }
+        .carrito-header { padding: 0 15px 15px; border-bottom: 1px solid rgba(201, 169, 97, 0.1); display: flex; justify-content: space-between; align-items: center; }
+        .carrito-header h2 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; }
+        .carrito-close { background: none; border: none; color: var(--gray); font-size: 20px; cursor: pointer; }
+        .carrito-items { padding: 15px; }
+        .carrito-item { display: flex; gap: 12px; padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid rgba(201, 169, 97, 0.1); }
+        .carrito-item-imagen { width: 65px; height: 65px; border-radius: 6px; overflow: hidden; flex-shrink: 0; }
+        .carrito-item-imagen img { width: 100%; height: 100%; object-fit: cover; }
+        .carrito-item-info { flex: 1; }
+        .carrito-item-nombre { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+        .carrito-item-precio { color: var(--gold); font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+        .carrito-item-cantidad { display: flex; align-items: center; gap: 10px; }
+        .cantidad-btn { width: 28px; height: 28px; border: 1px solid rgba(201, 169, 97, 0.3); background: transparent; color: var(--gold); cursor: pointer; font-size: 14px; border-radius: 5px; transition: all 0.3s; }
+        .cantidad-btn:hover { background: var(--gold); color: var(--black); }
+        .cantidad-valor { font-size: 13px; font-weight: 600; min-width: 26px; text-align: center; }
+        .carrito-item-eliminar { background: none; border: none; color: var(--gray); cursor: pointer; font-size: 16px; padding: 5px; }
+        .carrito-item-eliminar:hover { color: var(--red); }
+        .carrito-vacio { text-align: center; padding: 50px 15px; color: var(--gray); }
+        .carrito-vacio i { font-size: 50px; margin-bottom: 15px; opacity: 0.3; }
+        .carrito-footer { padding: 15px; background: var(--dark-gray); border-top: 1px solid rgba(201, 169, 97, 0.1); }
+        .carrito-total-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 13px; }
+        .carrito-total-row.subtotal { color: var(--gray); }
+        .carrito-total-row.total { font-size: 16px; font-weight: 700; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(201, 169, 97, 0.2); }
+        .carrito-total-row .monto { color: var(--gold); font-family: 'Playfair Display', serif; }
+        .carrito-total-row.total .monto { font-size: 20px; }
+        .btn-checkout { background: var(--gold); color: var(--black); border: none; padding: 15px; width: 100%; border-radius: 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.3s; margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-checkout:hover { background: var(--gold-light); }
+        .btn-checkout:disabled { background: var(--gray); cursor: not-allowed; }
+        .floating-cart { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--gold); color: var(--black); padding: 12px 24px; border-radius: 40px; display: flex; align-items: center; gap: 10px; cursor: pointer; z-index: 2500; transition: all 0.3s; box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4); font-weight: 700; font-size: 12px; }
+        .floating-cart.active { transform: translateX(-50%) translateY(0); }
+        .floating-cart:hover { transform: translateX(-50%) translateY(-3px); }
+        .floating-cart-count { background: var(--black); color: var(--gold); width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; }
+        .footer { background: var(--charcoal); padding: 40px 15px 25px; border-top: 1px solid rgba(201, 169, 97, 0.15); text-align: center; margin-top: 40px; }
+        .footer-title { font-size: 9px; letter-spacing: 2px; margin-bottom: 20px; color: var(--gold); text-transform: uppercase; }
+        .social-icons { display: flex; justify-content: center; gap: 12px; margin-bottom: 25px; flex-wrap: wrap; }
+        .social-icon { width: 40px; height: 40px; border: 1px solid rgba(201, 169, 97, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); text-decoration: none; font-size: 16px; transition: all 0.3s; }
+        .social-icon:hover { background: var(--gold); color: var(--black); border-color: var(--gold); }
+        .copyright { font-size: 10px; color: var(--gray); opacity: 0.5; }
+        .whatsapp-wrapper { position: fixed; bottom: 30px; right: 20px; z-index: 999; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; cursor: pointer; }
+        .whatsapp-status { background: rgba(10, 10, 10, 0.95); border: 1px solid rgba(201, 169, 97, 0.3); padding: 10px 16px; border-radius: 6px; display: flex; align-items: center; gap: 10px; opacity: 0; transform: translateY(20px); transition: all 0.4s ease; pointer-events: none; min-width: 180px; }
+        .whatsapp-wrapper:hover .whatsapp-status { opacity: 1; transform: translateY(0); }
+        .status-avatar { position: relative; width: 36px; height: 36px; flex-shrink: 0; }
+        .status-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid var(--whatsapp); }
+        .status-indicator { position: absolute; bottom: 2px; right: 2px; width: 10px; height: 10px; background: var(--online-green); border: 2px solid var(--black); border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); } 50% { opacity: 0.7; box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); } }
+        .status-text { flex: 1; }
+        .status-text h4 { font-size: 12px; font-weight: 500; margin-bottom: 2px; color: var(--white); }
+        .status-text p { font-size: 10px; color: var(--online-green); display: flex; align-items: center; gap: 4px; }
+        .status-text p::before { content: ''; width: 5px; height: 5px; background: var(--online-green); border-radius: 50%; display: inline-block; }
+        .whatsapp-float { width: 55px; height: 55px; background: var(--whatsapp); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 26px; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); transition: all 0.3s; position: relative; }
+        .whatsapp-float::before { content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 2px solid var(--whatsapp); animation: ripple 2s infinite; }
+        @keyframes ripple { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.6); opacity: 0; } }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 10px 35px rgba(37, 211, 102, 0.6); }
+        .online-dot { position: absolute; top: 4px; right: 4px; width: 12px; height: 12px; background: var(--online-green); border: 2px solid var(--black); border-radius: 50%; animation: pulse 2s infinite; }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--black); z-index: 2000; padding: 30px 20px; flex-direction: column; }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 15px; border-bottom: 1px solid rgba(201, 169, 97, 0.2); }
+        .close-menu { background: none; border: none; color: var(--gold); font-size: 24px; cursor: pointer; }
+        .nav-item { color: var(--white); text-decoration: none; font-size: 18px; font-weight: 300; padding: 18px 0; border-bottom: 1px solid rgba(201, 169, 97, 0.15); display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+        .nav-item-left { display: flex; align-items: center; gap: 12px; }
+        .nav-item i { color: var(--gold); width: 20px; }
+        .btn-reservar-mobile { background: var(--gold); color: var(--black); padding: 13px; border-radius: 2px; text-align: center; text-decoration: none; font-weight: 500; margin-top: 25px; letter-spacing: 2px; text-transform: uppercase; font-size: 11px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .historia-modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--black); z-index: 3000; overflow-y: auto; animation: slideUp 0.4s ease; }
+        .historia-modal.active { display: block; }
+        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+        .historia-modal-header { position: sticky; top: 0; background: var(--charcoal); padding: 15px; border-bottom: 1px solid rgba(201, 169, 97, 0.2); display: flex; justify-content: space-between; align-items: center; z-index: 10; }
+        .historia-modal-header h2 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); }
+        .btn-cerrar-modal-historia { background: none; border: none; color: var(--gray); font-size: 24px; cursor: pointer; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; }
+        .btn-cerrar-modal-historia:hover { color: var(--white); }
+        .historia-modal-content { padding: 25px 15px; }
+        .historia-modal-text { font-size: 14px; line-height: 1.7; color: var(--gray-light); margin-bottom: 25px; }
+        .historia-modal-text p { margin-bottom: 15px; }
+        .historia-modal-image { border-radius: 10px; overflow: hidden; margin-bottom: 25px; }
+        .historia-modal-image img { width: 100%; height: auto; }
 
-        /* ===== MEDIA QUERIES ===== */
         @media (min-width: 481px) {
-            .header {
-                padding: 15px 20px;
-            }
-            
-            .logo img {
-                height: 40px;
-            }
-            
-            .icon-btn {
-                width: 38px;
-                height: 38px;
-                font-size: 15px;
-            }
-            
-            .hero-banner {
-                padding: 100px 20px 40px;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-buttons {
-                gap: 15px;
-                margin-top: 30px;
-            }
-            
-            .btn-hero {
-                padding: 15px 35px;
-                font-size: 13px;
-                border-radius: 28px;
-            }
-            
-            .sede-selector {
-                border-radius: 25px;
-                padding: 5px;
-            }
-            
-            .sede-btn {
-                padding: 11px 35px;
-                font-size: 13px;
-                border-radius: 20px;
-            }
-                        .sede-info {
-                max-width: 500px;
-                padding: 20px 25px;
-            }
-            
-            .sede-info h3 {
-                font-size: 20px;
-            }
-            
-            .info-item {
-                font-size: 13px;
-                gap: 12px;
-            }
-            
-            .stats-section {
-                padding: 60px 20px;
-            }
-            
-            .stat-number {
-                font-size: 2.8rem;
-            }
-            
-            .stat-label {
-                font-size: 10px;
-            }
-            
-            .about-section {
-                padding: 80px 20px;
-            }
-            
-            .about-title {
-                font-size: 2.2rem;
-            }
-            
-            .about-text {
-                font-size: 14px;
-            }
-            
-            .historia-section {
-                padding: 80px 20px;
-            }
-            
-            .historia-title {
-                font-size: 2rem;
-            }
-            
-            .historia-content {
-                grid-template-columns: 1fr 1fr;
-                gap: 40px;
-            }            
-            .historia-stats {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 25px;
-                padding: 35px 25px;
-            }
-            
-            .historia-stat-item h3 {
-                font-size: 2.2rem;
-            }
-            
-            .categorias-scroll {
-                top: 70px;
-            }
-            
-            .categoria-pill {
-                padding: 9px 20px;
-                font-size: 12px;
-                border-radius: 22px;
-            }
-            
-            .seccion-title {
-                padding: 28px 20px 14px;
-                font-size: 1.6rem;
-            }
-            
-            .productos-scroll {
-                padding: 0 20px;
-                gap: 14px;
-            }
-            
-            .producto-card {
-                width: 250px;
-                border-radius: 11px;
-            }
-            
-            .producto-imagen {
-                height: 160px;
-            }
-            
-            .producto-info {
-                padding: 16px;
-            }
-            
-            .producto-nombre {
-                font-size: 16px;
-            }
-            
-            .producto-precio {
-                font-size: 18px;            }
-            
-            .btn-agregar {
-                padding: 7px 15px;
-                font-size: 10px;
-                border-radius: 18px;
-            }
-            
-            .login-popup {
-                max-width: 420px;
-                padding: 35px 30px;
-                border-radius: 14px;
-            }
-            
-            .login-logo h2 {
-                font-size: 26px;
-            }
-            
-            .login-tab {
-                padding: 13px;
-                font-size: 12px;
-            }
-            
-            .form-group {
-                margin-bottom: 16px;
-            }
-            
-            .form-group label {
-                font-size: 11px;
-            }
-            
-            .form-group input {
-                padding: 12px 14px;
-                font-size: 14px;
-            }
-            
-            .btn-login {
-                padding: 15px;
-                font-size: 13px;
-            }
-            
-            .social-btn {
-                width: 46px;
-                height: 46px;
-                font-size: 18px;
-            }
-            
-            .carrito-bottom {
-                border-top-left-radius: 18px;
-                border-top-right-radius: 18px;            }
-            
-            .floating-cart {
-                padding: 14px 28px;
-                font-size: 13px;
-                bottom: 100px;
-            }
-            
-            .whatsapp-wrapper {
-                bottom: 35px;
-                right: 35px;
-            }
-            
-            .whatsapp-float {
-                width: 60px;
-                height: 60px;
-                font-size: 28px;
-            }
-            
-            .modal-reserva-content {
-                max-width: 500px;
-                padding: 35px 30px;
-            }
-            
-            .modal-reserva-title {
-                font-size: 26px;
-            }
-            
-            .sede-reserva-btn {
-                padding: 22px;
-            }
+            .header { padding: 15px 20px; }
+            .logo img { height: 40px; }
+            .icon-btn { width: 38px; height: 38px; font-size: 15px; }
+            .hero-banner { padding: 100px 20px 40px; }
+            .hero-title { font-size: 2.5rem; }
+            .hero-buttons { gap: 15px; margin-top: 30px; }
+            .btn-hero { padding: 15px 35px; font-size: 13px; border-radius: 28px; }
+            .sede-selector { border-radius: 25px; padding: 5px; }
+            .sede-btn { padding: 11px 35px; font-size: 13px; border-radius: 20px; }
+            .sede-info { max-width: 500px; padding: 20px 25px; }
+            .sede-info h3 { font-size: 20px; }
+            .info-item { font-size: 13px; gap: 12px; }
+            .stats-section { padding: 60px 20px; }
+            .stat-number { font-size: 2.8rem; }
+            .stat-label { font-size: 10px; }
+            .about-section { padding: 80px 20px; }
+            .about-title { font-size: 2.2rem; }
+            .about-text { font-size: 14px; }
+            .historia-section { padding: 80px 20px; }
+            .historia-title { font-size: 2rem; }
+            .historia-content { grid-template-columns: 1fr 1fr; gap: 40px; }
+            .historia-stats { grid-template-columns: repeat(3, 1fr); gap: 25px; padding: 35px 25px; }
+            .historia-stat-item h3 { font-size: 2.2rem; }
+            .categorias-scroll { top: 70px; }
+            .categoria-pill { padding: 9px 20px; font-size: 12px; border-radius: 22px; }
+            .seccion-title { padding: 28px 20px 14px; font-size: 1.6rem; }
+            .productos-scroll { padding: 0 20px; gap: 14px; }
+            .producto-card { width: 250px; border-radius: 11px; }
+            .producto-imagen { height: 160px; }
+            .producto-info { padding: 16px; }
+            .producto-nombre { font-size: 16px; }
+            .producto-precio { font-size: 18px; }
+            .btn-agregar { padding: 7px 15px; font-size: 10px; border-radius: 18px; }
+            .login-popup { max-width: 420px; padding: 35px 30px; border-radius: 14px; }
+            .login-logo h2 { font-size: 26px; }
+            .login-tab { padding: 13px; font-size: 12px; }
+            .form-group { margin-bottom: 16px; }
+            .form-group label { font-size: 11px; }
+            .form-group input { padding: 12px 14px; font-size: 14px; }
+            .btn-login { padding: 15px; font-size: 13px; }
+            .social-btn { width: 46px; height: 46px; font-size: 18px; }
+            .carrito-bottom { border-top-left-radius: 18px; border-top-right-radius: 18px; }
+            .floating-cart { padding: 14px 28px; font-size: 13px; bottom: 100px; }
+            .whatsapp-wrapper { bottom: 35px; right: 35px; }
+            .whatsapp-float { width: 60px; height: 60px; font-size: 28px; }
+            .modal-reserva-content { max-width: 500px; padding: 35px 30px; }
+            .modal-reserva-title { font-size: 26px; }
+            .sede-reserva-btn { padding: 22px; }
         }
 
         @media (min-width: 770px) {
-            .menu-toggle {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: none !important;
-            }
-            
-            .header {
-                padding: 18px 30px;
-            }
-            
-            .logo img {
-                height: 45px;
-            }
-                        .icon-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 16px;
-            }
-            
-            .hero-banner {
-                padding: 120px 30px 50px;
-            }
-            
-            .hero-title {
-                font-size: 3.5rem;
-            }
-            
-            .hero-buttons {
-                gap: 18px;
-                margin-top: 35px;
-            }
-            
-            .btn-hero {
-                padding: 16px 40px;
-                font-size: 13px;
-                border-radius: 30px;
-            }
-            
-            .sede-selector {
-                border-radius: 30px;
-                padding: 6px;
-            }
-            
-            .sede-btn {
-                padding: 12px 40px;
-                font-size: 14px;
-                border-radius: 25px;
-            }
-            
-            .sede-info {
-                padding: 25px 35px;
-            }
-            
-            .sede-info h3 {
-                font-size: 24px;
-            }
-            
-            .info-item {
-                font-size: 14px;
-                gap: 15px;
-            }
-            
-            .stats-section {                padding: 80px 30px;
-            }
-            
-            .stats-grid {
-                gap: 40px;
-            }
-            
-            .stat-number {
-                font-size: 3.5rem;
-            }
-            
-            .stat-label {
-                font-size: 12px;
-            }
-            
-            .about-section {
-                padding: 100px 30px;
-            }
-            
-            .about-title {
-                font-size: 3rem;
-            }
-            
-            .about-text {
-                font-size: 16px;
-            }
-            
-            .historia-section {
-                padding: 100px 30px;
-            }
-            
-            .historia-title {
-                font-size: 3rem;
-            }
-            
-            .historia-stats {
-                padding: 40px 30px;
-            }
-            
-            .historia-stat-item h3 {
-                font-size: 2.5rem;
-            }
-            
-            .categoria-pill {
-                padding: 10px 22px;
-                font-size: 13px;
-                border-radius: 25px;
-            }
-            
-            .seccion-title {                padding: 30px 30px 15px;
-                font-size: 1.8rem;
-            }
-            
-            .productos-scroll {
-                padding: 0 30px;
-                gap: 15px;
-            }
-            
-            .producto-card {
-                width: 280px;
-                border-radius: 12px;
-            }
-            
-            .producto-imagen {
-                height: 180px;
-            }
-            
-            .producto-info {
-                padding: 18px;
-            }
-            
-            .producto-nombre {
-                font-size: 17px;
-            }
-            
-            .producto-precio {
-                font-size: 20px;
-            }
-            
-            .btn-agregar {
-                padding: 8px 18px;
-                font-size: 11px;
-                border-radius: 20px;
-            }
-            
-            .login-popup {
-                max-width: 450px;
-                padding: 40px;
-                border-radius: 16px;
-            }
-            
-            .login-logo h2 {
-                font-size: 28px;
-            }
-            
-            .login-tab {
-                padding: 15px;
-                font-size: 14px;
-            }            
-            .form-group {
-                margin-bottom: 20px;
-            }
-            
-            .form-group label {
-                font-size: 13px;
-            }
-            
-            .form-group input {
-                padding: 14px 16px;
-                font-size: 14px;
-            }
-            
-            .btn-login {
-                padding: 16px;
-                font-size: 14px;
-            }
-            
-            .social-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-            
-            .carrito-bottom {
-                border-top-left-radius: 20px;
-                border-top-right-radius: 20px;
-            }
-            
-            .floating-cart {
-                padding: 15px 30px;
-                font-size: 14px;
-                bottom: 100px;
-            }
-            
-            .whatsapp-wrapper {
-                bottom: 35px;
-                right: 35px;
-            }
-            
-            .whatsapp-float {
-                width: 65px;
-                height: 65px;
-                font-size: 32px;
-            }
-            
-            .modal-reserva-content {
-                max-width: 550px;
-                padding: 40px 35px;            }
-            
-            .modal-reserva-title {
-                font-size: 28px;
-            }
-            
-            .sede-reserva-btn {
-                padding: 25px;
-            }
-            
-            .sede-reserva-icon {
-                width: 55px;
-                height: 55px;
-                font-size: 22px;
-            }
-            
-            .sede-reserva-info h3 {
-                font-size: 17px;
-            }
+            .menu-toggle { display: none; }
+            .mobile-menu { display: none !important; }
+            .header { padding: 18px 30px; }
+            .logo img { height: 45px; }
+            .icon-btn { width: 40px; height: 40px; font-size: 16px; }
+            .hero-banner { padding: 120px 30px 50px; }
+            .hero-title { font-size: 3.5rem; }
+            .hero-buttons { gap: 18px; margin-top: 35px; }
+            .btn-hero { padding: 16px 40px; font-size: 13px; border-radius: 30px; }
+            .sede-selector { border-radius: 30px; padding: 6px; }
+            .sede-btn { padding: 12px 40px; font-size: 14px; border-radius: 25px; }
+            .sede-info { padding: 25px 35px; }
+            .sede-info h3 { font-size: 24px; }
+            .info-item { font-size: 14px; gap: 15px; }
+            .stats-section { padding: 80px 30px; }
+            .stats-grid { gap: 40px; }
+            .stat-number { font-size: 3.5rem; }
+            .stat-label { font-size: 12px; }
+            .about-section { padding: 100px 30px; }
+            .about-title { font-size: 3rem; }
+            .about-text { font-size: 16px; }
+            .historia-section { padding: 100px 30px; }
+            .historia-title { font-size: 3rem; }
+            .historia-stats { padding: 40px 30px; }
+            .historia-stat-item h3 { font-size: 2.5rem; }
+            .categoria-pill { padding: 10px 22px; font-size: 13px; border-radius: 25px; }
+            .seccion-title { padding: 30px 30px 15px; font-size: 1.8rem; }
+            .productos-scroll { padding: 0 30px; gap: 15px; }
+            .producto-card { width: 280px; border-radius: 12px; }
+            .producto-imagen { height: 180px; }
+            .producto-info { padding: 18px; }
+            .producto-nombre { font-size: 17px; }
+            .producto-precio { font-size: 20px; }
+            .btn-agregar { padding: 8px 18px; font-size: 11px; border-radius: 20px; }
+            .login-popup { max-width: 450px; padding: 40px; border-radius: 16px; }
+            .login-logo h2 { font-size: 28px; }
+            .login-tab { padding: 15px; font-size: 14px; }
+            .form-group { margin-bottom: 20px; }
+            .form-group label { font-size: 13px; }
+            .form-group input { padding: 14px 16px; font-size: 14px; }
+            .btn-login { padding: 16px; font-size: 14px; }
+            .social-btn { width: 50px; height: 50px; font-size: 20px; }
+            .carrito-bottom { border-top-left-radius: 20px; border-top-right-radius: 20px; }
+            .floating-cart { padding: 15px 30px; font-size: 14px; bottom: 100px; }
+            .whatsapp-wrapper { bottom: 35px; right: 35px; }
+            .whatsapp-float { width: 65px; height: 65px; font-size: 32px; }
+            .modal-reserva-content { max-width: 550px; padding: 40px 35px; }
+            .modal-reserva-title { font-size: 28px; }
+            .sede-reserva-btn { padding: 25px; }
+            .sede-reserva-icon { width: 55px; height: 55px; font-size: 22px; }
+            .sede-reserva-info h3 { font-size: 17px; }
         }
     </style>
 </head>
@@ -2131,9 +387,8 @@
     <header class="header">
         <div class="header-container">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="Fiesta Restaurant Logo">
+                <img src="logo-fiesta.png" alt="Fiesta Restaurant Logo">
             </a>
-            
             <div class="header-icons">
                 <button class="icon-btn user-btn" onclick="openLogin()" aria-label="Usuario" id="userBtn">
                     <i class="fas fa-user"></i>
@@ -2153,8 +408,9 @@
     </header>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">        <div class="mobile-menu-header">
-            <a href="#" class="logo">
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo" onclick="toggleMenu()">
                 <img src="logo.png" alt="Fiesta Restaurant Logo">
             </a>
             <button class="close-menu" onclick="toggleMenu()">
@@ -2162,35 +418,35 @@
             </button>
         </div>
         <nav>
-            <a href="index.html" class="nav-item">
+            <a href="index.html" class="nav-item" onclick="toggleMenu()">
                 <div class="nav-item-left">
                     <i class="fas fa-home"></i>
                     <span>Inicio</span>
                 </div>
                 <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 13px; opacity: 0.6;"></i>
             </a>
-            <a onclick="mostrarHistoriaMobile()" class="nav-item">
+            <div class="nav-item" onclick="mostrarHistoriaMobile()">
                 <div class="nav-item-left">
                     <i class="fas fa-book-open"></i>
                     <span>Nuestra Historia</span>
                 </div>
                 <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 13px; opacity: 0.6;"></i>
-            </a>
-            <a href="carta.html" class="nav-item">
+            </div>
+            <a href="#carta" class="nav-item" onclick="toggleMenu(); setTimeout(() => document.querySelector('.categorias-scroll')?.scrollIntoView({behavior: 'smooth'}), 300);">
                 <div class="nav-item-left">
                     <i class="fas fa-utensils"></i>
                     <span>Carta</span>
                 </div>
                 <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 13px; opacity: 0.6;"></i>
             </a>
-            <a href="tienda.html" class="nav-item">
+            <a href="#tienda" class="nav-item" onclick="toggleMenu(); setTimeout(() => document.querySelector('.seccion-title')?.scrollIntoView({behavior: 'smooth'}), 300);">
                 <div class="nav-item-left">
                     <i class="fas fa-store"></i>
                     <span>Tienda</span>
                 </div>
                 <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 13px; opacity: 0.6;"></i>
             </a>
-            <a href="nosotros.html" class="nav-item">
+            <a href="#nosotros" class="nav-item" onclick="toggleMenu(); setTimeout(() => document.querySelector('.about-section')?.scrollIntoView({behavior: 'smooth'}), 300);">
                 <div class="nav-item-left">
                     <i class="fas fa-info-circle"></i>
                     <span>Nosotros</span>
@@ -2198,35 +454,32 @@
                 <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 13px; opacity: 0.6;"></i>
             </a>
         </nav>
-        <a href="reservar.html" class="btn-reservar-mobile">Reservar Mesa</a>
+        <a href="#" class="btn-reservar-mobile" onclick="abrirModalReserva(); toggleMenu();">
+            Reservar Mesa <i class="fas fa-arrow-right"></i>
+        </a>
     </div>
 
     <!-- Modal Reserva Sede -->
-    <div class="modal-reserva-sede" id="modalReservaSede">        <div class="modal-reserva-content">
+    <div class="modal-reserva-sede" id="modalReservaSede">
+        <div class="modal-reserva-content">
             <button class="modal-reserva-close" onclick="cerrarModalReserva()">
                 <i class="fas fa-times"></i>
             </button>
             <h2 class="modal-reserva-title">Reservar Mesa</h2>
             <p class="modal-reserva-subtitle">Selecciona tu sede preferida</p>
-            
             <div class="sede-reserva-options">
                 <button class="sede-reserva-btn" onclick="irReservaLima()">
-                    <div class="sede-reserva-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
+                    <div class="sede-reserva-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div class="sede-reserva-info">
                         <h3>Lima</h3>
                         <p>Av. Reducto 1278, Miraflores</p>
                     </div>
                 </button>
-                
                 <button class="sede-reserva-btn" onclick="irReservaChiclayo()">
-                    <div class="sede-reserva-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
+                    <div class="sede-reserva-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div class="sede-reserva-info">
                         <h3>Chiclayo</h3>
-                        <p>Av. Balta 123, Chiclayo Centro</p>
+                        <p>Av. Salaverry 1820, Chiclayo</p>
                     </div>
                 </button>
             </div>
@@ -2247,37 +500,26 @@
             </div>
             <div class="historia-modal-text">
                 <p>Desde 1994, Fiesta Restaurant ha sido un referente de la cocina peruana de calidad. Lo que comenzó como un pequeño local familiar en Miraflores, se ha convertido en un símbolo de la gastronomía peruana contemporánea.</p>
-                
                 <p>Nuestra pasión por rescatar las recetas tradicionales y presentarlas con un toque moderno nos ha permitido conquistar el paladar de miles de clientes satisfechos a lo largo de más de tres décadas.</p>
-                
                 <p>Hoy contamos con dos sedes: Lima y Chiclayo, cada una adaptada al sabor local pero manteniendo la esencia que nos caracteriza: ingredientes frescos, recetas auténticas y un servicio excepcional.</p>
-                                <p>En Fiesta Restaurant no solo servimos comida, contamos historias a través de cada plato. Cada receta tiene un origen, una tradición y una familia detrás que la ha preservado por generaciones.</p>
+                <p>En Fiesta Restaurant no solo servimos comida, contamos historias a través de cada plato. Cada receta tiene un origen, una tradición y una familia detrás que la ha preservado por generaciones.</p>
             </div>
-            <button class="btn-cerrar-historia" onclick="cerrarHistoriaMobile()" style="width: 100%;">
-                Cerrar
-            </button>
+            <button class="btn-cerrar-historia" onclick="cerrarHistoriaMobile()" style="width: 100%;">Cerrar</button>
         </div>
     </div>
 
     <!-- Login Popup -->
     <div class="login-overlay" id="loginOverlay">
         <div class="login-popup">
-            <button class="login-close" onclick="closeLogin()">
-                <i class="fas fa-times"></i>
-            </button>
-            
+            <button class="login-close" onclick="closeLogin()"><i class="fas fa-times"></i></button>
             <div class="login-logo">
-                <img src="logo.png" alt="Fiesta Restaurant Logo">
-            
+                <h2>FIESTA<span style="color: var(--white);">.</span></h2>
                 <p>Ingresa o crea tu cuenta</p>
             </div>
-
             <div class="login-tabs">
                 <button class="login-tab active" onclick="switchTab('login')">Iniciar Sesión</button>
                 <button class="login-tab" onclick="switchTab('registro')">Registrarse</button>
             </div>
-
-            <!-- Login Form -->
             <form class="login-form active" id="loginForm" onsubmit="handleLogin(event)">
                 <div class="form-group">
                     <label>Email</label>
@@ -2288,26 +530,14 @@
                     <input type="password" placeholder="••••••••" required>
                 </div>
                 <button type="submit" class="btn-login">Ingresar</button>
-                
                 <div class="login-divider">o continúa con</div>
-                
                 <div class="social-login">
-                    <button type="button" class="social-btn">
-                        <i class="fab fa-google"></i>
-                    </button>
-                    <button type="button" class="social-btn">
-                        <i class="fab fa-facebook-f"></i>
-                    </button>
-                    <button type="button" class="social-btn">
-                        <i class="fab fa-apple"></i>
-                    </button>
+                    <button type="button" class="social-btn"><i class="fab fa-google"></i></button>
+                    <button type="button" class="social-btn"><i class="fab fa-facebook-f"></i></button>
+                    <button type="button" class="social-btn"><i class="fab fa-apple"></i></button>
                 </div>
-                <div class="login-footer">
-                    ¿Olvidaste tu contraseña? <a href="#">Recuperar</a>
-                </div>
+                <div class="login-footer">¿Olvidaste tu contraseña? <a href="#">Recuperar</a></div>
             </form>
-
-            <!-- Registro Form -->
             <form class="login-form" id="registroForm" onsubmit="handleRegistro(event)">
                 <div class="form-group">
                     <label>Nombre Completo</label>
@@ -2326,21 +556,12 @@
                     <input type="password" placeholder="••••••••" required minlength="6">
                 </div>
                 <button type="submit" class="btn-login">Crear Cuenta</button>
-                
                 <div class="login-divider">o regístrate con</div>
-                
                 <div class="social-login">
-                    <button type="button" class="social-btn">
-                        <i class="fab fa-google"></i>
-                    </button>
-                    <button type="button" class="social-btn">
-                        <i class="fab fa-facebook-f"></i>
-                    </button>
+                    <button type="button" class="social-btn"><i class="fab fa-google"></i></button>
+                    <button type="button" class="social-btn"><i class="fab fa-facebook-f"></i></button>
                 </div>
-
-                <div class="login-footer">
-                    ¿Ya tienes cuenta? <a href="#" onclick="switchTab('login')">Inicia sesión</a>
-                </div>
+                <div class="login-footer">¿Ya tienes cuenta? <a href="#" onclick="switchTab('login')">Inicia sesión</a></div>
             </form>
         </div>
     </div>
@@ -2348,17 +569,13 @@
     <!-- Hero Banner -->
     <section class="hero-banner">
         <div class="hero-content">
-            <h1 class="hero-title">
-                Bienvenidos <span class="gold-text">a nuestra casa</span>
-            </h1>            <p class="hero-subtitle">Elige tu sede y disfruta de la mejor experiencia culinaria</p>
-            
+            <h1 class="hero-title">Bienvenidos <span class="gold-text">a nuestra casa</span></h1>
+            <p class="hero-subtitle">Elige tu sede y disfruta de la mejor experiencia culinaria</p>
             <div class="sede-selector">
                 <button class="sede-btn active" onclick="cambiarSede('lima')">Lima</button>
                 <button class="sede-btn" onclick="cambiarSede('chiclayo')">Chiclayo</button>
             </div>
-            
             <div class="sede-info" id="sedeInfo"></div>
-            
             <div class="hero-buttons">
                 <button class="btn-hero btn-hero-primary" onclick="abrirCarta()">
                     <i class="fas fa-book-open"></i> Ver Carta
@@ -2373,35 +590,18 @@
     <!-- Stats Section -->
     <section class="stats-section">
         <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">32+</div>
-                <div class="stat-label">AÑOS</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">2</div>
-                <div class="stat-label">SEDES</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">50K+</div>
-                <div class="stat-label">CLIENTES</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">4.8</div>
-                <div class="stat-label">RATING</div>
-            </div>
+            <div class="stat-item"><div class="stat-number">32+</div><div class="stat-label">AÑOS</div></div>
+            <div class="stat-item"><div class="stat-number">2</div><div class="stat-label">SEDES</div></div>
+            <div class="stat-item"><div class="stat-number">50K+</div><div class="stat-label">CLIENTES</div></div>
+            <div class="stat-item"><div class="stat-number">4.8</div><div class="stat-label">RATING</div></div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about-section">
+    <section class="about-section" id="nosotros">
         <p class="about-subtitle">NUESTRA ESENCIA</p>
-        <h2 class="about-title">
-            Tradición peruana,<br>
-            <span class="gold-text">reinterpretada</span>
-        </h2>
-        <p class="about-text">            En Fiesta Restaurant creemos que la cocina peruana es un patrimonio vivo. 
-            Hoy llevamos esta pasión a Lima y Chiclayo.
-        </p>
+        <h2 class="about-title">Tradición peruana,<br><span class="gold-text">reinterpretada</span></h2>
+        <p class="about-text">En Fiesta Restaurant creemos que la cocina peruana es un patrimonio vivo. Hoy llevamos esta pasión a Lima y Chiclayo.</p>
         <div class="about-image">
             <img src="preparacion_collar.jpeg" alt="Chef">
         </div>
@@ -2414,48 +614,31 @@
                 <p class="historia-subtitle">NUESTRA TRAYECTORIA</p>
                 <h2 class="historia-title">Nuestra Historia</h2>
             </div>
-            
             <div class="historia-content">
                 <div class="historia-text">
                     <p>Desde 1994, Fiesta Restaurant ha sido un referente de la cocina peruana de calidad. Lo que comenzó como un pequeño local familiar en Miraflores, se ha convertido en un símbolo de la gastronomía peruana contemporánea.</p>
-                    
                     <p>Nuestra pasión por rescatar las recetas tradicionales y presentarlas con un toque moderno nos ha permitido conquistar el paladar de miles de clientes satisfechos a lo largo de más de tres décadas.</p>
-                    
                     <p>Hoy contamos con dos sedes: Lima y Chiclayo, cada una adaptada al sabor local pero manteniendo la esencia que nos caracteriza: ingredientes frescos, recetas auténticas y un servicio excepcional.</p>
                 </div>
                 <div class="historia-image">
                     <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800" alt="Historia">
                 </div>
             </div>
-            
             <div class="historia-stats">
-                <div class="historia-stat-item">
-                    <h3>1994</h3>
-                    <p>Año de Fundación</p>
-                </div>
-                <div class="historia-stat-item">
-                    <h3>2</h3>
-                    <p>Sedes Activas</p>
-                </div>
-                <div class="historia-stat-item">
-                    <h3>50K+</h3>
-                    <p>Clientes Felices</p>
-                </div>
+                <div class="historia-stat-item"><h3>1994</h3><p>Año de Fundación</p></div>
+                <div class="historia-stat-item"><h3>2</h3><p>Sedes Activas</p></div>
+                <div class="historia-stat-item"><h3>50K+</h3><p>Clientes Felices</p></div>
             </div>
-            
-            <div style="text-align: center;">
-                <button class="btn-cerrar-historia" onclick="cerrarHistoria()">
-                    Cerrar Historia
-                </button>
-            </div>
-        </div>    </section>
+            <div style="text-align: center;"><button class="btn-cerrar-historia" onclick="cerrarHistoria()">Cerrar Historia</button></div>
+        </div>
+    </section>
 
     <!-- Categorías Scroll -->
-    <div class="categorias-scroll">
+    <div class="categorias-scroll" id="carta">
         <div class="categorias-container">
             <button class="categoria-pill active" data-categoria="todos">Todos</button>
-            <button class="categoria-pill" data-categoria="comida">🍽️ Comida</button>
-            <button class="categoria-pill" data-categoria="bebidas">🥤 Bebidas</button>
+            <button class="categoria-pill" data-categoria="comida">Comida</button>
+            <button class="categoria-pill" data-categoria="bebidas">Bebidas</button>
             <button class="categoria-pill" data-categoria="entradas">Entradas</button>
             <button class="categoria-pill" data-categoria="fondos">Fondos</button>
             <button class="categoria-pill" data-categoria="postres">Postres</button>
@@ -2464,21 +647,13 @@
     </div>
 
     <!-- Sección Comida -->
-    <h2 class="seccion-title">
-        <i class="fas fa-utensils"></i>
-        <span class="gold-text">Comida</span>
-    </h2>
-
+    <h2 class="seccion-title" id="tienda"><i class="fas fa-utensils"></i><span class="gold-text">Comida</span></h2>
     <div class="productos-scroll-container">
         <div class="productos-scroll" id="comidaScroll"></div>
     </div>
 
     <!-- Sección Bebidas -->
-    <h2 class="seccion-title">
-        <i class="fas fa-wine-bottle"></i>
-        <span class="gold-text">Bebidas</span>
-    </h2>
-
+    <h2 class="seccion-title"><i class="fas fa-wine-bottle"></i><span class="gold-text">Bebidas</span></h2>
     <div class="productos-scroll-container">
         <div class="productos-scroll" id="bebidasScroll"></div>
     </div>
@@ -2489,53 +664,34 @@
         <div class="carrito-handle" onclick="toggleCarrito()"></div>
         <div class="carrito-header">
             <h2>Tu Pedido - <span id="sedeNombreCarrito">Lima</span></h2>
-            <button class="carrito-close" onclick="toggleCarrito()">
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="carrito-close" onclick="toggleCarrito()"><i class="fas fa-times"></i></button>
         </div>
         <div class="carrito-items" id="carritoItems">
-            <div class="carrito-vacio">
-                <i class="fas fa-shopping-bag"></i>
-                <p>Tu carrito está vacío</p>
-            </div>        </div>
+            <div class="carrito-vacio"><i class="fas fa-shopping-bag"></i><p>Tu carrito está vacío</p></div>
+        </div>
         <div class="carrito-footer">
-            <div class="carrito-total-row subtotal">
-                <span>Subtotal</span>
-                <span class="monto" id="subtotalTotal">S/ 0.00</span>
-            </div>
-            <div class="carrito-total-row">
-                <span>Delivery</span>
-                <span class="monto" id="deliveryTotal">S/ 5.00</span>
-            </div>
-            <div class="carrito-total-row total">
-                <span>Total</span>
-                <span class="monto" id="carritoTotal">S/ 0.00</span>
-            </div>
+            <div class="carrito-total-row subtotal"><span>Subtotal</span><span class="monto" id="subtotalTotal">S/ 0.00</span></div>
+            <div class="carrito-total-row"><span>Delivery</span><span class="monto" id="deliveryTotal">S/ 5.00</span></div>
+            <div class="carrito-total-row total"><span>Total</span><span class="monto" id="carritoTotal">S/ 0.00</span></div>
             <button class="btn-checkout" id="btnCheckout" onclick="checkout()" disabled>
-                <i class="fab fa-whatsapp"></i>
-                <span>Pedir por WhatsApp</span>
+                <i class="fab fa-whatsapp"></i><span>Pedir por WhatsApp</span>
             </button>
         </div>
     </div>
 
     <!-- Floating Cart -->
     <div class="floating-cart" id="floatingCart" onclick="toggleCarrito()">
-        <i class="fas fa-shopping-bag"></i>
-        <span>Ver pedido</span>
-        <span class="floating-cart-count" id="floatingCount">0</span>
+        <i class="fas fa-shopping-bag"></i><span>Ver pedido</span><span class="floating-cart-count" id="floatingCount">0</span>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
         <p class="footer-title">Encuéntranos en</p>
         <div class="social-icons">
-            <a href="https://wa.me/51927743956" class="social-icon" target="_blank">
-                <i class="fab fa-whatsapp"></i>
-            </a>
+            <a href="https://wa.me/51927743956" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tripadvisor.com" class="social-icon"><i class="fab fa-tripadvisor"></i>
-            </a>
+            <a href="https://www.tripadvisor.com" class="social-icon" target="_blank"><i class="fab fa-tripadvisor"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
         </div>
         <p class="copyright">© 2026 Fiesta Restaurant. Todos los derechos reservados.</p>
@@ -2545,17 +701,15 @@
     <div class="whatsapp-wrapper" onclick="openWhatsApp()">
         <div class="whatsapp-status">
             <div class="status-avatar">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Atención">                <span class="status-indicator"></span>
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Atención">
+                <span class="status-indicator"></span>
             </div>
             <div class="status-text">
                 <h4>Atención al Cliente</h4>
                 <p>En línea ahora</p>
             </div>
         </div>
-        <div class="whatsapp-float">
-            <i class="fab fa-whatsapp"></i>
-            <span class="online-dot"></span>
-        </div>
+        <div class="whatsapp-float"><i class="fab fa-whatsapp"></i><span class="online-dot"></span></div>
     </div>
 
     <script>
@@ -2594,7 +748,8 @@
                         { id: 103, nombre: 'Tortilla de Raya', precio: 52.00, descripcion: 'Raya seca frita', imagen: 'https://images.unsplash.com/photo-1535914254981-b5012eebbd15?w=600', badge: 'Típico' },
                         { id: 104, nombre: 'Ceviche Norteño', precio: 46.00, descripcion: 'Con chicharrón', imagen: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600', badge: null },
                         { id: 105, nombre: 'King Kong', precio: 25.00, descripcion: 'Dulce típico', imagen: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600', badge: 'Postre' },
-                        { id: 106, nombre: 'Seco de Chavelo', precio: 40.00, descripcion: 'Plátano con seco', imagen: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600', badge: null }                    ],
+                        { id: 106, nombre: 'Seco de Chavelo', precio: 40.00, descripcion: 'Plátano con seco', imagen: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600', badge: null }
+                    ],
                     bebidas: [
                         { id: 107, nombre: 'Pisco Sour', precio: 24.00, descripcion: 'Cóctel bandera', imagen: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600', badge: 'Signature' },
                         { id: 108, nombre: 'Chicha de Jora', precio: 10.00, descripcion: 'Bebida norteña', imagen: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600', badge: 'Típico' },
@@ -2622,61 +777,39 @@
             }
         });
 
-        // ===== ABRIR CARTA (NUEVA PESTAÑA) =====
-        function abrirCarta() {
-            window.open('https://cartafiestalima.my.canva.site/', '_blank');
-        }
-
-        // ===== MODAL RESERVA =====
+        function abrirCarta() { window.open('https://cartafiestalima.my.canva.site/', '_blank'); }
         function abrirModalReserva() {
             const modal = document.getElementById('modalReservaSede');
             modal.style.display = 'flex';
-            setTimeout(() => {
-                modal.classList.add('active');
-            }, 10);
+            setTimeout(() => { modal.classList.add('active'); }, 10);
             document.body.style.overflow = 'hidden';
         }
-
         function cerrarModalReserva() {
             const modal = document.getElementById('modalReservaSede');
             modal.classList.remove('active');
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 300);
-            document.body.style.overflow = '';        }
-
-        function irReservaLima() {
-            window.open('https://fiesta.mesa247.pe/reservas/#/fiesta_lima', '_blank');
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+            document.body.style.overflow = '';
         }
-
-        function irReservaChiclayo() {
-            window.open('https://fiesta.mesa247.pe/reservas/#/fiesta_chiclayo', '_blank');
-        }
-
-        // ===== HISTORIA =====
+        function irReservaLima() { window.open('https://fiesta.mesa247.pe/reservas/#/fiesta_lima', '_blank'); }
+        function irReservaChiclayo() { window.open('https://fiesta.mesa247.pe/reservas/#/fiesta_chiclayo', '_blank'); }
         function mostrarHistoriaMobile() {
             document.getElementById('historiaModal').classList.add('active');
             document.body.style.overflow = 'hidden';
             toggleMenu();
         }
-
         function cerrarHistoriaMobile() {
             document.getElementById('historiaModal').classList.remove('active');
             document.body.style.overflow = '';
         }
-
         function mostrarHistoriaDesktop() {
             const historiaSection = document.getElementById('historiaSection');
             historiaSection.classList.add('active');
             historiaSection.scrollIntoView({ behavior: 'smooth' });
         }
-
         function cerrarHistoria() {
             document.getElementById('historiaSection').classList.remove('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        // ===== SEDE =====
         function cambiarSede(sede) {
             sedeActual = sede;
             const data = sedes[sede];
@@ -2684,49 +817,25 @@
                 btn.classList.remove('active');
                 if (btn.textContent.toLowerCase() === sede) btn.classList.add('active');
             });
-            document.getElementById('sedeInfo').innerHTML = `
-                <h3>${data.nombre}</h3>
-                <div class="info-item"><i class="fas fa-map-marker-alt"></i><span>${data.direccion}</span></div>
-                <div class="info-item"><i class="fas fa-phone"></i><span>${data.telefono}</span></div>
-                <div class="info-item"><i class="fas fa-clock"></i><span>${data.horario}</span></div>
-            `;
+            document.getElementById('sedeInfo').innerHTML = `<h3>${data.nombre}</h3><div class="info-item"><i class="fas fa-map-marker-alt"></i><span>${data.direccion}</span></div><div class="info-item"><i class="fas fa-phone"></i><span>${data.telefono}</span></div><div class="info-item"><i class="fas fa-clock"></i><span>${data.horario}</span></div>`;
             document.getElementById('sedeNombreCarrito').textContent = data.nombre;
             renderProductos(data.productos.comida, 'comidaScroll');
-            renderProductos(data.productos.bebidas, 'bebidasScroll');            if (carrito.length > 0 && confirm('Al cambiar de sede, tu carrito se vaciará. ¿Continuar?')) {
+            renderProductos(data.productos.bebidas, 'bebidasScroll');
+            if (carrito.length > 0 && confirm('Al cambiar de sede, tu carrito se vaciará. ¿Continuar?')) {
                 carrito = [];
                 actualizarCarrito();
             }
         }
-
-        // ===== PRODUCTOS =====
         function renderProductos(productos, containerId) {
             const container = document.getElementById(containerId);
             container.innerHTML = '';
             productos.forEach(producto => {
                 const card = document.createElement('div');
                 card.className = 'producto-card';
-                card.innerHTML = `
-                    <div class="producto-imagen">
-                        <img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy">
-                        ${producto.badge ? `<span class="producto-badge">${producto.badge}</span>` : ''}
-                        <button class="producto-favorite" onclick="toggleFavorite(this)"><i class="fas fa-heart"></i></button>
-                    </div>
-                    <div class="producto-info">
-                        <h3 class="producto-nombre">${producto.nombre}</h3>
-                        <p class="producto-descripcion">${producto.descripcion}</p>
-                        <div class="producto-footer">
-                            <span class="producto-precio">S/ ${producto.precio.toFixed(2)}</span>
-                            <button class="btn-agregar" onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio}, '${producto.imagen}')">
-                                <i class="fas fa-plus"></i><span>Agregar</span>
-                            </button>
-                        </div>
-                    </div>
-                `;
+                card.innerHTML = `<div class="producto-imagen"><img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy">${producto.badge ? `<span class="producto-badge">${producto.badge}</span>` : ''}<button class="producto-favorite" onclick="toggleFavorite(this)"><i class="fas fa-heart"></i></button></div><div class="producto-info"><h3 class="producto-nombre">${producto.nombre}</h3><p class="producto-descripcion">${producto.descripcion}</p><div class="producto-footer"><span class="producto-precio">S/ ${producto.precio.toFixed(2)}</span><button class="btn-agregar" onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio}, '${producto.imagen}')"><i class="fas fa-plus"></i><span>Agregar</span></button></div></div>`;
                 container.appendChild(card);
             });
         }
-
-        // ===== LOGIN =====
         function openLogin() {
             if (usuarioLogueado) {
                 if (confirm(`¿Cerrar sesión de ${usuario.nombre}?`)) logout();
@@ -2734,14 +843,11 @@
                 document.getElementById('loginOverlay').classList.add('active');
             }
         }
-
-        function closeLogin() {
-            document.getElementById('loginOverlay').classList.remove('active');
-        }
-
+        function closeLogin() { document.getElementById('loginOverlay').classList.remove('active'); }
         function switchTab(tab) {
             document.querySelectorAll('.login-tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.login-form').forEach(f => f.classList.remove('active'));            if (tab === 'login') {
+            document.querySelectorAll('.login-form').forEach(f => f.classList.remove('active'));
+            if (tab === 'login') {
                 document.querySelector('.login-tab:first-child').classList.add('active');
                 document.getElementById('loginForm').classList.add('active');
             } else {
@@ -2749,7 +855,6 @@
                 document.getElementById('registroForm').classList.add('active');
             }
         }
-
         function handleLogin(e) {
             e.preventDefault();
             usuario = { nombre: 'Usuario', email: e.target.querySelector('input[type="email"]').value };
@@ -2759,7 +864,6 @@
             closeLogin();
             mostrarNotificacion('¡Bienvenido!');
         }
-
         function handleRegistro(e) {
             e.preventDefault();
             usuario = { nombre: e.target.querySelector('input[type="text"]').value, email: e.target.querySelector('input[type="email"]').value };
@@ -2769,7 +873,6 @@
             closeLogin();
             mostrarNotificacion('¡Cuenta creada!');
         }
-
         function logout() {
             usuario = null;
             usuarioLogueado = false;
@@ -2777,24 +880,15 @@
             actualizarUserBtn();
             mostrarNotificacion('Sesión cerrada');
         }
-
-        function actualizarUserBtn() {
-            document.getElementById('userBadge').style.display = usuarioLogueado ? 'block' : 'none';
-        }
-
-        // ===== CARRITO =====
+        function actualizarUserBtn() { document.getElementById('userBadge').style.display = usuarioLogueado ? 'block' : 'none'; }
         function agregarAlCarrito(id, nombre, precio, imagen) {
-            if (!usuarioLogueado) {
-                openLogin();
-                mostrarNotificacion('Inicia sesión para agregar productos');
-                return;
-            }
+            if (!usuarioLogueado) { openLogin(); mostrarNotificacion('Inicia sesión para agregar productos'); return; }
             const existente = carrito.find(item => item.id === id);
-            if (existente) existente.cantidad++;            else carrito.push({ id, nombre, precio, imagen, cantidad: 1 });
+            if (existente) existente.cantidad++;
+            else carrito.push({ id, nombre, precio, imagen, cantidad: 1 });
             actualizarCarrito();
             mostrarNotificacion(`${nombre} agregado`);
         }
-
         function actualizarCarrito() {
             const itemsContainer = document.getElementById('carritoItems');
             const countElement = document.getElementById('cartCount');
@@ -2804,43 +898,25 @@
             const totalElement = document.getElementById('carritoTotal');
             const btnCheckout = document.getElementById('btnCheckout');
             const floatingCart = document.getElementById('floatingCart');
-
             const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0);
             countElement.textContent = totalItems;
             floatingCount.textContent = totalItems;
             floatingCart.classList.toggle('active', totalItems > 0);
-
             if (carrito.length === 0) {
                 itemsContainer.innerHTML = `<div class="carrito-vacio"><i class="fas fa-shopping-bag"></i><p>Tu carrito está vacío</p></div>`;
                 btnCheckout.disabled = true;
             } else {
-                itemsContainer.innerHTML = carrito.map(item => `
-                    <div class="carrito-item">
-                        <div class="carrito-item-imagen"><img src="${item.imagen}" alt="${item.nombre}"></div>
-                        <div class="carrito-item-info">
-                            <h4 class="carrito-item-nombre">${item.nombre}</h4>
-                            <p class="carrito-item-precio">S/ ${item.precio.toFixed(2)}</p>
-                            <div class="carrito-item-cantidad">
-                                <button class="cantidad-btn" onclick="cambiarCantidad(${item.id}, -1)">-</button>
-                                <span class="cantidad-valor">${item.cantidad}</span>
-                                <button class="cantidad-btn" onclick="cambiarCantidad(${item.id}, 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="carrito-item-eliminar" onclick="eliminarDelCarrito(${item.id})"><i class="fas fa-trash"></i></button>
-                    </div>
-                `).join('');
+                itemsContainer.innerHTML = carrito.map(item => `<div class="carrito-item"><div class="carrito-item-imagen"><img src="${item.imagen}" alt="${item.nombre}"></div><div class="carrito-item-info"><h4 class="carrito-item-nombre">${item.nombre}</h4><p class="carrito-item-precio">S/ ${item.precio.toFixed(2)}</p><div class="carrito-item-cantidad"><button class="cantidad-btn" onclick="cambiarCantidad(${item.id}, -1)">-</button><span class="cantidad-valor">${item.cantidad}</span><button class="cantidad-btn" onclick="cambiarCantidad(${item.id}, 1)">+</button></div></div><button class="carrito-item-eliminar" onclick="eliminarDelCarrito(${item.id})"><i class="fas fa-trash"></i></button></div>`).join('');
                 btnCheckout.disabled = false;
             }
-
             const data = sedes[sedeActual];
             const subtotal = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
             const delivery = carrito.length > 0 ? data.delivery : 0;
             const total = subtotal + delivery;
-
             subtotalElement.textContent = `S/ ${subtotal.toFixed(2)}`;
             deliveryElement.textContent = `S/ ${delivery.toFixed(2)}`;
-            totalElement.textContent = `S/ ${total.toFixed(2)}`;        }
-
+            totalElement.textContent = `S/ ${total.toFixed(2)}`;
+        }
         function cambiarCantidad(id, cambio) {
             const item = carrito.find(i => i.id === id);
             if (item) {
@@ -2849,31 +925,18 @@
                 else actualizarCarrito();
             }
         }
-
-        function eliminarDelCarrito(id) {
-            carrito = carrito.filter(item => item.id !== id);
-            actualizarCarrito();
-        }
-
+        function eliminarDelCarrito(id) { carrito = carrito.filter(item => item.id !== id); actualizarCarrito(); }
         function toggleCarrito() {
-            if (!usuarioLogueado && carrito.length > 0) {
-                openLogin();
-                return;
-            }
+            if (!usuarioLogueado && carrito.length > 0) { openLogin(); return; }
             document.getElementById('carritoBottom').classList.toggle('active');
             document.getElementById('carritoOverlay').classList.toggle('active');
         }
-
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('active');
             document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
         }
-
-        function toggleFavorite(btn) {
-            btn.classList.toggle('active');
-        }
-
+        function toggleFavorite(btn) { btn.classList.toggle('active'); }
         document.querySelectorAll('.categoria-pill').forEach(btn => {
             btn.addEventListener('click', function() {
                 document.querySelectorAll('.categoria-pill').forEach(b => b.classList.remove('active'));
@@ -2888,15 +951,12 @@
                     document.getElementById('bebidasScroll').innerHTML = '';
                 } else if (categoria === 'bebidas') {
                     renderProductos(data.productos.bebidas, 'bebidasScroll');
-                    document.getElementById('comidaScroll').innerHTML = '';                }
+                    document.getElementById('comidaScroll').innerHTML = '';
+                }
             });
         });
-
         function checkout() {
-            if (!usuarioLogueado) {
-                openLogin();
-                return;
-            }
+            if (!usuarioLogueado) { openLogin(); return; }
             const data = sedes[sedeActual];
             const subtotal = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
             const delivery = data.delivery;
@@ -2904,11 +964,7 @@
             const mensaje = `*🍽️ PEDIDO FIESTA - ${data.nombre.toUpperCase()}*%0A%0A${carrito.map(item => `• ${item.nombre} x${item.cantidad} - S/ ${(item.precio * item.cantidad).toFixed(2)}`).join('%0A')}%0A%0A─────────────%0ASubtotal: S/ ${subtotal.toFixed(2)}%0ADelivery: S/ ${delivery.toFixed(2)}%0A*TOTAL: S/ ${total.toFixed(2)}*%0A%0A📍 ${data.direccion}%0A📞 ${data.telefono}%0A%0ADirección de entrega:`;
             window.open(`https://wa.me/51927743956?text=${mensaje}`, '_blank');
         }
-
-        function openWhatsApp() {
-            window.open('https://wa.me/51927743956?text=Hola,%20quisiera%20más%20información', '_blank');
-        }
-
+        function openWhatsApp() { window.open('https://wa.me/51927743956?text=Hola,%20quisiera%20más%20información', '_blank'); }
         function mostrarNotificacion(mensaje) {
             const notificacion = document.createElement('div');
             notificacion.style.cssText = `position:fixed;top:80px;right:15px;background:var(--gold);color:var(--black);padding:12px 20px;border-radius:6px;z-index:6000;font-size:13px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,0.3);animation:slideIn 0.3s ease;`;
@@ -2919,10 +975,10 @@
                 setTimeout(() => notificacion.remove(), 300);
             }, 2000);
         }
-
         const style = document.createElement('style');
         style.textContent = `@keyframes slideIn{from{transform:translateX(100%);opacity:0;}to{transform:translateX(0);opacity:1;}}@keyframes slideOut{from{transform:translateX(0);opacity:1;}to{transform:translateX(100%);opacity:0;}}`;
         document.head.appendChild(style);
     </script>
 </body>
 </html>
+
