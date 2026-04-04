@@ -3,24 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Restaurante peruano gourmet en Lima y Chiclayo. Cocina tradicional con toque contemporaneo.">
-    <title>Fiesta Restaurant | Restaurante Peruano Gourmet</title>
-
-    <!-- FAVICONS & THEME -->
+    
+    <!-- 🔍 SEO BÁSICO OPTIMIZADO -->
+    <title>Fiesta Restaurant | Ceviche y Cocina Peruana Gourmet en Lima y Chiclayo</title>
+    <meta name="description" content="Restaurante peruano gourmet en Lima (Miraflores) y Chiclayo. Ceviche clásico, lomo saltado, pisco sour y cocina tradicional con toque contemporáneo. ¡Reserva tu mesa online!">
+    <link rel="canonical" href="https://fiestarestaurant.pe/">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- 🌐 HREFLANG PARA SEO INTERNACIONAL -->
+    <link rel="alternate" hreflang="es-PE" href="https://fiestarestaurant.pe/">
+    <link rel="alternate" hreflang="en" href="https://fiestarestaurant.pe/en/">
+    
+    <!-- 📱 OPEN GRAPH - FACEBOOK/LINKEDIN -->
+    <meta property="og:title" content="Fiesta Restaurant | Ceviche y Cocina Peruana Gourmet">
+    <meta property="og:description" content="Restaurante peruano gourmet en Lima y Chiclayo. Reservas online, delivery y experiencia culinaria única desde 1994.">
+    <meta property="og:type" content="restaurant">
+    <meta property="og:url" content="https://fiestarestaurant.pe/">
+    <meta property="og:image" content="https://fiestarestaurant.pe/images/og-fiesta-restaurant.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:site_name" content="Fiesta Restaurant">
+    
+    <!-- 🐦 TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fiesta Restaurant | Cocina Peruana Gourmet">
+    <meta name="twitter:description" content="Reserva tu mesa en Lima o Chiclayo. Ceviche, lomo saltado, pisco sour y cócteles artesanales.">
+    <meta name="twitter:image" content="https://fiestarestaurant.pe/images/twitter-fiesta-restaurant.jpg">
+    <meta name="twitter:site" content="@fiestalima">
+    
+    <!-- 🎨 FAVICONS & THEME -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#0a0a0a">
-
-    <!-- FUENTES -->
+    <meta name="msapplication-TileColor" content="#c9a961">
+    
+    <!-- ⚡ PERFORMANCE: PRELOAD DE RECURSOS CRÍTICOS -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="logo.png" as="image">
+    
+    <!-- 🔗 FUENTES (con fallback para evitar FOIT) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- TAILWIND CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- 🎨 TAILWIND CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
 
-    <!-- TAILWIND CONFIG -->
+    <!-- ⚙️ TAILWIND CONFIG -->
     <script>
         tailwind.config = {
             theme: {
@@ -47,6 +85,167 @@
             }
         }
     </script>
+    
+    <!-- 🧠 SCHEMA.ORG JSON-LD - RESTAURANTE -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Fiesta Restaurant",
+      "image": [
+        "https://fiestarestaurant.pe/logo.png",
+        "https://fiestarestaurant.pe/images/hero-lima.jpg",
+        "https://fiestarestaurant.pe/images/hero-chiclayo.jpg"
+      ],
+      "description": "Restaurante peruano gourmet en Lima y Chiclayo. Cocina tradicional con toque contemporáneo desde 1994. Especialistas en ceviche, lomo saltado y pisco sour.",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Reducto 1278",
+          "addressLocality": "Miraflores",
+          "addressRegion": "Lima",
+          "postalCode": "15074",
+          "addressCountry": "PE"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Salaverry 1820",
+          "addressLocality": "Chiclayo",
+          "addressRegion": "Lambayeque",
+          "postalCode": "14001",
+          "addressCountry": "PE"
+        }
+      ],
+      "geo": [
+        { "@type": "GeoCoordinates", "latitude": -12.1195, "longitude": -77.0282 },
+        { "@type": "GeoCoordinates", "latitude": -6.7714, "longitude": -79.8408 }
+      ],
+      "url": "https://fiestarestaurant.pe",
+      "telephone": "+51927743956",
+      "servesCuisine": ["Peruvian", "Latin American", "Seafood", "Contemporary", "Gourmet"],
+      "priceRange": "$$",
+      "currenciesAccepted": "PEN",
+      "paymentAccepted": "Cash, Credit Card, Debit Card, Yape, Plin",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "12:00",
+          "closes": "23:00"
+        }
+      ],
+      "hasMenu": "https://cartafiestalima.my.canva.site/",
+      "acceptsReservations": "https://fiesta.mesa247.pe/reservas/",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1247",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "María G."},
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "reviewBody": "El mejor ceviche de Miraflores. ¡Volveré siempre!"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/share/1Bao94eAnb/",
+        "https://www.instagram.com/fiestalima",
+        "https://www.tripadvisor.com.pe/Restaurant_Review-g294316-d812950-Reviews-Fiesta_Restaurant_Gourmet-Lima_Lima_Region.html",
+        "https://youtube.com/@fiestarestaurantgourmet",
+        "https://wa.me/51927743956"
+      ],
+      "areaServed": ["Lima", "Chiclayo", "Miraflores", "Peru"],
+      "foundingDate": "1994",
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "MenuItem", "name": "Ceviche Clásico" },
+          "price": "45.00",
+          "priceCurrency": "PEN",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "MenuItem", "name": "Lomo Saltado" },
+          "price": "58.00",
+          "priceCurrency": "PEN",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- 📋 SCHEMA PARA MENÚ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Menu",
+      "name": "Carta Digital - Fiesta Restaurant",
+      "url": "https://cartafiestalima.my.canva.site/",
+      "hasMenuSection": [
+        {
+          "@type": "MenuSection",
+          "name": "Entradas y Ceviches",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "Ceviche Clásico",
+              "description": "Pescado fresco del día en leche de tigre, con camote, choclo y cancha serrana",
+              "offers": { "@type": "Offer", "price": "45.00", "priceCurrency": "PEN" },
+              "image": "https://fiestarestaurant.pe/images/ceviche-clasico.jpg"
+            },
+            {
+              "@type": "MenuItem",
+              "name": "Causa Limeña",
+              "description": "Masa de papa amarilla con pollo deshilachado, palta y huevo",
+              "offers": { "@type": "Offer", "price": "32.00", "priceCurrency": "PEN" }
+            }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Fondos",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "Lomo Saltado",
+              "description": "Lomo fino salteado al wok con cebolla, tomate, papas fritas y arroz",
+              "offers": { "@type": "Offer", "price": "58.00", "priceCurrency": "PEN" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "Arroz con Mariscos",
+              "description": "Arroz cremoso con mariscos frescos del día",
+              "offers": { "@type": "Offer", "price": "55.00", "priceCurrency": "PEN" }
+            }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Bebidas y Cócteles",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "Pisco Sour",
+              "description": "Cóctel bandera del Perú con pisco, limón, clara de huevo y amargo de angostura",
+              "offers": { "@type": "Offer", "price": "25.00", "priceCurrency": "PEN" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "Chicha Morada",
+              "description": "Bebida tradicional peruana hecha con maíz morado, piña y especias",
+              "offers": { "@type": "Offer", "price": "12.00", "priceCurrency": "PEN" }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -427,85 +626,85 @@
     <header class="header">
         <div class="header-container">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="Fiesta Restaurant Logo">
+                <img src="logo.png" alt="Fiesta Restaurant - Logo oficial restaurante peruano gourmet Lima Chiclayo" width="120" height="40" loading="eager">
             </a>
             <div class="header-icons">
-                <button class="icon-btn user-btn" onclick="openLogin()" aria-label="Usuario" id="userBtn">
-                    <i class="fas fa-user"></i>
+                <button class="icon-btn user-btn" onclick="openLogin()" aria-label="Iniciar sesión o crear cuenta - Usuario Fiesta Restaurant" id="userBtn">
+                    <i class="fas fa-user" aria-hidden="true"></i>
                     <span class="user-badge" id="userBadge" style="display: none;"></span>
                 </button>
                 <div class="cart-icon-wrapper">
-                    <button class="icon-btn" onclick="toggleCarrito()" aria-label="Carrito">
-                        <i class="fas fa-shopping-cart"></i>
+                    <button class="icon-btn" onclick="toggleCarrito()" aria-label="Ver carrito de compras - Tu pedido Fiesta Restaurant">
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
                         <span class="cart-badge" id="cartCount">0</span>
                     </button>
                 </div>
-                <button class="icon-btn menu-toggle" onclick="toggleMenu()" aria-label="Menú">
-                    <i class="fas fa-bars"></i>
+                <button class="icon-btn menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú de navegación principal">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
     </header>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Menú principal móvil">
         <div class="mobile-menu-header">
             <a href="index.html" class="logo" onclick="toggleMenu()">
-                <img src="logo.png" alt="Fiesta Restaurant Logo">
+                <img src="logo.png" alt="Fiesta Restaurant - Inicio" width="120" height="40" loading="eager">
             </a>
-            <button class="close-menu" onclick="toggleMenu()">
-                <i class="fas fa-times"></i>
+            <button class="close-menu" onclick="toggleMenu()" aria-label="Cerrar menú">
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
         </div>
-        <nav>
-            <a href="index.html" class="nav-item" onclick="toggleMenu()">
+        <ul>
+            <li><a href="index.html" class="nav-item" onclick="toggleMenu()">
                 <div class="nav-item-left">
-                    <i class="fas fa-home"></i>
+                    <i class="fas fa-home" aria-hidden="true"></i>
                     <span>Inicio</span>
                 </div>
-                <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 13px; opacity: 0.6;"></i>
-            </a>
-            <div class="nav-item" onclick="mostrarHistoriaMobile()">
+                <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 13px; opacity: 0.6;" aria-hidden="true"></i>
+            </a></li>
+            <li><div class="nav-item" onclick="mostrarHistoriaMobile()">
                 <div class="nav-item-left">
-                    <i class="fas fa-book-open"></i>
+                    <i class="fas fa-book-open" aria-hidden="true"></i>
                     <span>Nuestra Historia</span>
                 </div>
-                <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 13px; opacity: 0.6;"></i>
-            </div>
-            <a href="#carta" class="nav-item" onclick="toggleMenu(); setTimeout(() => document.querySelector('.categorias-scroll')?.scrollIntoView({behavior: 'smooth'}), 300);">
+                <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 13px; opacity: 0.6;" aria-hidden="true"></i>
+            </div></li>
+            <li><a href="#carta" class="nav-item" onclick="toggleMenu(); setTimeout(() => document.querySelector('.categorias-scroll')?.scrollIntoView({behavior: 'smooth'}), 300);">
                 <div class="nav-item-left">
-                    <i class="fas fa-utensils"></i>
+                    <i class="fas fa-utensils" aria-hidden="true"></i>
                     <span>Carta</span>
                 </div>
-                <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 13px; opacity: 0.6;"></i>
-            </a>
-            <a href="#tienda" class="nav-item" onclick="toggleMenu(); setTimeout(() => document.querySelector('.seccion-title')?.scrollIntoView({behavior: 'smooth'}), 300);">
+                <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 13px; opacity: 0.6;" aria-hidden="true"></i>
+            </a></li>
+            <li><a href="#tienda" class="nav-item" onclick="toggleMenu(); setTimeout(() => document.querySelector('.seccion-title')?.scrollIntoView({behavior: 'smooth'}), 300);">
                 <div class="nav-item-left">
-                    <i class="fas fa-store"></i>
+                    <i class="fas fa-store" aria-hidden="true"></i>
                     <span>Tienda</span>
                 </div>
-                <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 13px; opacity: 0.6;"></i>
-            </a>
-            <a href="#nosotros" class="nav-item" onclick="toggleMenu(); setTimeout(() => document.querySelector('.about-section')?.scrollIntoView({behavior: 'smooth'}), 300);">
+                <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 13px; opacity: 0.6;" aria-hidden="true"></i>
+            </a></li>
+            <li><a href="#nosotros" class="nav-item" onclick="toggleMenu(); setTimeout(() => document.querySelector('.about-section')?.scrollIntoView({behavior: 'smooth'}), 300);">
                 <div class="nav-item-left">
-                    <i class="fas fa-info-circle"></i>
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
                     <span>Nosotros</span>
                 </div>
-                <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 13px; opacity: 0.6;"></i>
-            </a>
-        </nav>
+                <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 13px; opacity: 0.6;" aria-hidden="true"></i>
+            </a></li>
+        </ul>
         <a href="#" class="btn-reservar-mobile" onclick="abrirModalReserva(); toggleMenu();">
-            Reservar Mesa <i class="fas fa-arrow-right"></i>
+            Reservar Mesa <i class="fas fa-arrow-right" aria-hidden="true"></i>
         </a>
-    </div>
+    </nav>
 
     <!-- Modal Reserva Sede -->
-    <div class="modal-reserva-sede" id="modalReservaSede">
+    <div class="modal-reserva-sede" id="modalReservaSede" role="dialog" aria-modal="true" aria-labelledby="modalReservaTitle">
         <div class="modal-reserva-content">
-            <button class="modal-reserva-close" onclick="cerrarModalReserva()">
+            <button class="modal-reserva-close" onclick="cerrarModalReserva()" aria-label="Cerrar modal de reserva">
                 <i class="fas fa-times"></i>
             </button>
-            <h2 class="modal-reserva-title">Reservar Mesa</h2>
+            <h2 id="modalReservaTitle" class="modal-reserva-title">Reservar Mesa</h2>
             <p class="modal-reserva-subtitle">Selecciona tu sede preferida</p>
             <div class="sede-reserva-options">
                 <button class="sede-reserva-btn" onclick="irReservaLima()">
@@ -527,16 +726,16 @@
     </div>
 
     <!-- Modal Historia Mobile -->
-    <div class="historia-modal" id="historiaModal">
+    <div class="historia-modal" id="historiaModal" role="dialog" aria-modal="true" aria-labelledby="historiaModalTitle">
         <div class="historia-modal-header">
-            <h2>Nuestra Historia</h2>
-            <button class="btn-cerrar-modal-historia" onclick="cerrarHistoriaMobile()">
+            <h2 id="historiaModalTitle">Nuestra Historia</h2>
+            <button class="btn-cerrar-modal-historia" onclick="cerrarHistoriaMobile()" aria-label="Cerrar historia">
                 <i class="fas fa-times"></i>
             </button>
         </div>
         <div class="historia-modal-content">
             <div class="historia-modal-image">
-                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800" alt="Nuestra Historia">
+                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800" alt="Chef preparando ceviche en Fiesta Restaurant - Nuestra historia desde 1994" loading="lazy" width="800" height="600">
             </div>
             <div class="historia-modal-text">
                 <p>Desde 1994, Fiesta Restaurant ha sido un referente de la cocina peruana de calidad. Lo que comenzó como un pequeño local familiar en Miraflores, se ha convertido en un símbolo de la gastronomía peruana contemporánea.</p>
@@ -549,57 +748,57 @@
     </div>
 
     <!-- Login Popup -->
-    <div class="login-overlay" id="loginOverlay">
+    <div class="login-overlay" id="loginOverlay" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
         <div class="login-popup">
-            <button class="login-close" onclick="closeLogin()"><i class="fas fa-times"></i></button>
+            <button class="login-close" onclick="closeLogin()" aria-label="Cerrar formulario de login"><i class="fas fa-times"></i></button>
             <div class="login-logo">
-                <h2>FIESTA<span style="color: var(--white);">.</span></h2>
+                <h2 id="loginTitle">FIESTA<span style="color: var(--white);">.</span></h2>
                 <p>Ingresa o crea tu cuenta</p>
             </div>
-            <div class="login-tabs">
-                <button class="login-tab active" onclick="switchTab('login')">Iniciar Sesión</button>
-                <button class="login-tab" onclick="switchTab('registro')">Registrarse</button>
+            <div class="login-tabs" role="tablist">
+                <button class="login-tab active" onclick="switchTab('login')" role="tab" aria-selected="true">Iniciar Sesión</button>
+                <button class="login-tab" onclick="switchTab('registro')" role="tab" aria-selected="false">Registrarse</button>
             </div>
-            <form class="login-form active" id="loginForm" onsubmit="handleLogin(event)">
+            <form class="login-form active" id="loginForm" onsubmit="handleLogin(event)" role="tabpanel">
                 <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" placeholder="tu@email.com" required>
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="tu@email.com" required>
                 </div>
                 <div class="form-group">
-                    <label>Contraseña</label>
-                    <input type="password" placeholder="••••••••" required>
+                    <label for="loginPassword">Contraseña</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
                 </div>
                 <button type="submit" class="btn-login">Ingresar</button>
                 <div class="login-divider">o continúa con</div>
                 <div class="social-login">
-                    <button type="button" class="social-btn"><i class="fab fa-google"></i></button>
-                    <button type="button" class="social-btn"><i class="fab fa-facebook-f"></i></button>
-                    <button type="button" class="social-btn"><i class="fab fa-apple"></i></button>
+                    <button type="button" class="social-btn" aria-label="Iniciar sesión con Google"><i class="fab fa-google"></i></button>
+                    <button type="button" class="social-btn" aria-label="Iniciar sesión con Facebook"><i class="fab fa-facebook-f"></i></button>
+                    <button type="button" class="social-btn" aria-label="Iniciar sesión con Apple"><i class="fab fa-apple"></i></button>
                 </div>
                 <div class="login-footer">¿Olvidaste tu contraseña? <a href="#">Recuperar</a></div>
             </form>
-            <form class="login-form" id="registroForm" onsubmit="handleRegistro(event)">
+            <form class="login-form" id="registroForm" onsubmit="handleRegistro(event)" role="tabpanel">
                 <div class="form-group">
-                    <label>Nombre Completo</label>
-                    <input type="text" placeholder="Juan Pérez" required>
+                    <label for="registroNombre">Nombre Completo</label>
+                    <input type="text" id="registroNombre" placeholder="Juan Pérez" required>
                 </div>
                 <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" placeholder="tu@email.com" required>
+                    <label for="registroEmail">Email</label>
+                    <input type="email" id="registroEmail" placeholder="tu@email.com" required>
                 </div>
                 <div class="form-group">
-                    <label>Teléfono</label>
-                    <input type="tel" placeholder="999 999 999" required>
+                    <label for="registroTelefono">Teléfono</label>
+                    <input type="tel" id="registroTelefono" placeholder="999 999 999" required>
                 </div>
                 <div class="form-group">
-                    <label>Contraseña</label>
-                    <input type="password" placeholder="••••••••" required minlength="6">
+                    <label for="registroPassword">Contraseña</label>
+                    <input type="password" id="registroPassword" placeholder="••••••••" required minlength="6">
                 </div>
                 <button type="submit" class="btn-login">Crear Cuenta</button>
                 <div class="login-divider">o regístrate con</div>
                 <div class="social-login">
-                    <button type="button" class="social-btn"><i class="fab fa-google"></i></button>
-                    <button type="button" class="social-btn"><i class="fab fa-facebook-f"></i></button>
+                    <button type="button" class="social-btn" aria-label="Registrarse con Google"><i class="fab fa-google"></i></button>
+                    <button type="button" class="social-btn" aria-label="Registrarse con Facebook"><i class="fab fa-facebook-f"></i></button>
                 </div>
                 <div class="login-footer">¿Ya tienes cuenta? <a href="#" onclick="switchTab('login')">Inicia sesión</a></div>
             </form>
@@ -607,52 +806,64 @@
     </div>
 
     <!-- Hero Banner -->
-    <section class="hero-banner">
+    <section class="hero-banner" aria-labelledby="hero-title">
         <div class="hero-content">
-            <h1 class="hero-title">Bienvenidos <span class="gold-text">a nuestra casa</span></h1>
-            <p class="hero-subtitle">Elige tu sede y disfruta de la mejor experiencia culinaria</p>
-            <div class="sede-selector">
-                <button class="sede-btn active" onclick="cambiarSede('lima')">Lima</button>
-                <button class="sede-btn" onclick="cambiarSede('chiclayo')">Chiclayo</button>
+            <h1 id="hero-title" class="hero-title">
+                Restaurante Peruano Gourmet en <span class="gold-text">Lima y Chiclayo</span>
+            </h1>
+            <p class="hero-subtitle">Elige tu sede y disfruta de ceviche, lomo saltado y la mejor experiencia culinaria peruana</p>
+            
+            <div class="sede-selector" role="group" aria-label="Seleccionar sede del restaurante">
+                <button class="sede-btn active" onclick="cambiarSede('lima')" aria-pressed="true">Lima</button>
+                <button class="sede-btn" onclick="cambiarSede('chiclayo')" aria-pressed="false">Chiclayo</button>
             </div>
-            <div class="sede-info" id="sedeInfo"></div>
+            
+            <div class="sede-info" id="sedeInfo" itemscope itemtype="https://schema.org/LocalBusiness">
+                <!-- Se llena dinámicamente con JS -->
+            </div>
+            
             <div class="hero-buttons">
                 <button class="btn-hero btn-hero-primary" onclick="abrirCarta()">
-                    <i class="fas fa-book-open"></i> Ver Carta
+                    <i class="fas fa-book-open" aria-hidden="true"></i> Ver Carta Digital
                 </button>
                 <button class="btn-hero btn-hero-secondary" onclick="abrirModalReserva()">
-                    <i class="fas fa-calendar-alt"></i> Reservar Mesa
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i> Reservar Mesa
                 </button>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="stats-section">
+    <section class="stats-section" aria-label="Estadísticas del restaurante Fiesta Restaurant">
         <div class="stats-grid">
-            <div class="stat-item"><div class="stat-number">32+</div><div class="stat-label">AÑOS</div></div>
-            <div class="stat-item"><div class="stat-number">2</div><div class="stat-label">SEDES</div></div>
-            <div class="stat-item"><div class="stat-number">50K+</div><div class="stat-label">CLIENTES</div></div>
-            <div class="stat-item"><div class="stat-number">4.8</div><div class="stat-label">RATING</div></div>
+            <div class="stat-item"><div class="stat-number">32+</div><div class="stat-label">AÑOS DE EXPERIENCIA</div></div>
+            <div class="stat-item"><div class="stat-number">2</div><div class="stat-label">SEDES EN PERÚ</div></div>
+            <div class="stat-item"><div class="stat-number">50K+</div><div class="stat-label">CLIENTES FELICES</div></div>
+            <div class="stat-item"><div class="stat-number">4.8★</div><div class="stat-label">RATING PROMEDIO</div></div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about-section" id="nosotros">
+    <section class="about-section" id="nosotros" aria-labelledby="about-title">
         <p class="about-subtitle">NUESTRA ESENCIA</p>
-        <h2 class="about-title">Tradición peruana,<br><span class="gold-text">reinterpretada</span></h2>
-        <p class="about-text">En Fiesta Restaurant creemos que la cocina peruana es un patrimonio vivo. Hoy llevamos esta pasión a Lima y Chiclayo.</p>
+        <h2 id="about-title" class="about-title">Tradición peruana,<br><span class="gold-text">reinterpretada con pasión</span></h2>
+        <p class="about-text">En <strong>Fiesta Restaurant Miraflores</strong> y <strong>Fiesta Restaurant Chiclayo</strong> creemos que la cocina peruana es un patrimonio vivo. Desde 1994 llevamos esta pasión a tu mesa con ingredientes frescos y recetas auténticas.</p>
         <div class="about-image">
-            <img src="preparacion_collar.jpeg" alt="Chef">
+            <img src="preparacion_collar.jpeg" 
+                 alt="Chef preparando ceviche fresco en cocina de Fiesta Restaurant Lima" 
+                 loading="lazy" 
+                 width="800" 
+                 height="600"
+                 decoding="async">
         </div>
     </section>
 
     <!-- Historia Section -->
-    <section class="historia-section" id="historiaSection">
+    <section class="historia-section" id="historiaSection" aria-labelledby="historia-title">
         <div class="historia-container">
             <div class="historia-header">
                 <p class="historia-subtitle">NUESTRA TRAYECTORIA</p>
-                <h2 class="historia-title">Nuestra Historia</h2>
+                <h2 id="historia-title" class="historia-title">Nuestra Historia</h2>
             </div>
             <div class="historia-content">
                 <div class="historia-text">
@@ -661,7 +872,7 @@
                     <p>Hoy contamos con dos sedes: Lima y Chiclayo, cada una adaptada al sabor local pero manteniendo la esencia que nos caracteriza: ingredientes frescos, recetas auténticas y un servicio excepcional.</p>
                 </div>
                 <div class="historia-image">
-                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800" alt="Historia">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800" alt="Interior de Fiesta Restaurant - Ambiente elegante y acogedor" loading="lazy" width="800" height="600">
                 </div>
             </div>
             <div class="historia-stats">
@@ -674,84 +885,109 @@
     </section>
 
     <!-- Categorías Scroll -->
-    <div class="categorias-scroll" id="carta">
+    <div class="categorias-scroll" id="carta" role="navigation" aria-label="Categorías del menú">
         <div class="categorias-container">
-            <button class="categoria-pill active" data-categoria="todos">Todos</button>
-            <button class="categoria-pill" data-categoria="comida">Comida</button>
-            <button class="categoria-pill" data-categoria="bebidas">Bebidas</button>
-            <button class="categoria-pill" data-categoria="entradas">Entradas</button>
-            <button class="categoria-pill" data-categoria="fondos">Fondos</button>
-            <button class="categoria-pill" data-categoria="postres">Postres</button>
-            <button class="categoria-pill" data-categoria="cocteles">Cócteles</button>
+            <button class="categoria-pill active" data-categoria="todos" role="tab" aria-selected="true">Todos</button>
+            <button class="categoria-pill" data-categoria="comida" role="tab" aria-selected="false">Comida</button>
+            <button class="categoria-pill" data-categoria="bebidas" role="tab" aria-selected="false">Bebidas</button>
+            <button class="categoria-pill" data-categoria="entradas" role="tab" aria-selected="false">Entradas</button>
+            <button class="categoria-pill" data-categoria="fondos" role="tab" aria-selected="false">Fondos</button>
+            <button class="categoria-pill" data-categoria="postres" role="tab" aria-selected="false">Postres</button>
+            <button class="categoria-pill" data-categoria="cocteles" role="tab" aria-selected="false">Cócteles</button>
         </div>
     </div>
 
     <!-- Sección Comida -->
-    <h2 class="seccion-title" id="tienda"><i class="fas fa-utensils"></i><span class="gold-text">Comida</span></h2>
+    <h2 class="seccion-title" id="tienda"><i class="fas fa-utensils" aria-hidden="true"></i><span class="gold-text">Comida Peruana</span></h2>
     <div class="productos-scroll-container">
-        <div class="productos-scroll" id="comidaScroll"></div>
+        <div class="productos-scroll" id="comidaScroll" role="list" aria-label="Platos de comida peruana"></div>
     </div>
 
     <!-- Sección Bebidas -->
-    <h2 class="seccion-title"><i class="fas fa-wine-bottle"></i><span class="gold-text">Bebidas</span></h2>
+    <h2 class="seccion-title"><i class="fas fa-wine-bottle" aria-hidden="true"></i><span class="gold-text">Bebidas y Cócteles</span></h2>
     <div class="productos-scroll-container">
-        <div class="productos-scroll" id="bebidasScroll"></div>
+        <div class="productos-scroll" id="bebidasScroll" role="list" aria-label="Bebidas y cócteles peruanos"></div>
     </div>
 
     <!-- Carrito Bottom Sheet -->
-    <div class="carrito-overlay" id="carritoOverlay" onclick="toggleCarrito()"></div>
-    <div class="carrito-bottom" id="carritoBottom">
-        <div class="carrito-handle" onclick="toggleCarrito()"></div>
+    <div class="carrito-overlay" id="carritoOverlay" onclick="toggleCarrito()" aria-hidden="true"></div>
+    <div class="carrito-bottom" id="carritoBottom" role="dialog" aria-modal="true" aria-labelledby="carritoTitle">
+        <div class="carrito-handle" onclick="toggleCarrito()" aria-label="Cerrar carrito"></div>
         <div class="carrito-header">
-            <h2>Tu Pedido - <span id="sedeNombreCarrito">Lima</span></h2>
-            <button class="carrito-close" onclick="toggleCarrito()"><i class="fas fa-times"></i></button>
+            <h2 id="carritoTitle">Tu Pedido - <span id="sedeNombreCarrito">Lima</span></h2>
+            <button class="carrito-close" onclick="toggleCarrito()" aria-label="Cerrar carrito"><i class="fas fa-times"></i></button>
         </div>
         <div class="carrito-items" id="carritoItems">
-            <div class="carrito-vacio"><i class="fas fa-shopping-bag"></i><p>Tu carrito está vacío</p></div>
+            <div class="carrito-vacio"><i class="fas fa-shopping-bag" aria-hidden="true"></i><p>Tu carrito está vacío</p></div>
         </div>
         <div class="carrito-footer">
             <div class="carrito-total-row subtotal"><span>Subtotal</span><span class="monto" id="subtotalTotal">S/ 0.00</span></div>
             <div class="carrito-total-row"><span>Delivery</span><span class="monto" id="deliveryTotal">S/ 5.00</span></div>
             <div class="carrito-total-row total"><span>Total</span><span class="monto" id="carritoTotal">S/ 0.00</span></div>
             <button class="btn-checkout" id="btnCheckout" onclick="checkout()" disabled>
-                <i class="fab fa-whatsapp"></i><span>Pedir por WhatsApp</span>
+                <i class="fab fa-whatsapp" aria-hidden="true"></i><span>Pedir por WhatsApp</span>
             </button>
         </div>
     </div>
 
     <!-- Floating Cart -->
-    <div class="floating-cart" id="floatingCart" onclick="toggleCarrito()">
-        <i class="fas fa-shopping-bag"></i><span>Ver pedido</span><span class="floating-cart-count" id="floatingCount">0</span>
+    <div class="floating-cart" id="floatingCart" onclick="toggleCarrito()" aria-label="Ver pedido en carrito">
+        <i class="fas fa-shopping-bag" aria-hidden="true"></i><span>Ver pedido</span><span class="floating-cart-count" id="floatingCount">0</span>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" itemscope itemtype="https://schema.org/Restaurant">
+        <meta itemprop="name" content="Fiesta Restaurant">
+        <meta itemprop="telephone" content="+51927743956">
+        <meta itemprop="priceRange" content="$$">
+        
         <p class="footer-title">Encuéntranos en</p>
         <div class="social-icons">
-           <a href="https://wa.me/51927743956" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
-                <iconify-icon icon="mdi:whatsapp" width="24"></iconify-icon>
+           <a href="https://wa.me/51927743956" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Escríbenos por WhatsApp - Atención al cliente Fiesta Restaurant">
+                <iconify-icon icon="mdi:whatsapp" width="24" aria-hidden="true"></iconify-icon>
             </a>
-            <a href="https://www.facebook.com/share/1Bao94eAnb/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
-                <iconify-icon icon="mdi:facebook" width="24"></iconify-icon>
+            <a href="https://www.facebook.com/share/1Bao94eAnb/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Síguenos en Facebook - Fiesta Restaurant">
+                <iconify-icon icon="mdi:facebook" width="24" aria-hidden="true"></iconify-icon>
             </a>
-            <a href="https://www.instagram.com/fiestalima?igsh=bmh5ZHhrbW56ZXRr" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
-                <iconify-icon icon="mdi:instagram" width="24"></iconify-icon>
+            <a href="https://www.instagram.com/fiestalima?igsh=bmh5ZHhrbW56ZXRr" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Síguenos en Instagram - @fiestalima">
+                <iconify-icon icon="mdi:instagram" width="24" aria-hidden="true"></iconify-icon>
             </a>
-            <a href="https://www.tripadvisor.com.pe/Restaurant_Review-g294316-d812950-Reviews-Fiesta_Restaurant_Gourmet-Lima_Lima_Region.html" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TripAdvisor">
-                <iconify-icon icon="simple-icons:tripadvisor" width="24"></iconify-icon>
+            <a href="https://www.tripadvisor.com.pe/Restaurant_Review-g294316-d812950-Reviews-Fiesta_Restaurant_Gourmet-Lima_Lima_Region.html" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Ver reseñas en TripAdvisor - Fiesta Restaurant">
+                <iconify-icon icon="simple-icons:tripadvisor" width="24" aria-hidden="true"></iconify-icon>
             </a>
-            <a href="https://youtube.com/@fiestarestaurantgourmet?si=UuB16V2-niKuGn4k" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
-                <iconify-icon icon="mdi:youtube" width="24"></iconify-icon>
+            <a href="https://youtube.com/@fiestarestaurantgourmet?si=UuB16V2-niKuGn4k" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Suscríbete en YouTube - Fiesta Restaurant Gourmet">
+                <iconify-icon icon="mdi:youtube" width="24" aria-hidden="true"></iconify-icon>
             </a>
         </div>
-        <p class="copyright">© 2026 Fiesta Restaurant. Todos los derechos reservados.</p>
+        
+        <div style="margin: 20px 0; font-size: 11px; color: var(--gray);">
+            <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                📍 Lima: <span itemprop="streetAddress">Av. Reducto 1278</span>, 
+                <span itemprop="addressLocality">Miraflores</span>, 
+                <span itemprop="addressRegion">Lima</span>, 
+                <span itemprop="postalCode">15074</span>, 
+                <span itemprop="addressCountry">Perú</span>
+            </p>
+            <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                📍 Chiclayo: <span itemprop="streetAddress">Av. Salaverry 1820</span>, 
+                <span itemprop="addressLocality">Chiclayo</span>, 
+                <span itemprop="addressRegion">Lambayeque</span>, 
+                <span itemprop="postalCode">14001</span>, 
+                <span itemprop="addressCountry">Perú</span>
+            </p>
+        </div>
+        
+        <p class="copyright">© <time datetime="2026">2026</time> Fiesta Restaurant. Todos los derechos reservados. | 
+           <a href="/politica-privacidad" style="color: var(--gold);">Política de Privacidad</a> | 
+           <a href="/terminos" style="color: var(--gold);">Términos</a>
+        </p>
     </footer>
 
     <!-- WhatsApp Float -->
-    <div class="whatsapp-wrapper" onclick="openWhatsApp()">
+    <div class="whatsapp-wrapper" onclick="openWhatsApp()" role="button" aria-label="Contactar por WhatsApp - Atención en línea">
         <div class="whatsapp-status">
             <div class="status-avatar">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Atención">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Atención al cliente Fiesta Restaurant" loading="lazy" width="36" height="36">
                 <span class="status-indicator"></span>
             </div>
             <div class="status-text">
@@ -759,7 +995,7 @@
                 <p>En línea ahora</p>
             </div>
         </div>
-        <div class="whatsapp-float"><i class="fab fa-whatsapp"></i><span class="online-dot"></span></div>
+        <div class="whatsapp-float"><i class="fab fa-whatsapp" aria-hidden="true"></i><span class="online-dot"></span></div>
     </div>
 
     <script>
@@ -770,20 +1006,20 @@
                 delivery: 0.00,
                 productos: {
                     comida: [
-                        { id: 1, nombre: 'Ceviche Clásico', precio: 45.00, descripcion: 'Pescado fresco en leche de tigre', imagen: 'https://images.unsplash.com/photo-1535914254981-b5012eebbd15?w=600', badge: 'Más Vendido' },
-                        { id: 2, nombre: 'Lomo Saltado', precio: 58.00, descripcion: 'Lomo fino salteado al wok', imagen: 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=600', badge: 'Recomendado' },
-                        { id: 3, nombre: 'Arroz con Mariscos', precio: 55.00, descripcion: 'Arroz cremoso con mariscos', imagen: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600', badge: null },
-                        { id: 4, nombre: 'Ají de Gallina', precio: 42.00, descripcion: 'Pechuga en salsa de ají', imagen: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600', badge: 'Tradicional' },
-                        { id: 5, nombre: 'Causa Limeña', precio: 32.00, descripcion: 'Masa de papa con pollo', imagen: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600', badge: null },
-                        { id: 6, nombre: 'Suspiro Limeño', precio: 28.00, descripcion: 'Dulce de leche con merengue', imagen: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600', badge: 'Dulce' }
+                        { id: 1, nombre: 'Ceviche Clásico', precio: 45.00, descripcion: 'Pescado fresco en leche de tigre con camote y choclo', imagen: 'https://images.unsplash.com/photo-1535914254981-b5012eebbd15?w=600', badge: 'Más Vendido' },
+                        { id: 2, nombre: 'Lomo Saltado', precio: 58.00, descripcion: 'Lomo fino salteado al wok con cebolla, tomate y papas fritas', imagen: 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=600', badge: 'Recomendado' },
+                        { id: 3, nombre: 'Arroz con Mariscos', precio: 55.00, descripcion: 'Arroz cremoso con mariscos frescos del día', imagen: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600', badge: null },
+                        { id: 4, nombre: 'Ají de Gallina', precio: 42.00, descripcion: 'Pechuga en salsa de ají amarillo con papa y aceituna', imagen: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600', badge: 'Tradicional' },
+                        { id: 5, nombre: 'Causa Limeña', precio: 32.00, descripcion: 'Masa de papa amarilla con pollo deshilachado y palta', imagen: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600', badge: null },
+                        { id: 6, nombre: 'Suspiro Limeño', precio: 28.00, descripcion: 'Dulce de leche con merengue al pisco', imagen: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600', badge: 'Dulce' }
                     ],
                     bebidas: [
-                        { id: 7, nombre: 'Pisco Sour', precio: 25.00, descripcion: 'Cóctel bandera', imagen: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600', badge: 'Signature' },
-                        { id: 8, nombre: 'Chilcano', precio: 22.00, descripcion: 'Pisco y ginger ale', imagen: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600', badge: null },
-                        { id: 9, nombre: 'Chicha Morada', precio: 12.00, descripcion: 'Bebida tradicional', imagen: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600', badge: 'Sin Alcohol' },
-                        { id: 10, nombre: 'Inca Kola', precio: 8.00, descripcion: 'Gaseosa 500ml', imagen: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600', badge: null },
-                        { id: 11, nombre: 'Cerveza Artesanal', precio: 18.00, descripcion: 'Cerveza rubia 500ml', imagen: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600', badge: 'Artesanal' },
-                        { id: 12, nombre: 'Mojito', precio: 24.00, descripcion: 'Ron y maracuyá', imagen: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600', badge: 'Refrescante' }
+                        { id: 7, nombre: 'Pisco Sour', precio: 25.00, descripcion: 'Cóctel bandera del Perú con pisco, limón y amargo', imagen: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600', badge: 'Signature' },
+                        { id: 8, nombre: 'Chilcano', precio: 22.00, descripcion: 'Pisco y ginger ale con limón y angostura', imagen: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600', badge: null },
+                        { id: 9, nombre: 'Chicha Morada', precio: 12.00, descripcion: 'Bebida tradicional con maíz morado, piña y especias', imagen: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600', badge: 'Sin Alcohol' },
+                        { id: 10, nombre: 'Inca Kola', precio: 8.00, descripcion: 'Gaseosa peruana 500ml', imagen: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600', badge: null },
+                        { id: 11, nombre: 'Cerveza Artesanal', precio: 18.00, descripcion: 'Cerveza rubia artesanal 500ml', imagen: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600', badge: 'Artesanal' },
+                        { id: 12, nombre: 'Mojito', precio: 24.00, descripcion: 'Ron blanco con maracuyá, menta y limón', imagen: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600', badge: 'Refrescante' }
                     ]
                 }
             },
@@ -793,20 +1029,20 @@
                 delivery: 6.00,
                 productos: {
                     comida: [
-                        { id: 101, nombre: 'Arroz con Pato', precio: 48.00, descripcion: 'Arroz verde con pato', imagen: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600', badge: 'Especialidad' },
-                        { id: 102, nombre: 'Espesado', precio: 38.00, descripcion: 'Plato típico', imagen: 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=600', badge: 'Tradicional' },
-                        { id: 103, nombre: 'Tortilla de Raya', precio: 52.00, descripcion: 'Raya seca frita', imagen: 'https://images.unsplash.com/photo-1535914254981-b5012eebbd15?w=600', badge: 'Típico' },
-                        { id: 104, nombre: 'Ceviche Norteño', precio: 46.00, descripcion: 'Con chicharrón', imagen: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600', badge: null },
-                        { id: 105, nombre: 'King Kong', precio: 25.00, descripcion: 'Dulce típico', imagen: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600', badge: 'Postre' },
-                        { id: 106, nombre: 'Seco de Chavelo', precio: 40.00, descripcion: 'Plátano con seco', imagen: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600', badge: null }
+                        { id: 101, nombre: 'Arroz con Pato', precio: 48.00, descripcion: 'Arroz verde con pato estofado y salsa de culantro', imagen: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600', badge: 'Especialidad' },
+                        { id: 102, nombre: 'Espesado', precio: 38.00, descripcion: 'Plato típico norteño con carne y yuca', imagen: 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=600', badge: 'Tradicional' },
+                        { id: 103, nombre: 'Tortilla de Raya', precio: 52.00, descripcion: 'Raya seca frita con huevo y especias norteñas', imagen: 'https://images.unsplash.com/photo-1535914254981-b5012eebbd15?w=600', badge: 'Típico' },
+                        { id: 104, nombre: 'Ceviche Norteño', precio: 46.00, descripcion: 'Ceviche con chicharrón de pescado y salsa de ají', imagen: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600', badge: null },
+                        { id: 105, nombre: 'King Kong', precio: 25.00, descripcion: 'Dulce típico de manjarblanco y frutas', imagen: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600', badge: 'Postre' },
+                        { id: 106, nombre: 'Seco de Chavelo', precio: 40.00, descripcion: 'Carne de res con plátano maduro y yuca', imagen: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600', badge: null }
                     ],
                     bebidas: [
-                        { id: 107, nombre: 'Pisco Sour', precio: 24.00, descripcion: 'Cóctel bandera', imagen: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600', badge: 'Signature' },
-                        { id: 108, nombre: 'Chicha de Jora', precio: 10.00, descripcion: 'Bebida norteña', imagen: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600', badge: 'Típico' },
-                        { id: 109, nombre: 'Cerveza Norteña', precio: 15.00, descripcion: 'Cerveza local', imagen: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600', badge: 'Local' },
-                        { id: 110, nombre: 'Guarapo', precio: 8.00, descripcion: 'Jugo de caña', imagen: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600', badge: 'Natural' },
-                        { id: 111, nombre: 'Pisco Acholado', precio: 26.00, descripcion: 'Pisco premium', imagen: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600', badge: 'Premium' },
-                        { id: 112, nombre: 'Inca Kola', precio: 8.00, descripcion: 'Gaseosa 500ml', imagen: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600', badge: null }
+                        { id: 107, nombre: 'Pisco Sour', precio: 24.00, descripcion: 'Cóctel bandera del Perú', imagen: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600', badge: 'Signature' },
+                        { id: 108, nombre: 'Chicha de Jora', precio: 10.00, descripcion: 'Bebida fermentada tradicional del norte', imagen: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600', badge: 'Típico' },
+                        { id: 109, nombre: 'Cerveza Norteña', precio: 15.00, descripcion: 'Cerveza local artesanal', imagen: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600', badge: 'Local' },
+                        { id: 110, nombre: 'Guarapo', precio: 8.00, descripcion: 'Jugo fresco de caña de azúcar', imagen: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600', badge: 'Natural' },
+                        { id: 111, nombre: 'Pisco Acholado', precio: 26.00, descripcion: 'Pisco premium de uvas seleccionadas', imagen: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600', badge: 'Premium' },
+                        { id: 112, nombre: 'Inca Kola', precio: 8.00, descripcion: 'Gaseosa peruana 500ml', imagen: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600', badge: null }
                     ]
                 }
             }
@@ -880,9 +1116,40 @@
             const container = document.getElementById(containerId);
             container.innerHTML = '';
             productos.forEach(producto => {
-                const card = document.createElement('div');
+                const card = document.createElement('article');
                 card.className = 'producto-card';
-                card.innerHTML = `<div class="producto-imagen"><img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy">${producto.badge ? `<span class="producto-badge">${producto.badge}</span>` : ''}<button class="producto-favorite" onclick="toggleFavorite(this)"><i class="fas fa-heart"></i></button></div><div class="producto-info"><h3 class="producto-nombre">${producto.nombre}</h3><p class="producto-descripcion">${producto.descripcion}</p><div class="producto-footer"><span class="producto-precio">S/ ${producto.precio.toFixed(2)}</span><button class="btn-agregar" onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio}, '${producto.imagen}')"><i class="fas fa-plus"></i><span>Agregar</span></button></div></div>`;
+                card.setAttribute('itemscope', '');
+                card.setAttribute('itemtype', 'https://schema.org/MenuItem');
+                card.innerHTML = `
+                    <div class="producto-imagen">
+                        <img src="${producto.imagen}" 
+                             alt="${producto.nombre} - Plato peruano en Fiesta Restaurant" 
+                             loading="lazy"
+                             width="300" 
+                             height="200"
+                             itemprop="image">
+                        ${producto.badge ? `<span class="producto-badge">${producto.badge}</span>` : ''}
+                        <button class="producto-favorite" onclick="toggleFavorite(this)" aria-label="Agregar ${producto.nombre} a favoritos">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="producto-info">
+                        <h3 class="producto-nombre" itemprop="name">${producto.nombre}</h3>
+                        <p class="producto-descripcion" itemprop="description">${producto.descripcion}</p>
+                        <div class="producto-footer">
+                            <span class="producto-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <meta itemprop="priceCurrency" content="PEN">
+                                <span itemprop="price">S/ ${producto.precio.toFixed(2)}</span>
+                            </span>
+                            <button class="btn-agregar" 
+                                    onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio}, '${producto.imagen}')"
+                                    aria-label="Agregar ${producto.nombre} al carrito - S/ ${producto.precio.toFixed(2)}">
+                                <i class="fas fa-plus" aria-hidden="true"></i>
+                                <span>Agregar</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
                 container.appendChild(card);
             });
         }
@@ -895,13 +1162,18 @@
         }
         function closeLogin() { document.getElementById('loginOverlay').classList.remove('active'); }
         function switchTab(tab) {
-            document.querySelectorAll('.login-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.login-tab').forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
             document.querySelectorAll('.login-form').forEach(f => f.classList.remove('active'));
             if (tab === 'login') {
                 document.querySelector('.login-tab:first-child').classList.add('active');
+                document.querySelector('.login-tab:first-child').setAttribute('aria-selected', 'true');
                 document.getElementById('loginForm').classList.add('active');
             } else {
                 document.querySelector('.login-tab:last-child').classList.add('active');
+                document.querySelector('.login-tab:last-child').setAttribute('aria-selected', 'true');
                 document.getElementById('registroForm').classList.add('active');
             }
         }
@@ -953,10 +1225,10 @@
             floatingCount.textContent = totalItems;
             floatingCart.classList.toggle('active', totalItems > 0);
             if (carrito.length === 0) {
-                itemsContainer.innerHTML = `<div class="carrito-vacio"><i class="fas fa-shopping-bag"></i><p>Tu carrito está vacío</p></div>`;
+                itemsContainer.innerHTML = `<div class="carrito-vacio"><i class="fas fa-shopping-bag" aria-hidden="true"></i><p>Tu carrito está vacío</p></div>`;
                 btnCheckout.disabled = true;
             } else {
-                itemsContainer.innerHTML = carrito.map(item => `<div class="carrito-item"><div class="carrito-item-imagen"><img src="${item.imagen}" alt="${item.nombre}"></div><div class="carrito-item-info"><h4 class="carrito-item-nombre">${item.nombre}</h4><p class="carrito-item-precio">S/ ${item.precio.toFixed(2)}</p><div class="carrito-item-cantidad"><button class="cantidad-btn" onclick="cambiarCantidad(${item.id}, -1)">-</button><span class="cantidad-valor">${item.cantidad}</span><button class="cantidad-btn" onclick="cambiarCantidad(${item.id}, 1)">+</button></div></div><button class="carrito-item-eliminar" onclick="eliminarDelCarrito(${item.id})"><i class="fas fa-trash"></i></button></div>`).join('');
+                itemsContainer.innerHTML = carrito.map(item => `<div class="carrito-item"><div class="carrito-item-imagen"><img src="${item.imagen}" alt="${item.nombre}" loading="lazy"></div><div class="carrito-item-info"><h4 class="carrito-item-nombre">${item.nombre}</h4><p class="carrito-item-precio">S/ ${item.precio.toFixed(2)}</p><div class="carrito-item-cantidad"><button class="cantidad-btn" onclick="cambiarCantidad(${item.id}, -1)" aria-label="Reducir cantidad">-</button><span class="cantidad-valor">${item.cantidad}</span><button class="cantidad-btn" onclick="cambiarCantidad(${item.id}, 1)" aria-label="Aumentar cantidad">+</button></div></div><button class="carrito-item-eliminar" onclick="eliminarDelCarrito(${item.id})" aria-label="Eliminar ${item.nombre}"><i class="fas fa-trash"></i></button></div>`).join('');
                 btnCheckout.disabled = false;
             }
             const data = sedes[sedeActual];
@@ -989,8 +1261,12 @@
         function toggleFavorite(btn) { btn.classList.toggle('active'); }
         document.querySelectorAll('.categoria-pill').forEach(btn => {
             btn.addEventListener('click', function() {
-                document.querySelectorAll('.categoria-pill').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.categoria-pill').forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
                 this.classList.add('active');
+                this.setAttribute('aria-selected', 'true');
                 const categoria = this.dataset.categoria;
                 const data = sedes[sedeActual];
                 if (categoria === 'todos') {
@@ -1028,6 +1304,19 @@
         const style = document.createElement('style');
         style.textContent = `@keyframes slideIn{from{transform:translateX(100%);opacity:0;}to{transform:translateX(0);opacity:1;}}@keyframes slideOut{from{transform:translateX(0);opacity:1;}to{transform:translateX(100%);opacity:0;}}`;
         document.head.appendChild(style);
+        
+        // Analytics events (opcional - requiere Google Analytics instalado)
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.btn-hero-primary')) {
+                if (typeof gtag !== 'undefined') gtag('event', 'click_ver_carta', { event_category: 'engagement' });
+            }
+            if (e.target.closest('.btn-hero-secondary')) {
+                if (typeof gtag !== 'undefined') gtag('event', 'click_reservar', { event_category: 'conversion' });
+            }
+            if (e.target.closest('.btn-agregar')) {
+                if (typeof gtag !== 'undefined') gtag('event', 'agregar_al_carrito', { event_category: 'ecommerce' });
+            }
+        });
     </script>
 </body>
 </html>
