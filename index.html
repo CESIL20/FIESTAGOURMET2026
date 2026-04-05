@@ -1285,9 +1285,9 @@
             const delivery = data.delivery;
             const total = subtotal + delivery;
             const mensaje = `*🍽️ PEDIDO FIESTA - ${data.nombre.toUpperCase()}*%0A%0A${carrito.map(item => `• ${item.nombre} x${item.cantidad} - S/ ${(item.precio * item.cantidad).toFixed(2)}`).join('%0A')}%0A%0A─────────────%0ASubtotal: S/ ${subtotal.toFixed(2)}%0ADelivery: S/ ${delivery.toFixed(2)}%0A*TOTAL: S/ ${total.toFixed(2)}*%0A%0A📍 ${data.direccion}%0A📞 ${data.telefono}%0A%0ADirección de entrega:`;
-            window.open(`https://wa.me/51927743956?text=${mensaje}`, '_blank');
+            window.open(`https://wa.me/51932483302?text=${mensaje}`, '_blank');
         }
-        function openWhatsApp() { window.open('https://wa.me/51927743956?text=Hola,%20quisiera%20más%20información', '_blank'); }
+        function openWhatsApp() { window.open('https://wa.me/51932483302?text=Hola,%20quisiera%20más%20información', '_blank'); }
         function mostrarNotificacion(mensaje) {
             const notificacion = document.createElement('div');
             notificacion.style.cssText = `position:fixed;top:80px;right:15px;background:var(--gold);color:var(--black);padding:12px 20px;border-radius:6px;z-index:6000;font-size:13px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,0.3);animation:slideIn 0.3s ease;`;
