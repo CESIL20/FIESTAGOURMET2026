@@ -43,12 +43,12 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
 .hdr {
     position:fixed; width:100%; top:0; z-index:1000; padding:20px 24px;
     transition:padding var(--t), background var(--t);
-    background:transparent;
+    background:black;
     border-bottom:1px solid transparent;
 }
 .hdr.sc {
     padding:12px 24px;
-    background:rgba(10,10,10,0.95);
+    background:white;
     border-bottom-color:var(--border);
     backdrop-filter:blur(12px);
 }
@@ -96,7 +96,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
 .hero { position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; overflow:hidden }
 .hero-bg {
     position:absolute; inset:0;
-    background:url('fachada_fiesta.jpg') center/cover no-repeat;
+    background:url('mesa1.jpeg') center/cover no-repeat;
     transform:scale(1.05);
     transition:transform 8s ease-out;
 }
