@@ -48,7 +48,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
 }
 .hdr.sc {
     padding:12px 24px;
-    background:white;
+    background:black;
     border-bottom-color:var(--border);
     backdrop-filter:blur(12px);
 }
