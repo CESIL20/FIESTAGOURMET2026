@@ -43,7 +43,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
 .hdr {
     position:fixed; width:100%; top:0; z-index:1000; padding:20px 24px;
     transition:padding var(--t), background var(--t);
-    background:transparent;
+    background:rgba(10,10,10,0.95);
     border-bottom:1px solid transparent;
 }
 .hdr.sc {
