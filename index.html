@@ -49,8 +49,8 @@
         "telephone": "+51932483302",
         "servesCuisine": ["Peruvian", "Seafood", "Gourmet"],
         "priceRange": "$$",
-        "hasMenu": "https://cartafiestalima.my.canva.site/",
-        "acceptsReservations": "https://fiesta.mesa247.pe/reservas/",
+        "hasMenu": "https://www.restaurantfiestagourmet.pe/deliverylima",
+        "acceptsReservations": "https://www.restaurantfiestagourmet.pe/lima/reservas",
         "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"1247","bestRating":"5"},
         "foundingDate": "1994",
         "url": "https://fiestarestaurant.pe"
@@ -115,21 +115,30 @@
         <!-- Cabecera del widget -->
         <div class="resv-hdr">
             <div class="resv-hdr-left">
-                <img src="logo.png" alt="Fiesta Restaurant" height="26" style="filter:brightness(0.9)">
+                <img src="logo.png" alt="Fiesta Restaurant" style="height:28px; width:auto; max-width:100px; object-fit:contain; filter:brightness(0.85); display:block;">
                 <div class="resv-hdr-info">
                     <span class="resv-hdr-title" id="resvTitle">Reservar Mesa</span>
                     <span class="resv-hdr-sede" id="resvSubtitle">Lima — Miraflores</span>
                 </div>
             </div>
             <div style="display:flex;align-items:center;gap:8px">
-                <!-- Selector de sede dentro del widget -->
+                <!-- Selector de sede -->
                 <div class="resv-sede-sw" id="resvSedeSw">
                     <button class="resv-sw-b on" onclick="switchResvSede('lima')" data-sede="lima">Lima</button>
                     <button class="resv-sw-b" onclick="switchResvSede('chiclayo')" data-sede="chiclayo">Chiclayo</button>
                 </div>
-                <button class="resv-close" onclick="cerrarModalReserva()" aria-label="Cerrar reserva">
-                    <i class="fas fa-times"></i>
-                </button>
+                <!-- Controles -->
+                <div class="resv-controls">
+                    <button class="resv-ctrl" onclick="resvMinimize(event)" aria-label="Minimizar" title="Minimizar">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="resv-ctrl" onclick="resvMaximize(event)" aria-label="Maximizar" title="Maximizar" id="resvMaxBtn">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <button class="resv-close" onclick="cerrarModalReserva()" aria-label="Cerrar reserva" title="Cerrar">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -236,17 +245,15 @@
             <div class="hero-ov"></div>
             <div class="hero-grain"></div>
             <div class="hc">
-                <p class="hc-eyebrow"></p>
-                <h1 class="hc-title" id="heroTitle">Bienvenidos <br><em>a nuestra casa</em></h1>
-                <div class="hc-line"></div>
-                <p class="hc-sub">Selecciona tu sede.</p>
+                
+                <p class="hc-sub">Selecciona su sede y disfrute suexperiencia gastronómica en</p>
                 <div class="sede-sel" role="group" aria-label="Seleccionar sede">
                     <button class="sede-b on" onclick="cambiarSede('lima')" aria-pressed="true">Lima</button>
                     <button class="sede-b" onclick="cambiarSede('chiclayo')" aria-pressed="false">Chiclayo</button>
                 </div>
                 <div class="sede-card" id="sedeInfo" aria-live="polite"></div>
                 <div class="hc-btns">
-                    <button class="btn btn-f" onclick="window.open('https://cartafiestalima.my.canva.site/','_blank')"><i class="fas fa-book-open"></i> Ver Carta Digital</button>
+                    <button class="btn btn-f" onclick="abrirCarta()"><i class="fas fa-book-open"></i> Ver Carta Digital</button>
                     <button class="btn btn-o" onclick="reservarDirecto()"><i class="fas fa-calendar-alt"></i> Reservar Mesa</button>
                 </div>
             </div>
@@ -292,38 +299,6 @@
             </div>
         </section>
 
-        <!-- POR QUÉ NOSOTROS -->
-        <section class="why" id="porquenos" aria-labelledby="whyTitle">
-            <div class="sc">
-                <div style="text-align:center" class="reveal">
-                    <p class="ey" style="justify-content:center">Nuestra Diferencia</p>
-                    <h2 class="st" id="whyTitle" style="max-width:500px;margin:0 auto 8px">Por qué elegir<br><em>Fiesta Restaurant</em></h2>
-                </div>
-                <div class="why-grid">
-                    <div class="why-card reveal reveal-d1">
-                        <div class="why-ic"><i class="fas fa-fish"></i></div>
-                        <h3>Pesca del Día</h3>
-                        <p>Trabajamos directamente con pescadores artesanales para garantizar la frescura y calidad en cada plato marino.</p>
-                    </div>
-                    <div class="why-card reveal reveal-d2">
-                        <div class="why-ic"><i class="fas fa-award"></i></div>
-                        <h3>Cocina de Autor</h3>
-                        <p>Nuestros chefs fusionan técnicas modernas con recetas tradicionales para crear experiencias únicas e irrepetibles.</p>
-                    </div>
-                    <div class="why-card reveal reveal-d3">
-                        <div class="why-ic"><i class="fas fa-glass-cheers"></i></div>
-                        <h3>Cócteles Signature</h3>
-                        <p>Pisco Sours, chilcanos y creaciones exclusivas elaboradas con ingredientes seleccionados por nuestros bartenders.</p>
-                    </div>
-                    <div class="why-card reveal reveal-d4">
-                        <div class="why-ic"><i class="fas fa-concierge-bell"></i></div>
-                        <h3>Servicio Premium</h3>
-                        <p>Atención personalizada, ambiente cálido y dedicación total para que cada visita sea un recuerdo imborrable.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- SPOTLIGHT -->
         <section class="spot" id="spotlight" aria-labelledby="spotlightTitle">
             <div class="spot-inner">
@@ -338,7 +313,7 @@
                     <div class="spot-price">S/ 200.00 <span>/ porción</span></div>
                     <div style="display:flex;gap:10px;flex-wrap:wrap">
                         <button class="btn btn-f" onclick="addCart(6,'Ceviche Super Fiesta',200,'fiest1.jpeg')"><i class="fas fa-plus"></i> Agregar al Pedido</button>
-                        <button class="btn btn-o" onclick="window.open('https://cartafiestalima.my.canva.site/','_blank')"><i class="fas fa-book-open"></i> Ver Carta</button>
+                        <button class="btn btn-o" onclick="abrirCarta()"><i class="fas fa-book-open"></i> Ver Carta</button>
                     </div>
                 </div>
             </div>
@@ -501,17 +476,9 @@
                         <li><a href="https://wa.me/51932483302"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
                     </ul>
                 </div>
-                <div class="ftr-col">
-                    <h4>Newsletter</h4>
-                    <p style="font-size:10px;color:rgba(161,161,170,0.25);margin-bottom:10px;line-height:1.7">Promociones y novedades del menú directamente en tu correo.</p>
-                    <div class="ftr-nl">
-                        <form onsubmit="subscribeNewsletter(event)">
-                            <input type="email" class="ftr-nl-input" placeholder="tu@email.com" required aria-label="Tu email">
-                            <button type="submit" class="ftr-nl-btn">Suscribir</button>
-                        </form>
-                    </div>
-                </div>
+                
             </div>
+            <!-- /ftr-grid -->
             <div class="ftr-ornament" style="margin-top:44px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,110,0.08) 30%,rgba(201,169,110,0.08) 70%,transparent)"></div>
             <div class="ftr-divider"><div class="ftr-divider-line"><div class="ftr-diamond"></div></div></div>
             <div class="ftr-bot">
@@ -521,13 +488,98 @@
         </div>
     </footer>
 
-    <!-- CARRITO -->
+    <!-- WIDGET CARTA DIGITAL -->
+    <div class="carta-ov" id="cartaOv" aria-hidden="true"></div>
+    <div class="carta-widget" id="cartaWidget" role="dialog" aria-modal="true" aria-labelledby="cartaWidgetTitle">
+
+        <!-- Cabecera -->
+        <div class="carta-hdr">
+            <div class="carta-hdr-left">
+                <div class="carta-hdr-icon"><i class="fas fa-book-open"></i></div>
+                <div class="carta-hdr-info">
+                    <span class="carta-hdr-title" id="cartaWidgetTitle">Carta Digital</span>
+                    <span class="carta-hdr-sub" id="cartaWidgetSede">Fiesta Restaurant</span>
+                </div>
+            </div>
+            <div class="carta-controls">
+                <button class="carta-ctrl" onclick="cartaMinimize(event)" aria-label="Minimizar" title="Minimizar">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="carta-ctrl" onclick="cartaMaximize(event)" aria-label="Maximizar" title="Maximizar" id="cartaMaxBtn">
+                    <i class="fas fa-expand"></i>
+                </button>
+                <a href="https://cartafiestalima.my.canva.site/" target="_blank" rel="noopener" class="carta-ctrl" aria-label="Abrir en nueva pestaña" title="Abrir en nueva pestaña">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <button class="carta-close" onclick="cerrarCarta()" aria-label="Cerrar carta" title="Cerrar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Barra de carga -->
+        <div class="carta-loader-bar-wrap" id="cartaLoaderWrap">
+            <div class="carta-loader-fill" id="cartaLoaderFill"></div>
+        </div>
+
+        <!-- Iframe con sandbox permisivo -->
+        <div class="carta-frame-wrap">
+            <iframe
+                id="cartaIframe"
+                src=""
+                title="Carta digital Fiesta Restaurant"
+                frameborder="0"
+                loading="lazy"
+                class="carta-iframe"
+                sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-top-navigation-by-user-activation"
+                referrerpolicy="no-referrer"
+                onload="onCartaLoad()"
+            ></iframe>
+            <!-- Placeholder mientras carga -->
+            <div class="carta-placeholder" id="cartaPlaceholder">
+                <div class="carta-spinner-ring"></div>
+                <p>Cargando carta…</p>
+            </div>
+            <!-- Fallback si Canva bloquea -->
+            <div class="carta-fallback" id="cartaFallback">
+                <i class="fas fa-book-open"></i>
+                <p>La carta se abrirá en una ventana aparte</p>
+                <a href="https://cartafiestalima.my.canva.site/" target="_blank" rel="noopener" class="carta-fallback-btn" onclick="cerrarCarta()">
+                    <i class="fas fa-external-link-alt"></i> Ver Carta Completa
+                </a>
+            </div>
+        </div>
+
+        <!-- Pie -->
+        <div class="carta-foot">
+            <span><i class="fas fa-utensils"></i> Menú actualizado 2025</span>
+            <a href="https://cartafiestalima.my.canva.site/" target="_blank" rel="noopener" class="carta-foot-link">
+                <i class="fas fa-external-link-alt"></i> Abrir en nueva pestaña
+            </a>
+        </div>
+    </div>
+
+    <!-- CARRITO — panel flotante draggable -->
     <div class="cart-ov" id="cartOv" onclick="toggleCart()"></div>
     <div class="cart-sh" id="cartSh" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
-        <div class="cart-handle" onclick="toggleCart()"></div>
-        <div class="cart-hdr">
-            <h2 id="cartTitle">Tu Pedido — <span id="cartSede">Lima</span></h2>
-            <button class="cart-x" onclick="toggleCart()" aria-label="Cerrar carrito"><i class="fas fa-times"></i></button>
+        <!-- Handle de arrastre -->
+        <div class="cart-drag-handle" id="cartDragHandle">
+            <div class="cart-drag-pip"></div>
+        </div>
+        <!-- Header draggable con controles -->
+        <div class="cart-hdr" id="cartHdr">
+            <h2 id="cartTitle">Pedido — <span id="cartSede">Lima</span></h2>
+            <div class="cart-controls">
+                <button class="cart-ctrl mini"  onclick="cartMinimize(event)" title="Minimizar" aria-label="Minimizar">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="cart-ctrl maxi"  onclick="cartMaximize(event)" title="Maximizar" aria-label="Maximizar">
+                    <i class="fas fa-expand"></i>
+                </button>
+                <button class="cart-ctrl close" onclick="toggleCart()"        title="Cerrar"    aria-label="Cerrar carrito">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
         </div>
         <div class="cart-items" id="cartItems" aria-live="polite">
             <div class="cart-empty"><i class="fas fa-shopping-bag"></i><p>Tu carrito está vacío</p></div>

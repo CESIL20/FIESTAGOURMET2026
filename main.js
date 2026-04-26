@@ -56,6 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initSearch();
     initKeyboard();
     initHeroBg();
+    initCartDrag();
+    window.addEventListener('resize', () => { if (cartIsOpen) cartResetPos(); });
 
     const s = sessionStorage.getItem('fiestaUsr');
     if (s) {
@@ -298,14 +300,130 @@ function chgQ(id, d) {
 }
 function delI(id) { carrito = carrito.filter(i => i.id !== id); updCart(); toast('Producto eliminado', 'warning') }
 
+// ===== CARRITO — PANEL FLOTANTE DRAGGABLE =====
+let cartIsOpen = false;
+
 function toggleCart() {
-    const sh = document.getElementById('cartSh'), ov = document.getElementById('cartOv');
-    sh.classList.toggle('on'); ov.classList.toggle('on');
-    document.body.style.overflow = sh.classList.contains('on') ? 'hidden' : '';
+    const sh = document.getElementById('cartSh');
+    const ov = document.getElementById('cartOv');
+    cartIsOpen = !cartIsOpen;
+    sh.classList.toggle('on', cartIsOpen);
+    ov.classList.toggle('on', cartIsOpen);
+    // Solo bloquear scroll en móvil
+    if (window.innerWidth < 640) {
+        document.body.style.overflow = cartIsOpen ? 'hidden' : '';
+    }
+    // Al abrir: resetear a posición por defecto si fue arrastrado fuera de pantalla
+    if (cartIsOpen) {
+        cartResetPos();
+        sh.classList.remove('minimized');
+    }
 }
 
+function cartMinimize(e) {
+    e.stopPropagation();
+    const sh = document.getElementById('cartSh');
+    sh.classList.toggle('minimized');
+    sh.classList.remove('maximized');
+    const btn = e.currentTarget;
+    btn.querySelector('i').className = sh.classList.contains('minimized')
+        ? 'fas fa-chevron-up' : 'fas fa-minus';
+}
+
+function cartMaximize(e) {
+    e.stopPropagation();
+    const sh = document.getElementById('cartSh');
+    const isMaxi = sh.classList.toggle('maximized');
+    sh.classList.remove('minimized');
+    const btn = e.currentTarget;
+    btn.querySelector('i').className = isMaxi ? 'fas fa-compress' : 'fas fa-expand';
+    if (isMaxi) cartResetPos();
+}
+
+function cartResetPos() {
+    const sh = document.getElementById('cartSh');
+    // Solo en desktop — en móvil usa bottom:0
+    if (window.innerWidth >= 640) {
+        sh.style.right  = '16px';
+        sh.style.bottom = '24px';
+        sh.style.left   = 'auto';
+        sh.style.top    = 'auto';
+    }
+}
+
+// ── DRAG ─────────────────────────────────────────────────────────────────────
+function initCartDrag() {
+    if (window.innerWidth < 640) return; // sin drag en móvil
+
+    const sh      = document.getElementById('cartSh');
+    const handle  = document.getElementById('cartDragHandle');
+    const hdr     = document.getElementById('cartHdr');
+    let dragging  = false, startX = 0, startY = 0, origLeft = 0, origTop = 0;
+
+    function dragStart(cx, cy) {
+        if (sh.classList.contains('minimized')) return;
+        dragging = true;
+        sh.classList.add('dragging');
+        // Convertir de right/bottom a left/top para poder mover libremente
+        const rect = sh.getBoundingClientRect();
+        sh.style.left   = rect.left + 'px';
+        sh.style.top    = rect.top  + 'px';
+        sh.style.right  = 'auto';
+        sh.style.bottom = 'auto';
+        origLeft = rect.left;
+        origTop  = rect.top;
+        startX   = cx;
+        startY   = cy;
+    }
+
+    function dragMove(cx, cy) {
+        if (!dragging) return;
+        const dx = cx - startX, dy = cy - startY;
+        const newLeft = origLeft + dx;
+        const newTop  = origTop  + dy;
+        // Mantener dentro de la ventana
+        const maxL = window.innerWidth  - sh.offsetWidth;
+        const maxT = window.innerHeight - sh.offsetHeight;
+        sh.style.left = Math.max(0, Math.min(newLeft, maxL)) + 'px';
+        sh.style.top  = Math.max(0, Math.min(newTop,  maxT)) + 'px';
+    }
+
+    function dragEnd() {
+        if (!dragging) return;
+        dragging = false;
+        sh.classList.remove('dragging');
+    }
+
+    // Mouse
+    [handle, hdr].forEach(el => {
+        el.addEventListener('mousedown', e => {
+            if (e.target.closest('.cart-controls')) return;
+            e.preventDefault();
+            dragStart(e.clientX, e.clientY);
+        });
+    });
+    document.addEventListener('mousemove', e => dragMove(e.clientX, e.clientY));
+    document.addEventListener('mouseup',   dragEnd);
+
+    // Touch
+    [handle, hdr].forEach(el => {
+        el.addEventListener('touchstart', e => {
+            if (e.target.closest('.cart-controls')) return;
+            const t = e.touches[0];
+            dragStart(t.clientX, t.clientY);
+        }, { passive:true });
+    });
+    document.addEventListener('touchmove', e => {
+        if (!dragging) return;
+        e.preventDefault();
+        const t = e.touches[0];
+        dragMove(t.clientX, t.clientY);
+    }, { passive:false });
+    document.addEventListener('touchend', dragEnd);
+}
+
+
 function checkout() {
-    // Login requerido solo al confirmar pedido
     if (!logged) {
         openLogin();
         toast('Inicia sesión para confirmar tu pedido', 'warning');
@@ -317,6 +435,7 @@ function checkout() {
         `%0A%0A─────────────%0ASubtotal: S/ ${sub.toFixed(2)}%0ADelivery: S/ ${d.delivery.toFixed(2)}%0A*TOTAL: S/ ${tot.toFixed(2)}*%0A%0A${d.direccion}%0A%0ADirección de entrega:`;
     window.open(`https://wa.me/51932483302?text=${msg}`, '_blank');
 }
+
 
 // ===== FAVORITOS =====
 function toggleFav(btn) {
@@ -375,8 +494,29 @@ function cerrarModalReserva() {
     ov.classList.remove('on');
     ov.setAttribute('aria-hidden','true');
     wid.classList.remove('on');
+    wid.classList.remove('minimized','maximized');
     document.body.style.overflow = '';
     setTimeout(() => { iframe.src = '' }, 460);
+}
+
+function resvMinimize(e) {
+    e.stopPropagation();
+    const wid = document.getElementById('resvWidget');
+    const isMin = wid.classList.toggle('minimized');
+    wid.classList.remove('maximized');
+    e.currentTarget.querySelector('i').className = isMin ? 'fas fa-chevron-down' : 'fas fa-minus';
+    document.getElementById('resvMaxBtn').querySelector('i').className = 'fas fa-expand';
+}
+
+function resvMaximize(e) {
+    e.stopPropagation();
+    const wid = document.getElementById('resvWidget');
+    const isMax = wid.classList.toggle('maximized');
+    wid.classList.remove('minimized');
+    e.currentTarget.querySelector('i').className = isMax ? 'fas fa-compress' : 'fas fa-expand';
+    // Resetear icono de minimizar
+    const minBtn = document.querySelector('.resv-ctrl[onclick*="resvMinimize"] i');
+    if (minBtn) minBtn.className = 'fas fa-minus';
 }
 
 function switchResvSede(sede) {
@@ -509,3 +649,110 @@ document.getElementById('moLogin')?.addEventListener('click', e => {
 
 // Overlay reserva — click directo sobre él (no sobre el widget)
 document.getElementById('resvOv').addEventListener('click', cerrarModalReserva);
+// ===== WIDGET CARTA DIGITAL (iframe con detección de bloqueo) =====
+const CARTA_URL = 'https://cartafiestalima.my.canva.site/';
+let cartaBlockTimer = null;
+
+function abrirCarta() {
+    const ov          = document.getElementById('cartaOv');
+    const wid         = document.getElementById('cartaWidget');
+    const iframe      = document.getElementById('cartaIframe');
+    const placeholder = document.getElementById('cartaPlaceholder');
+    const loader      = document.getElementById('cartaLoaderWrap');
+    const fallback    = document.getElementById('cartaFallback');
+
+    // Reset
+    iframe.classList.remove('visible');
+    placeholder.classList.remove('hide');
+    fallback.classList.remove('show');
+    loader.classList.remove('done','hide');
+
+    // Subtítulo
+    const sub = document.getElementById('cartaWidgetSede');
+    if (sub) sub.textContent = 'Fiesta ' + (sedes[sedeAct]?.nombre || 'Restaurant');
+
+    ov.classList.add('on');
+    ov.removeAttribute('aria-hidden');
+    wid.classList.add('on');
+    document.body.style.overflow = 'hidden';
+
+    // Cargar iframe con delay para que la animación de entrada sea visible
+    setTimeout(() => {
+        iframe.src = CARTA_URL;
+
+        // Si en 8 segundos no cargó → mostrar fallback (Canva bloqueó)
+        cartaBlockTimer = setTimeout(() => {
+            if (!iframe.classList.contains('visible')) {
+                placeholder.classList.add('hide');
+                fallback.classList.add('show');
+                loader.classList.add('hide');
+            }
+        }, 8000);
+    }, 220);
+
+    setTimeout(() => document.querySelector('.carta-close')?.focus(), 440);
+}
+
+function onCartaLoad() {
+    clearTimeout(cartaBlockTimer);
+    const iframe      = document.getElementById('cartaIframe');
+    const placeholder = document.getElementById('cartaPlaceholder');
+    const loader      = document.getElementById('cartaLoaderWrap');
+
+    // Intentar detectar si Canva redirigió a una página de error
+    try {
+        const doc = iframe.contentDocument || iframe.contentWindow?.document;
+        // Si podemos leer el documento y está vacío o tiene error → fallback
+        if (doc && (doc.title === '' || doc.body?.innerHTML === '')) {
+            throw new Error('blocked');
+        }
+    } catch(e) {
+        // Cross-origin: no podemos leer — asumir que cargó bien
+    }
+
+    iframe.classList.add('visible');
+    placeholder.classList.add('hide');
+    loader.classList.add('done');
+    setTimeout(() => loader.classList.add('hide'), 600);
+}
+
+function cerrarCarta() {
+    clearTimeout(cartaBlockTimer);
+    const ov     = document.getElementById('cartaOv');
+    const wid    = document.getElementById('cartaWidget');
+    const iframe = document.getElementById('cartaIframe');
+    ov.classList.remove('on');
+    ov.setAttribute('aria-hidden', 'true');
+    wid.classList.remove('on', 'minimized', 'maximized');
+    document.body.style.overflow = '';
+    setTimeout(() => { iframe.src = ''; iframe.classList.remove('visible'); }, 460);
+}
+
+function cartaMinimize(e) {
+    e.stopPropagation();
+    const wid  = document.getElementById('cartaWidget');
+    const isMin = wid.classList.toggle('minimized');
+    wid.classList.remove('maximized');
+    e.currentTarget.querySelector('i').className = isMin ? 'fas fa-chevron-down' : 'fas fa-minus';
+    document.getElementById('cartaMaxBtn').querySelector('i').className = 'fas fa-expand';
+}
+
+function cartaMaximize(e) {
+    e.stopPropagation();
+    const wid  = document.getElementById('cartaWidget');
+    const isMax = wid.classList.toggle('maximized');
+    wid.classList.remove('minimized');
+    e.currentTarget.querySelector('i').className = isMax ? 'fas fa-compress' : 'fas fa-expand';
+    const minBtn = document.querySelector('.carta-ctrl[onclick*="cartaMinimize"] i');
+    if (minBtn) minBtn.className = 'fas fa-minus';
+}
+
+// Overlay — cerrar al click sobre el fondo
+document.getElementById('cartaOv').addEventListener('click', cerrarCarta);
+
+// Escape cierra la carta
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && document.getElementById('cartaWidget')?.classList.contains('on')) {
+        cerrarCarta();
+    }
+});
